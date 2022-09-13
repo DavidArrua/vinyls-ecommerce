@@ -1,0 +1,58 @@
+package com.mindHub.vinilysEcommerce;
+
+import com.mindHub.vinilysEcommerce.models.*;
+import com.mindHub.vinilysEcommerce.repositories.BillRepository;
+import com.mindHub.vinilysEcommerce.repositories.ClientRepository;
+import com.mindHub.vinilysEcommerce.repositories.ProductBillRepository;
+import com.mindHub.vinilysEcommerce.repositories.ProductRepository;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import java.time.LocalDateTime;
+import java.util.Set;
+
+@SpringBootApplication
+public class VinilysEcommerceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(VinilysEcommerceApplication.class, args);
+	}
+
+	@Bean
+	public CommandLineRunner initData(ClientRepository clientRepository, ProductRepository productRepository, BillRepository billRepository, ProductBillRepository productBillRepository) {
+		return (args) -> {
+
+			Client client1 = new Client("Facu","Araujo", "facu@mindhub.com", "123", true);
+			clientRepository.save(client1);
+
+			Product product3 = new Product("Fine Line", "Harry Styles", "2019", "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg", Set.of("Pop","Pop Rock"), 4, 2000.0, true, ProductType.VINYLS);
+			Product product2 = new Product("Fine Line", "Harry Styles", "2019", "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg", Set.of("Pop","Pop Rock"), 4, 2000.0, true, ProductType.VINYLS);
+			Product product1 = new Product("Fine Line", "Harry Styles", "2019", "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg", Set.of("Pop","Pop Rock"), 4, 2000.0, true, ProductType.VINYLS);
+			productRepository.save(product1);
+			productRepository.save(product2);
+			productRepository.save(product3);
+
+			Bill bill1 = new Bill("11111 1111", 500.00, 1000.00, 900.00, LocalDateTime.now(), client1);
+			Bill bill2 = new Bill("2222 2222", 500.00, 1000.00, 900.00, LocalDateTime.now(), client1);
+			billRepository.save(bill1);
+			billRepository.save(bill2);
+
+			ProductBill pb1 = new ProductBill(2, product1, bill1);
+			ProductBill pb2 = new ProductBill(2, product2, bill1);
+			ProductBill pb3 = new ProductBill(2, product2, bill2);
+			productBillRepository.save(pb1);
+			productBillRepository.save(pb2);
+			productBillRepository.save(pb3);
+
+
+			//bill(String number, Double deliveryAmount, Double grossAmount, Double netAmount, LocalDateTime date, Client client)
+			//productbill(Integer quantity, Product product, Bill bill)
+
+
+
+		};
+	}
+
+}
