@@ -18,12 +18,16 @@ public class ClientServiceImpl implements ClientService {
     ClientRepository clientRepository;
 
     @Override
-    public void saveProduct(Client client) {
+    public void saveClient(Client client) {
         clientRepository.save(client);
     }
 
     @Override
     public List<Client> getAllClients(){
         return clientRepository.findAll();
+    }
+    @Override
+    public Client getClientByEmail(String email){
+        return clientRepository.findByEmail(email);
     }
 }

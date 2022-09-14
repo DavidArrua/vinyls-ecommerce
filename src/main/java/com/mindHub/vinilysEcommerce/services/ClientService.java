@@ -6,7 +6,9 @@ import java.util.List;
 
 public interface ClientService {
 
-    public void saveProduct(Client client);
+    public void saveClient(Client client);
 
     public List<Client> getAllClients();
+
+    public Client getClientByEmail(String email);
 }
