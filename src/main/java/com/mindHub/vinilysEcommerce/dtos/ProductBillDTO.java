@@ -5,13 +5,17 @@ import com.mindHub.vinilysEcommerce.models.Bill;
 import com.mindHub.vinilysEcommerce.models.Product;
 import com.mindHub.vinilysEcommerce.models.ProductBill;
 
+import java.util.List;
+
 public class ProductBillDTO {
     private long id;
     private Integer quantity;
 
     private Long product_id;
 
-    private String productName, productImage, productAuthor;
+    private String productName, productAuthor;
+
+    private List<String> productImage;
 
     private Double productPrice;
 
@@ -46,7 +50,7 @@ public class ProductBillDTO {
         return product_id;
     }
 
-    public String getProductImage() {
+    public List<String> getProductImage() {
         return productImage;
     }
 

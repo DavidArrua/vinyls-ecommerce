@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 @SpringBootApplication
@@ -27,9 +28,9 @@ public class VinilysEcommerceApplication {
 			Client client1 = new Client("Facu","Araujo", "facu@mindhub.com", "123", true);
 			clientRepository.save(client1);
 
-			Product product3 = new Product("Fine Line", "Harry Styles", "2019", "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg", Set.of("Pop","Pop Rock"), 4, 2000.0, true, ProductType.VINYLS);
-			Product product2 = new Product("Fine Line", "Harry Styles", "2019", "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg", Set.of("Pop","Pop Rock"), 4, 2000.0, true, ProductType.VINYLS);
-			Product product1 = new Product("Fine Line", "Harry Styles", "2019", "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg", Set.of("Pop","Pop Rock"), 4, 2000.0, true, ProductType.VINYLS);
+			Product product3 = new Product("Fine Line", "Harry Styles", "2019", List.of( "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg"), Set.of("Pop","Pop Rock"), 4, 2000.0, true, ProductType.VINYLS, "-");
+			Product product2 = new Product("Fine Line", "Harry Styles", "2019", List.of( "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg"), Set.of("Pop","Pop Rock"), 4, 2000.0, true, ProductType.VINYLS, "-");
+			Product product1 = new Product("Fine Line", "Harry Styles", "2019", List.of( "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg"), Set.of("Pop","Pop Rock"), 4, 2000.0, true, ProductType.VINYLS, "-");
 			productRepository.save(product1);
 			productRepository.save(product2);
 			productRepository.save(product3);

@@ -2,16 +2,19 @@ package com.mindHub.vinilysEcommerce.dtos;
 
 
 import com.mindHub.vinilysEcommerce.models.Product;
+import com.mindHub.vinilysEcommerce.models.ProductBill;
 import com.mindHub.vinilysEcommerce.models.ProductType;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class ProductDTO {
     private long id;
 
-    private String name,author, releaseDate, image;
+    private String name,author, releaseDate, brand ;
 
+    private List<String> image;
     private Set<String> genres;
 
     private Integer stock;
@@ -36,7 +39,9 @@ public class ProductDTO {
         this.price = product.getPrice();
         this.firstHand = product.getFirstHand();
         this.productType = product.getProductType();
+        this.brand = product.getBrand();
     }
+
 
     public long getId() {
         return id;
@@ -54,7 +59,7 @@ public class ProductDTO {
         return releaseDate;
     }
 
-    public String getImage() {
+    public List<String> getImage() {
         return image;
     }
 
@@ -76,5 +81,9 @@ public class ProductDTO {
 
     public ProductType getProductType() {
         return productType;
+    }
+
+    public String getBrand() {
+        return brand;
     }
 }
