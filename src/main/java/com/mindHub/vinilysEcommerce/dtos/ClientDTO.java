@@ -1,10 +1,7 @@
 package com.mindHub.vinilysEcommerce.dtos;
 
-
-import com.mindHub.vinilysEcommerce.models.Bill;
 import com.mindHub.vinilysEcommerce.models.Client;
 
-import java.awt.image.ImageProducer;
 import java.util.Set;
 import java.util.stream.Collectors;
 

@@ -16,7 +16,6 @@ public class ProductBillDTO {
     private Double productPrice;
 
 
-
     public ProductBillDTO() {
     }
 
