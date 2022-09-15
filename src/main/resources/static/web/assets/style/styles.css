@@ -39,9 +39,9 @@ h1{
     display: flex;
     height: 40vh;
     margin-top: 4rem;
-  }
-  
-  .accordion {
+}
+
+.accordion {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -49,10 +49,33 @@ h1{
     margin: 0;
     padding: 0;
     transition: all 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
-  
-  .accordion:hover {
+}
+
+.accordion:hover {
     flex-basis: 30vw;
-  }
-  
-    
+}
+
+iframe{
+    margin-top: 4rem;
+    width: 100%;
+    height: 35rem;
+    z-index: -1;
+}
+.formContact{
+    width: 23rem;
+    position: absolute;
+    right: 80px;
+    top: 127rem;
+}
+
+footer{
+    min-height: 10vh;
+}
+.social svg{
+    margin: 10px;
+}
+
+.social a{
+    text-decoration: none;
+    color: black;
+}
