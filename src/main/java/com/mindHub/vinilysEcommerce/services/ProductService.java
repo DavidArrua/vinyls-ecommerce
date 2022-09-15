@@ -9,4 +9,6 @@ public interface ProductService {
     public void saveProduct(Product product);
 
     public Set<Product> getAllProducts();
+
+    public Product getProductById(long id);
 }

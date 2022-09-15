@@ -26,7 +26,7 @@ public class Product {
 
     private Integer stock;
 
-    private Double price;
+    private double price;
 
     private Boolean firstHand;
 
@@ -39,7 +39,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(String name, String author, String releaseDate, List<String> image, Set<String> genres, Integer stock, Double price, Boolean firstHand, ProductType productType, String brand) {
+    public Product(String name, String author, String releaseDate, List<String> image, Set<String> genres, Integer stock, double price, Boolean firstHand, ProductType productType, String brand) {
         this.name = name;
         this.author = author;
         this.releaseDate = releaseDate;
@@ -105,11 +105,11 @@ public class Product {
         this.stock = stock;
     }
 
-    public Double getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

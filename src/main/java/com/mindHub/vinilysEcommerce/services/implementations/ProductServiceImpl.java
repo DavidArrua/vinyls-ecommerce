@@ -24,4 +24,8 @@ public class ProductServiceImpl implements ProductService {
     public Set<Product> getAllProducts() {
         return productRepository.findAll().stream().collect(Collectors.toSet());
     }
+
+    public Product getProductById(long id){
+     return productRepository.findById(id).get();
+    }
 }

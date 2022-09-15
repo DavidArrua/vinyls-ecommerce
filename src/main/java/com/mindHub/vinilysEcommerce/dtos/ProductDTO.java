@@ -19,7 +19,7 @@ public class ProductDTO {
 
     private Integer stock;
 
-    private Double price;
+    private double price;
 
     private Boolean firstHand;
 
@@ -71,7 +71,7 @@ public class ProductDTO {
         return stock;
     }
 
-    public Double getPrice() {
+    public double getPrice() {
         return price;
     }
 
