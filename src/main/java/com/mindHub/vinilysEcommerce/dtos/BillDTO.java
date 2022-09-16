@@ -15,7 +15,7 @@ public class BillDTO {
 
     private String number;
 
-    private Double grossAmount, netAmount, deliveryAmount;
+    private Double grossAmount, netAmount, deliveryAmount, totalAmount;
 
     private Delivery delivery;
 
@@ -30,6 +30,7 @@ public class BillDTO {
         this.id = bill.getId();
         this.number = bill.getNumber();
         this.deliveryAmount = bill.getDeliveryAmount();
+        this.totalAmount = bill.getTotalAmount();
         this.delivery = bill.getDelivery();
         this.grossAmount = bill.getGrossAmount();
         this.netAmount = bill.getNetAmount();
@@ -67,5 +68,9 @@ public class BillDTO {
 
     public Delivery getDelivery() {
         return delivery;
+    }
+
+    public Double getTotalAmount() {
+        return totalAmount;
     }
 }

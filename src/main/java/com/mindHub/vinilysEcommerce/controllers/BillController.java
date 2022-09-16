@@ -41,23 +41,11 @@ public class BillController {
     public ResponseEntity <Object> bills (@RequestBody Set<ProductSelectDTO> productSelectDTOSet, @RequestParam String delivery, Authentication authentication){
         Client client = clientService.getClientByEmail(authentication.getName());
 
-        Bill bill = new Bill("11",0.0, Delivery.valueOf(delivery), 0.0, 0.0, LocalDateTime.now(),client);
+        Bill bill = new Bill("11",0.0, Delivery.valueOf(delivery), 0.0, 0.0, 0.0 ,LocalDateTime.now(),client);
         billRepository.save(bill);
         List<Product>productList = new ArrayList<>();
 
 
-
-        if(delivery.equals("CABA")){
-            bill.setDeliveryAmount(300.00);
-        }
-
-        if(delivery.equals("AMBA")){
-            bill.setDeliveryAmount(500.00);
-        }
-
-        if(delivery.equals("INTERIOR")){
-            bill.setDeliveryAmount(700.00);
-        }
 
 
 
@@ -85,10 +73,26 @@ public class BillController {
 
         });
 
+        
        bill.setNetAmount(bill.getGrossAmount() * 1.21);
-       billRepository.save(bill);
 
 
+        if(delivery.equals("CABA")){
+            bill.setDeliveryAmount(300.00);
+            bill.setTotalAmount(bill.getNetAmount() + 300.00);
+        }
+
+        if(delivery.equals("AMBA")){
+            bill.setDeliveryAmount(500.00);
+            bill.setTotalAmount(bill.getNetAmount() + 500.00);
+        }
+
+        if(delivery.equals("INTERIOR")){
+            bill.setDeliveryAmount(700.00);
+            bill.setTotalAmount(bill.getNetAmount() + 700.00);
+        }
+
+        billRepository.save(bill);
 
 
         return new ResponseEntity<>("productList",HttpStatus.CREATED);

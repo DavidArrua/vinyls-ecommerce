@@ -37,8 +37,8 @@ public class VinilysEcommerceApplication {
 			productRepository.save(product2);
 			productRepository.save(product3);
 
-			Bill bill1 = new Bill("11111 1111",200.00 ,Delivery.AMBA , 1000.00, 900.00, LocalDateTime.now(), client1);
-			Bill bill2 = new Bill("2222 2222", 300.00,Delivery.CABA, 1000.00, 900.00, LocalDateTime.now(), client1);
+			Bill bill1 = new Bill("11111 1111",200.00 ,Delivery.AMBA , 1000.00, 900.00, 1200.00 ,LocalDateTime.now(), client1);
+			Bill bill2 = new Bill("2222 2222", 300.00,Delivery.CABA, 1000.00, 900.00, 1300.00 ,LocalDateTime.now(), client1);
 			billRepository.save(bill1);
 			billRepository.save(bill2);
 

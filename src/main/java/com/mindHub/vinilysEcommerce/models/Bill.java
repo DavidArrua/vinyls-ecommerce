@@ -19,7 +19,7 @@ public class Bill {
 
     private String number;
 
-    private Double deliveryAmount, grossAmount, netAmount;
+    private Double deliveryAmount, grossAmount, netAmount, totalAmount;
 
     private Delivery delivery;
 
@@ -35,10 +35,12 @@ public class Bill {
     public Bill() {
     }
 
-    public Bill(String number,Double deliveryAmount, Delivery delivery, Double grossAmount, Double netAmount, LocalDateTime date, Client client) {
+    public Bill(String number,Double deliveryAmount, Delivery delivery, Double grossAmount, Double netAmount,Double totalAmount, LocalDateTime date, Client client) {
         this.number = number;
+        this.deliveryAmount = deliveryAmount;
         this.delivery = delivery;
         this.grossAmount = grossAmount;
+        this.totalAmount = totalAmount;
         this.netAmount = netAmount;
         this.date = date;
         this.client = client;
@@ -110,5 +112,13 @@ public class Bill {
 
     public void setDeliveryAmount(Double deliveryAmount) {
         this.deliveryAmount = deliveryAmount;
+    }
+
+    public Double getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(Double totalAmount) {
+        this.totalAmount = totalAmount;
     }
 }
