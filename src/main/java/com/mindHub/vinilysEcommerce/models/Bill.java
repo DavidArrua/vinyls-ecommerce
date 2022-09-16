@@ -21,6 +21,8 @@ public class Bill {
 
     private Double deliveryAmount, grossAmount, netAmount;
 
+    private Delivery delivery;
+
     private LocalDateTime date;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -33,9 +35,9 @@ public class Bill {
     public Bill() {
     }
 
-    public Bill(String number, Double deliveryAmount, Double grossAmount, Double netAmount, LocalDateTime date, Client client) {
+    public Bill(String number,Double deliveryAmount, Delivery delivery, Double grossAmount, Double netAmount, LocalDateTime date, Client client) {
         this.number = number;
-        this.deliveryAmount = deliveryAmount;
+        this.delivery = delivery;
         this.grossAmount = grossAmount;
         this.netAmount = netAmount;
         this.date = date;
@@ -54,12 +56,12 @@ public class Bill {
         this.number = number;
     }
 
-    public Double getDeliveryAmount() {
-        return deliveryAmount;
+    public Delivery getDelivery() {
+        return delivery;
     }
 
-    public void setDeliveryAmount(Double deliveryAmount) {
-        this.deliveryAmount = deliveryAmount;
+    public void setDelivery(Delivery deliveryAmount) {
+        this.delivery = deliveryAmount;
     }
 
     public Double getGrossAmount() {
@@ -100,5 +102,13 @@ public class Bill {
 
     public void setProductBills(Set<ProductBill> productBills) {
         this.productBills = productBills;
+    }
+
+    public Double getDeliveryAmount() {
+        return deliveryAmount;
+    }
+
+    public void setDeliveryAmount(Double deliveryAmount) {
+        this.deliveryAmount = deliveryAmount;
     }
 }

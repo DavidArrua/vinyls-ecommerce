@@ -1,6 +1,7 @@
 package com.mindHub.vinilysEcommerce.dtos;
 
 import com.mindHub.vinilysEcommerce.models.Bill;
+import com.mindHub.vinilysEcommerce.models.Delivery;
 import com.mindHub.vinilysEcommerce.models.ProductBill;
 
 import java.time.LocalDateTime;
@@ -14,7 +15,9 @@ public class BillDTO {
 
     private String number;
 
-    private Double deliveryAmount, grossAmount, netAmount;
+    private Double grossAmount, netAmount, deliveryAmount;
+
+    private Delivery delivery;
 
     private LocalDateTime date;
 
@@ -27,6 +30,7 @@ public class BillDTO {
         this.id = bill.getId();
         this.number = bill.getNumber();
         this.deliveryAmount = bill.getDeliveryAmount();
+        this.delivery = bill.getDelivery();
         this.grossAmount = bill.getGrossAmount();
         this.netAmount = bill.getNetAmount();
         this.date = bill.getDate();
@@ -59,5 +63,9 @@ public class BillDTO {
 
     public Set<ProductBillDTO> getProductBills() {
         return productBills;
+    }
+
+    public Delivery getDelivery() {
+        return delivery;
     }
 }

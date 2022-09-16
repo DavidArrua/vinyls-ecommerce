@@ -2,10 +2,7 @@ package com.mindHub.vinilysEcommerce.controllers;
 
 
 import com.mindHub.vinilysEcommerce.dtos.ProductSelectDTO;
-import com.mindHub.vinilysEcommerce.models.Bill;
-import com.mindHub.vinilysEcommerce.models.Client;
-import com.mindHub.vinilysEcommerce.models.Product;
-import com.mindHub.vinilysEcommerce.models.ProductBill;
+import com.mindHub.vinilysEcommerce.models.*;
 import com.mindHub.vinilysEcommerce.repositories.BillRepository;
 import com.mindHub.vinilysEcommerce.repositories.ProductBillRepository;
 import com.mindHub.vinilysEcommerce.services.ClientService;
@@ -16,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
@@ -40,12 +38,32 @@ public class BillController {
     ClientService clientService;
 
     @PostMapping("/api/bills")
-    public ResponseEntity <Object> bills (@RequestBody Set<ProductSelectDTO> productSelectDTOSet, Authentication authentication){
+    public ResponseEntity <Object> bills (@RequestBody Set<ProductSelectDTO> productSelectDTOSet, @RequestParam String delivery, Authentication authentication){
         Client client = clientService.getClientByEmail(authentication.getName());
-        AtomicReference<Double> total = new AtomicReference<>(0.0);
-        Bill bill = new Bill("11",250.00,total.get(), total.get() * 1.21, LocalDateTime.now(),client);
+
+        Bill bill = new Bill("11",0.0, Delivery.valueOf(delivery), 0.0, 0.0, LocalDateTime.now(),client);
         billRepository.save(bill);
         List<Product>productList = new ArrayList<>();
+
+
+
+        if(delivery.equals("CABA")){
+            bill.setDeliveryAmount(300.00);
+        }
+
+        if(delivery.equals("AMBA")){
+            bill.setDeliveryAmount(500.00);
+        }
+
+        if(delivery.equals("INTERIOR")){
+            bill.setDeliveryAmount(700.00);
+        }
+
+
+
+
+
+
 
         productSelectDTOSet.forEach(product ->{
 
@@ -56,20 +74,21 @@ public class BillController {
                 productList.add(product1);
                 Product selectProduct = productService.getProductById(product1.getId());
                 selectProduct.setStock(selectProduct.getStock() - 1);
-                 double productPrice = selectProduct.getPrice();
-                 total.updateAndGet(v -> (double) (v + productPrice));
+                 Double productPrice = selectProduct.getPrice();
+
                 productService.saveProduct(selectProduct);
+                bill.setGrossAmount(bill.getGrossAmount() + productPrice);
+
+                billRepository.save(bill);
             }
             productBillRepository.save(productBill);
 
-
-
-            
         });
 
+       bill.setNetAmount(bill.getGrossAmount() * 1.21);
+       billRepository.save(bill);
 
 
-//        total += product1.getPrice();
 
 
         return new ResponseEntity<>("productList",HttpStatus.CREATED);

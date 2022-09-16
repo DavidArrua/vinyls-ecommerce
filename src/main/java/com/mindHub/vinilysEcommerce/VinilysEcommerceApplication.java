@@ -30,15 +30,15 @@ public class VinilysEcommerceApplication {
 			Client client1 = new Client("Facu","Araujo", "facu@mindhub.com", passwordEncoder.encode("123"), true);
 			clientRepository.save(client1);
 
-			Product product3 = new Product("Dual Lipa album", "Dua Lipa", "2019", List.of( "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg"), Set.of("Pop","Pop Rock"), 10, 2000.0, true, ProductType.VINYLS, "-");
+			Product product3 = new Product("Dual Lipa album", "Dua Lipa", "2019", List.of( "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg"), Set.of("Pop","Pop Rock"), 10, 1000.0, true, ProductType.VINYLS, "-");
 			Product product2 = new Product("Fine Line", "Harry Styles", "2019", List.of( "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg"), Set.of("Pop","Pop Rock"), 4, 2000.0, true, ProductType.VINYLS, "-");
 			Product product1 = new Product("Fine Line", "Harry Styles", "2019", List.of( "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg"), Set.of("Pop","Pop Rock"), 4, 2000.0, true, ProductType.VINYLS, "-");
 			productRepository.save(product1);
 			productRepository.save(product2);
 			productRepository.save(product3);
 
-			Bill bill1 = new Bill("11111 1111", 500.00, 1000.00, 900.00, LocalDateTime.now(), client1);
-			Bill bill2 = new Bill("2222 2222", 500.00, 1000.00, 900.00, LocalDateTime.now(), client1);
+			Bill bill1 = new Bill("11111 1111",200.00 ,Delivery.AMBA , 1000.00, 900.00, LocalDateTime.now(), client1);
+			Bill bill2 = new Bill("2222 2222", 300.00,Delivery.CABA, 1000.00, 900.00, LocalDateTime.now(), client1);
 			billRepository.save(bill1);
 			billRepository.save(bill2);
 
