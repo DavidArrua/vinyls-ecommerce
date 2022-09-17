@@ -41,20 +41,12 @@ public class BillController {
 
         Client client = clientService.getClientByEmail(authentication.getName());
 
-        if(productSelectDTOSet.isEmpty()){
-            return new ResponseEntity<>("Missing data.",HttpStatus.FORBIDDEN);
-        }
-        if(delivery.isEmpty()){
-            return new ResponseEntity<>("The delivery data is missing",HttpStatus.FORBIDDEN);
-        }
+            if(client == null){
+                return new ResponseEntity<>("El cliente no existe", HttpStatus.FORBIDDEN);
+            }
 
 
-        Bill bill = new Bill("11",0.0, Delivery.valueOf(delivery), 0.0, 0.0, 0.0 ,LocalDateTime.now(),client);
-        billRepository.save(bill);
-        List<Product>productList = new ArrayList<>();
         Map<Product,Integer> productToSell = new HashMap<>();
-
-        List<Product>selectedProductList = productSelectDTOSet.stream().map(productSelectDTO -> productService.getProductById(productSelectDTO.getId())).collect(Collectors.toList());
 
         productSelectDTOSet.forEach(productSelectDTO -> {
             productToSell.put(productService.getProductById(productSelectDTO.getId()),productSelectDTO.getQuantity());
@@ -62,75 +54,44 @@ public class BillController {
 
         for (Map.Entry<Product, Integer> product: productToSell.entrySet()) {
 
+            if (product.getValue() == null || product.getKey() == null){
+                return new ResponseEntity<>("Datos vacios",HttpStatus.FORBIDDEN);
+            }
             if (productService.getProductById(product.getKey().getId()) == null) {
-
                 return new ResponseEntity<>("El producto no existe",HttpStatus.FORBIDDEN);
             }
-
-            System.out.println( "key: " + product.getKey().getName() + " value: " + product.getValue());
-
-
-
-
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        productSelectDTOSet.forEach(product ->{
-            Product product1 = productService.getProductById(product.getId());
-            if(product1.getStock() > 0 && product.getQuantity() <= product1.getStock()) {
-
-                ProductBill productBill = new ProductBill(product.getQuantity(), product1, bill);
-
-                for (int i = 0; i < product.getQuantity(); i++) {
-                        productList.add(product1);
-                        Product selectProduct = productService.getProductById(product1.getId());
-
-                        selectProduct.setStock(selectProduct.getStock() - 1);
-
-                        Double productPrice = selectProduct.getPrice();
-                        productService.saveProduct(selectProduct);
-
-                        bill.setGrossAmount(bill.getGrossAmount() + productPrice);
-
-                        billRepository.save(bill);
-                }
-                productBillRepository.save(productBill);
+            if(productService.getProductById(product.getKey().getId()).getStock()<product.getValue()){
+                return new ResponseEntity<>("No hay suficiente stock",HttpStatus.FORBIDDEN);
             }
         }
 
-        );
+        if(delivery.isEmpty()){
+            return new ResponseEntity<>("The delivery data is missing",HttpStatus.FORBIDDEN);
+        }
+
+
+
+        Bill bill = new Bill("11",0.0, Delivery.valueOf(delivery), 0.0, 0.0, 0.0 ,LocalDateTime.now(),client);
+        billRepository.save(bill);
+        List<Product>productList = new ArrayList<>();
+
+        for (Map.Entry<Product, Integer> product: productToSell.entrySet()){
+            Product productSelected = productService.getProductById(product.getKey().getId());
+            ProductBill productBill = new ProductBill(product.getValue(), productSelected, bill);
+
+            for (int i = 0; i < product.getValue(); i++) {
+                productList.add(productSelected);
+                productSelected.subtractStock();
+                productService.saveProduct(productSelected);
+
+                bill.setGrossAmount(bill.getGrossAmount() + productSelected.getPrice());
+                billRepository.save(bill);
+            }
+            productBillRepository.save(productBill);
+        }
 
        bill.setNetAmount(bill.getGrossAmount() * 1.21);
 
-        if(bill.getGrossAmount()>0) {
 
             if (delivery.equals("CABA")) {
                 bill.setDeliveryAmount(300.00);
@@ -146,28 +107,8 @@ public class BillController {
             }else {
                 return new ResponseEntity<>("The delivery data is missing",HttpStatus.FORBIDDEN);
             }
-                billRepository.save(bill);
-
-
-        } else {
-            if (delivery.equals("CABA")) {
-                bill.setDeliveryAmount(00.00);
-                bill.setTotalAmount(bill.getNetAmount() + 00.00);
-            }
-
-            if (delivery.equals("AMBA")) {
-                bill.setDeliveryAmount(00.00);
-                bill.setTotalAmount(bill.getNetAmount() + 00.00);
-            }
-
-            if (delivery.equals("INTERIOR")) {
-                bill.setDeliveryAmount(00.00);
-                bill.setTotalAmount(bill.getNetAmount() + 00.00);
-
-            }
-        }
 
             billRepository.save(bill);
-        return new ResponseEntity<>("productList",HttpStatus.CREATED);
+            return new ResponseEntity<>("productList",HttpStatus.CREATED);
     }
 }
