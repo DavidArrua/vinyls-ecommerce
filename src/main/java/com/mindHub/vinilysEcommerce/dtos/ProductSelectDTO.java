@@ -16,7 +16,6 @@ public class ProductSelectDTO {
     public ProductSelectDTO(Long id, Integer quantity, Delivery delivery) {
         this.id = id;
         this.quantity = quantity;
-
     }
 
     public Long getId() {
