@@ -40,8 +40,7 @@ public class VinilysEcommerceApplication {
 			productRepository.save(product4);
 
 
-
-			//http://drive.google.com/uc?export=view&id=1tjw3hSYS2VZ6vObLn8FHj_GcXbIcqVcE
+			//http://drive.google.com/uc?export=FIELD
 
 
 			Product product99 = new Product("A Rush of blood to the head", "Coldplay", "Es el segundo álbum de estudio de la banda británica Coldplay. Lanzado el 26 de agosto de 2002 bajo el sello de la discográfica Parlophone, el álbum fue producido por la banda junto a Ken Nelson 2012", "2020", List.of( "http://drive.google.com/uc?export=view&id=1tjw3hSYS2VZ6vObLn8FHj_GcXbIcqVcE"), Set.of("Rock", "Pop"), 35, 6205.0, true, ProductType.VINYLS, "-");
@@ -116,8 +115,8 @@ public class VinilysEcommerceApplication {
 			productRepository.save(product39);
 			Product product40 = new Product("True Blue", "Madonna","True Blue es el tercer álbum de estudio de la cantante estadounidense Madonna, publicado el 30 de junio de 1986 por la compañía discográfica Sire Records.​", "2012", List.of("https://drive.google.com/file/d/1C7n31c8i9DsxH3eieYKcMIYxXALYnYwa/view?usp=sharing"), Set.of("Pop "), 3, 6205.0, true, ProductType.VINYLS, "-");
 			productRepository.save(product40);
-//			Product product41 = new Product("Crystal silence", "Gary Burton","Crystal Silence es un álbum del pianista Chick Corea y el vibrafonista Gary Burton. Fue grabado en noviembre de 1972 y producido por Manfred Eicher para ECM Records. Su colaboración continuó en 1979 con los álbumes Duet e In Concert, Zürich, 28 de octubre de 1979, también en ECM Records.", "2018", List.of("https://drive.google.com/file/d/1sAH66DGrJ7uwoRHRD1vO5OVuMvRxeK9b/view?usp=sharing"), Set.of("Pop"), 5, 6511.0, true, ProductType.VINYLS, "-");
-//			productRepository.save(product41);
+			Product product41 = new Product("Crystal silence", "Gary Burton","Crystal Silence es un álbum del pianista Chick Corea y el vibrafonista Gary Burton. Fue grabado en noviembre de 1972", "2018", List.of("https://drive.google.com/file/d/1sAH66DGrJ7uwoRHRD1vO5OVuMvRxeK9b/view?usp=sharing"), Set.of("Pop"), 5, 6511.0, true, ProductType.VINYLS, "-");
+			productRepository.save(product41);
 //			Product product42 = new Product("Llegando los monos", "Sumo","Llegando los monos es el segundo álbum de estudio del grupo musical de Argentina Sumo. Fue publicado el 22 de mayo de 1986 por Sony Music.​ Está considerado como el 22 mejor álbum de la historia del rock argentino por la lista de la revista Rolling Stone.​", "2019", List.of("https://drive.google.com/file/d/1uEosMENdZYBCy4nRICz2fqeny90LqCNB/view?usp=sharing"), Set.of("Rock"), 8, 11034.0, true, ProductType.VINYLS, "-");
 //			productRepository.save(product42);
 			Product product43 = new Product("Why me? Why not", "Liam Gallagher","Why Me? Why Not. es el segundo álbum de estudio del cantante y compositor británico Liam Gallagher, fue lanzado el 20 de septiembre de 2019 por Warner Bros", "2020", List.of("https://drive.google.com/file/d/1RwAKDlT2b0ykieAOtgY0EVLanVQhcxUO/view?usp=sharing"), Set.of("Rock"), 3, 8957.0, true, ProductType.VINYLS, "-");
