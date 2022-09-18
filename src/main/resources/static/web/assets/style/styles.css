@@ -2,19 +2,42 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body{
+    background-image: url(https://doc-04-7k-docs.googleusercontent.com/docs/securesc/8ooo764oc1gfl365fok1e0tegmud1vs0/hm7fgf40b5c0bfcm0n5lncqd0uamv4o9/1663538100000/16788346458400498553/10975064642661970887/1QklDfG9DJloUXSMMA6GigdGJQfjDC4CN?e=view&ax=ALW9-sDG6hwM28GY9GxpJla6B0W-OKi4ugScqoJha1h_9XnliMW4vqaZVToCTeByN2Cql1MT_hCSdC7Vh7VGx69HwzfYAdXS6NkZnxvOMLHazChnY0GcOdhfMFR9I5S6Eq6GLXi6JadXTzarSkgFt7yw3OvgFWvKqiwjEQVPzIEclQCa0sgeLr_6E00830nv5emwSyg2GCWK_QCFQffbtdLjiRJxEldz_2WZn_KCrYOudjeFVaZeRE5JfdD-k8PjQBh0PL0vj3E2WRx8zFUMRWMfFTrGw58pTZoauF3scW3w52yYFZLK4Ve0Pruf4tCYx3LXbtYQ5RYNKYTHBLK5Ojk9yM6BcrYQ5UEBApLbU1OIq6CDGVj4GEesfKxWBQf1j2RwOPUXoaHzRxLFlxEiCmDH6yR4rv-RR-R_stykEwDqgHN0ZLBt2Esn0aK0A22AzQWThjA75Ru_rejPPywbV8QtxRpWuJDQ9k4c4K_WpGw3_vMeRu1ZV3pTd253ATcG3IE8RQ6acSqTZBKwAFFzWlvjIyFKeGTYPVSMgTZdXnJ5G5k4gZIXEemL50H11JvmHN4QihPstsyC-E1sQprtztAQgbi_dI8A4pHpii5Fl4V3AeoeeHB0mpvnWvWj4oHRrH30rolaPeqF_l6akw_sqRNuCY7P8yDGV_L9u3W_cRBrEwQSl7fX8KEx_RyPMzQXrU2olvEeWC_4oYu7yUMjYSZbhwwvf0-lroL8LGSsX0dg2ZlvAj5QLIUCiY53JHNlSLZ1tvclhb_ThFoaDn7OK9RvHTPCAqjoBXuDSTuP9QUgCCTP2NBrIjubFaPIemtK7gcexUchL_4ZRzPSR1gA-xmWXFmuuU6W15ajB8zjEY6bm8O_3dy2JCXh4Ohe3tzORfL-l0MkWqbwYJhJDdK6Af_pdJwSWOwGUzhp9w&uuid=3113ba0e-b46f-4eec-9bd7-b6aea89187ee&authuser=0&nonce=75tp7sg39a2ne&user=10975064642661970887&hash=1gmjtgdiflr0r25o7rdjehs2it9kf15c);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+video{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    z-index: -1;
+}
+
+main{
+    padding-top: 5rem;
 }
 
 header{
     min-height: 100vh;
-    background-image: url(https://images.pexels.com/photos/3007347/pexels-photo-3007347.jpeg);
+    /* background-image: url(https://images.pexels.com/photos/3007347/pexels-photo-3007347.jpeg); */
     background-size: cover;
     object-fit: cover;
 }
 
-h1{
-    position: absolute;
-    right: 40%;
-    top: 20%;
+.sticky1{
+    background-color: black;
+    color: white !important;
+    
 }
 
 .btnLanding{
@@ -65,11 +88,11 @@ iframe{
     width: 23rem;
     position: absolute;
     right: 80px;
-    top: 127rem;
+    top: 119rem;
 }
 
 footer{
-    min-height: 10vh;
+    min-height: 15vh;
 }
 .social svg{
     margin: 10px;

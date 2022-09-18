@@ -6,6 +6,8 @@
     background-color: #f5f5f5;
 }
 
+
+
 .details {
     display: flex;
     flex-direction: column;
@@ -55,8 +57,3 @@ h2 {
     border-radius: 0.5rem;
     padding: 0.2rem;
 }
-
-/* naranja: #E38164 */
-/* blanco: #f5f5f5 */
-/* violeta: #713E5A */
-/* negro: #20231B */
