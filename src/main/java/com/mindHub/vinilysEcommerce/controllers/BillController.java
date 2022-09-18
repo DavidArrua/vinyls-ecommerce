@@ -93,20 +93,22 @@ public class BillController {
        bill.setNetAmount(bill.getGrossAmount() * 1.21);
 
 
-            if (delivery.equals("CABA")) {
+        switch (delivery) {
+            case "CABA":
                 bill.setDeliveryAmount(300.00);
                 bill.setTotalAmount(bill.getNetAmount() + 300.00);
-            }
-            else if (delivery.equals("AMBA")){
+                break;
+            case "AMBA":
                 bill.setDeliveryAmount(500.00);
                 bill.setTotalAmount(bill.getNetAmount() + 500.00);
-            }
-            else if (delivery.equals("INTERIOR")) {
+                break;
+            case "INTERIOR":
                 bill.setDeliveryAmount(700.00);
                 bill.setTotalAmount(bill.getNetAmount() + 700.00);
-            }else {
-                return new ResponseEntity<>("The delivery data is missing",HttpStatus.FORBIDDEN);
-            }
+                break;
+            default:
+                return new ResponseEntity<>("The delivery data is missing", HttpStatus.FORBIDDEN);
+        }
 
             billRepository.save(bill);
             return new ResponseEntity<>("productList",HttpStatus.CREATED);

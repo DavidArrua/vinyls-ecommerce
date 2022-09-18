@@ -11,4 +11,5 @@ public interface ProductService {
     public Set<Product> getAllProducts();
 
     public Product getProductById(long id);
+    public Product getProductByName(String name);
 }

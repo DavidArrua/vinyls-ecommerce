@@ -31,6 +31,11 @@ public class ProductController {
         return productService.getAllProducts().stream().map(product -> new ProductDTO(product)).collect(Collectors.toSet());
     }
 
+    @GetMapping("/products/{id}")
+    public ProductDTO getProduct(@PathVariable long id){
+        return new ProductDTO(productService.getProductById(id));
+    }
+
     @PostMapping("/add/vinyl/products")
     public ResponseEntity<Object> addProductsVinyl(
             @RequestParam String name, @RequestParam String author,
@@ -52,6 +57,30 @@ public class ProductController {
         Product newProduct = new Product(name, author,releaseDate,image,genres,stock,price,firstHand, ProductType.valueOf(productType), brand);
         productService.saveProduct(newProduct);
         return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/products/{productId}")
+    public ResponseEntity<Long> deletedProduct(@PathVariable (value = "id") long productId){
+        return new ResponseEntity<>(productId,HttpStatus.OK);
+    }
+
+    @PatchMapping("/products/edit")
+    public ResponseEntity<Object> editProductStock(
+            @RequestParam String name, @RequestParam Integer stock,
+            Authentication authentication){
+        Client client = clientService.getClientByEmail(authentication.getName());
+        Product product = productService.getProductByName(name);
+        if (name.isEmpty()){
+            return new ResponseEntity<>("Nombre vacio", HttpStatus.FORBIDDEN);
+        }
+        if (stock<0){
+            return new ResponseEntity<>("No se puede poner stock en negativo",HttpStatus.FORBIDDEN);
+        }
+
+        product.setName(name);
+        product.setStock(stock);
+        productService.saveProduct(product);
+        return new ResponseEntity<>("Stock actualizado correctamente.", HttpStatus.CREATED);
     }
 
 }
