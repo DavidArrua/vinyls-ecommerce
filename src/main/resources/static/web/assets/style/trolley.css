@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+
+}
+
+header {
+    height: 25vh;
+    background-color: rgba(255, 255, 0, 0.797);
+
+}
+
+main {
+    min-height: 100vh;
+    background-color: rgba(128, 128, 128, 0.338);
+
+}
+
+.inputStock {
+    width: 60px;
+    border: solid 0.5px yellow;
+    align-items: center !important;
+}
+
+.downPart {
+    height: 15vh;
+    margin-top: 10px;
+    background-color: rgba(128, 128, 128, 0.388);
+}
+
+.stepAction {
+    color: rgba(128, 128, 128, 0.658);
+}
+
+.arrowSize {
+    width: 25px;
+    height: 25px;
+}
+
+.filterSelect {
+
+    filter: opacity(0.4) drop-shadow(0 0 0 rgb(61, 61, 61));
+
+}
+
+.filterSelect2 {
+
+    filter: opacity(0.4) drop-shadow(0 0 0 rgb(61, 61, 61));
+
+}
+
+.stepNumberSize {
+    width: 40px;
+    height: 40px;
+}
+
+.imgExampleAlbum {
+    width: 200px;
+    height: 200px;
+}
+
+.imgExampleAlbum2 {
+    width: 100px;
+    height: 100px;
+}
+
+.icoSize {
+    width: 40px;
+    height: 40px;
+}
+
+textarea {
+    resize: none;
+}
+
+.blockSize {
+    width: 35vw;
+}
+
+.resume_detail {
+    background-color: rgba(128, 128, 128, 0.636);
+    min-height: 40vh;
+}
+
+
+
+
+/*************************************** RESPONSIVE ***************************************************/
+@media (min-width: 1023px) and (max-width: 1024px) {}
+
+@media (min-width: 766px) and (max-width: 1023px) {}
+
+@media screen and (max-width: 768px) {
+    header {
+        min-width: fit-content;
+        margin-left: 5vh;
+        margin-right: 5vh;
+    }
+
+    main {
+        min-height: 100vh;
+        background-color: rgba(128, 128, 128, 0.338);
+        margin-left: 5vh;
+        margin-right: 5vh;
+    }
+
+    .lineSteps {
+        transform: scale(.8);
+        padding: 10px !important;
+        justify-content: center !important;
+    }
+
+    .imgResponsive {
+        width: 120px;
+        height: 120px;
+        margin-left: 10px;
+    }
+
+    .imgExampleAlbum {
+        align-items: center !important;
+
+    }
+
+    .responsiveIco {
+        margin: 0px !important;
+    }
+
+    .resposiveTitle {
+        font-size: 0.8rem;
+    }
+
+    .icoResponsive1 {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+    }
+
+    .icoResponsive2 {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+    }
+
+    /* .responsiveInput {
+        width: 120px;
+        margin: 5px !important;
+    } */
+    /* .responsiveInput2 {
+        width: 260px;
+    } */
+
+    .responsiveBlock {
+        justify-content: space-between !important;
+        flex-wrap: wrap;
+    }
+
+    .blockSize {
+        width: fit-content !important;
+        margin-inline: auto;
+    }
+
+    .resumen_compra {
+        margin: 0 auto;
+    }
+
+    .button_responsive {
+        margin-top: .5rem !important;
+    }
+
+    .responsive_button_back {
+        margin-left: .5rem !important;
+    }
+
+    .productos_carrito {
+        margin: 1rem !important;
+    }
+}
