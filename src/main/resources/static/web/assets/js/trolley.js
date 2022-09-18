@@ -33,12 +33,12 @@ const app = Vue.
                 this.select = value
                 
 
-                if ( this.select == 'selectStep1') { 
+                if ( this.select == 'selectStep1') {
                     var valueStep = document.getElementById('selectStep2')
                     valueStep.classList.add("filterSelect") 
 
                 } 
-                if ( this.select == 'selectStep2') { 
+                if ( this.select == 'selectStep2') {
                     var valueStep = document.getElementById('selectStep3')
                     valueStep.classList.add("filterSelect") 
 
