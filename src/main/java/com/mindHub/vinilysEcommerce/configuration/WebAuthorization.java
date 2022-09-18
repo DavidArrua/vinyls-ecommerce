@@ -21,18 +21,18 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.authorizeRequests()
-
-                .antMatchers(HttpMethod.POST, "/api/clients").permitAll()
-
-                .antMatchers(HttpMethod.POST, "/api/add/vinyl/products","/api/bills").hasAuthority("ADMIN")
-                .antMatchers(HttpMethod.PATCH,"/api/products/edit").hasAnyAuthority("ADMIN")
-
-                .antMatchers("/web/index.html").permitAll()
-
-                .antMatchers("/rest/").hasAuthority("ADMIN")
-
-                .antMatchers("/web/**").hasAnyAuthority("CLIENT","ADMIN");
+//        http.authorizeRequests()
+//
+//                .antMatchers(HttpMethod.POST, "/api/clients").permitAll()
+//
+//                .antMatchers(HttpMethod.POST, "/api/add/vinyl/products","/api/bills").hasAuthority("ADMIN")
+//                .antMatchers(HttpMethod.PATCH,"/api/products/edit").hasAnyAuthority("ADMIN")
+//
+//                .antMatchers("/web/index.html").permitAll()
+//
+//                .antMatchers("/rest/").hasAuthority("ADMIN")
+//
+//                .antMatchers("/web/**").hasAnyAuthority("CLIENT","ADMIN");
 
 
 

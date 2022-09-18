@@ -41,8 +41,10 @@ public class VinilysEcommerceApplication {
 
 
 
+			//http://drive.google.com/uc?export=view&id=1tjw3hSYS2VZ6vObLn8FHj_GcXbIcqVcE
 
-			Product product99 = new Product("A Rush of blood to the head", "Coldplay", "Es el segundo álbum de estudio de la banda británica Coldplay. Lanzado el 26 de agosto de 2002 bajo el sello de la discográfica Parlophone, el álbum fue producido por la banda junto a Ken Nelson 2012", "2020", List.of( "https://drive.google.com/file/d/1tjw3hSYS2VZ6vObLn8FHj_GcXbIcqVcE/view?usp=sharing"), Set.of("Rock", "Pop"), 35, 6205.0, true, ProductType.VINYLS, "-");
+
+			Product product99 = new Product("A Rush of blood to the head", "Coldplay", "Es el segundo álbum de estudio de la banda británica Coldplay. Lanzado el 26 de agosto de 2002 bajo el sello de la discográfica Parlophone, el álbum fue producido por la banda junto a Ken Nelson 2012", "2020", List.of( "http://drive.google.com/uc?export=view&id=1tjw3hSYS2VZ6vObLn8FHj_GcXbIcqVcE"), Set.of("Rock", "Pop"), 35, 6205.0, true, ProductType.VINYLS, "-");
 			productRepository.save(product99);
 			Product product5 = new Product("Clics Modernos", "Charly Garcia","Clics Modernos es el segundo álbum de estudio del cantante argentino Charly García, publicado el 5 de noviembre de 1983 por la compañía SG Discos.", "2020", List.of("https://drive.google.com/file/d/1dWQZ0kK24vfeKKVLPPzlkb_N6mqzL7go/view?usp=sharing"), Set.of("Rock" ), 30, 8245.0, true, ProductType.VINYLS, "-");
 			productRepository.save(product5);
@@ -60,9 +62,6 @@ public class VinilysEcommerceApplication {
 			productRepository.save(product11);
 			Product product12 = new Product("Lo último", "Hermética","Lo último es el primer álbum en vivo póstumo de la banda argentina de thrash metal Hermética, grabado en el Estadio Obras Sanitarias el 12 de noviembre de 1994 y publicado en 1995 por el sello discográfico DBN. ", "2022", List.of("https://drive.google.com/file/d/1HMZiVC-_M9i4Mrp6aDf5K-IwKe92h2nE/view?usp=sharing"), Set.of("Heavy Metal"), 66, 6090.0, true, ProductType.VINYLS, "-");
 			productRepository.save(product12);
-
-
-
 			Product product14 = new Product("Vasos vacíos", "Los Fabulosos Cadillacs","Vasos vacíos es el primer y más premiado álbum recopilatorio del grupo argentino Los Fabulosos Cadillacs, lanzado en 1993. Contiene diecisiete temas, de los cuales dos eran nuevos: V Centenario y Matador", "2020", List.of("https://drive.google.com/file/d/1MZWuDn5uOUUEaj2l7g6F3QN3zeRMMXrW/view?usp=sharing"), Set.of("Rock"), 14, 16893.0, true, ProductType.VINYLS, "-");
 			productRepository.save(product14);
 			Product product15 = new Product("Kind of blue", "David Miles","Kind of Blue —en español: Una especie de tristeza o algún tipo de tristeza— es un álbum de estudio del músico estadounidense de jazz Miles Davis editado en agosto de 1959. ", "2016", List.of("https://drive.google.com/file/d/1aAdZw508Ix-QLNAUzdnlmpoaDdAE1Xps/view?usp=sharing"), Set.of("Blues"), 88, 14115.0, true, ProductType.VINYLS, "-");
