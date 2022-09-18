@@ -11,26 +11,26 @@
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <!--CSS -->
     <link rel="stylesheet" href="./assets/style/trolley.css">
+    <!--Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <title>VINILIS RECORD</title>
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" class="backColor">
 
-        <header class="container">
+        <header class="container-fluid">
 
             <div class="d-flex justify-content-between">
-                <div>
-                    <h3>VINILIS RECORD</h3>
-                </div>
+
                 <div class="d-flex align-items-center">
                     <img src="http://drive.google.com/uc?export=view&id=1Ie4vLA1408wRT8KSto1Y8UqAygCcXPrX"
                         class="me-2 icoSize" alt="">
-                    <h3 class="mt-3 me-5">Mendoza</h3>
+                    <h3 class="me-5">Mendoza</h3>
                 </div>
             </div>
-            <div class="d-flex justify-content-end mt-5 me-5">
+            <div class="d-flex justify-content-end  pb-5 me-5">
                 <div>
                     <img src="http://drive.google.com/uc?export=view&id=1zvg9vfQ5WRp_ik_HZDYgkeLyCePvEI-D"
                         class="ms-2 icoSize" alt="">
@@ -44,13 +44,13 @@
 
         <main class="container">
 
-            <div class="lineSteps d-flex justify-content-start p-5">
+            <div class="lineSteps d-flex justify-content-start p-3 align-content-center">
 
                 <div class="step_1 d-flex align-items-center">
 
                     <img src="http://drive.google.com/uc?export=view&id=19zgunXbl7QjnmL9RXTohggXrumutzt2R" alt=""
                         class="stepNumberSize">
-                    <h3 class="ps-2">Carrito</h3>
+                    <h5 class="ps-2 mt-1">Carrito</h5>
                     <img src="http://drive.google.com/uc?export=view&id=1lVknd671fcBtxU1E5EATzbSGxO6eK7BH" alt=""
                         class="arrowSize mx-3">
 
@@ -60,7 +60,7 @@
 
                     <img src="http://drive.google.com/uc?export=view&id=1pSnawlghvdAlb2Txxbng8qMGX4wsfq8Q" alt=""
                         class="stepNumberSize">
-                    <h3 class="ps-2">Envio</h3>
+                    <h5 class="ps-2 mt-1">Envio</h5>
                     <img src="http://drive.google.com/uc?export=view&id=1lVknd671fcBtxU1E5EATzbSGxO6eK7BH" alt=""
                         class="arrowSize  mx-3">
 
@@ -70,38 +70,66 @@
 
                     <img src="http://drive.google.com/uc?export=view&id=1spm0XZGakvgp3-bgUDtJKhXK2SJeTxId" alt=""
                         class="stepNumberSize">
-                    <h3 class="ps-2 ">Pago</h3>
+                    <h5 class="ps-2 mt-1">Pago</h5>
 
                 </div>
 
             </div>
+            
+           
 
-            <div v-if="select == 'selectStep1'" class="steepOneCart">
+            <div v-if="select == 'selectStep1'" class="steepOneCart p-5 animate__animated animate__bounceInDown">
 
-                <h4 class="m-5 productos_carrito">1. Productos en el carrito</h4>
+                <h4 class="mt-3 ms-4 productos_carrito">1. Productos en el carrito</h4>
+                <div class="d-flex flex-column align-items-center pt-3 ">
+                    <div class="d-flex justify-content-between align-items-center w-100 py-3"
+                        style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
 
-                <div class="d-flex justify-content-evenly align-items-center">
+                        <div class="d-flex justify-content-lg-center imgExampleAlbum">
+                            <img src="http://drive.google.com/uc?export=view&id=1b8yk95jE6064tRUT3MKsRoYo1bZ-02GF"
+                                alt="" class="imgResponsive ms-5">
+                        </div>
 
-                    <div class="d-flex justify-content-lg-center imgExampleAlbum">
-                        <img src="http://drive.google.com/uc?export=view&id=1b8yk95jE6064tRUT3MKsRoYo1bZ-02GF" alt=""
-                            class="imgResponsive ms-5">
+                        <div class="d-flex flex-column align-items-center">
+                            <h5 class="resposiveTitle text-center">Nombre del disco:</h5>
+                            <h5 class="resposiveTitle text-center fw-bolder">Guasones - Como animales</h5>
+                            <input type="number" class="inputStock mt-3">
+                        </div>
+
+                        <div class="me-5 responsiveIco">
+                            <img src="http://drive.google.com/uc?export=view&id=1bLeOFh5Tg5f7J3QOPKq8B_PCAGVeLopI "
+                                alt="" class="icoResponsive1 icoSize">
+                            <img src="http://drive.google.com/uc?export=view&id=1DC80BNiWNxAsxTK9ViClKkVpaREFQ76Z"
+                                alt="" class="icoResponsive2 ms-2 icoSize">
+                            <h5 class="resposiveTitle text-center mt-3">Precio: <span class="fw-bolder text-success">
+                                    750.5</span></h5>
+                        </div>
+
                     </div>
+                    <div class="d-flex justify-content-between align-items-center w-100 py-3 mt-3" 
+                        style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
 
-                    <div class="d-flex flex-column align-items-center">
-                        <h5 class="resposiveTitle text-center">Nombre del disco:</h5>
-                        <h5 class="resposiveTitle text-center fw-bolder">Guasones - Como animales</h5>
-                        <input type="number" class="inputStock mt-3">
+                        <div class="d-flex justify-content-lg-center imgExampleAlbum">
+                            <img src="http://drive.google.com/uc?export=view&id=1b8yk95jE6064tRUT3MKsRoYo1bZ-02GF"
+                                alt="" class="imgResponsive ms-5">
+                        </div>
+
+                        <div class="d-flex flex-column align-items-center">
+                            <h5 class="resposiveTitle text-center">Nombre del disco:</h5>
+                            <h5 class="resposiveTitle text-center fw-bolder">Guasones - Como animales</h5>
+                            <input type="number" class="inputStock mt-3">
+                        </div>
+
+                        <div class="me-5 responsiveIco">
+                            <img src="http://drive.google.com/uc?export=view&id=1bLeOFh5Tg5f7J3QOPKq8B_PCAGVeLopI "
+                                alt="" class="icoResponsive1 icoSize">
+                            <img src="http://drive.google.com/uc?export=view&id=1DC80BNiWNxAsxTK9ViClKkVpaREFQ76Z"
+                                alt="" class="icoResponsive2 ms-2 icoSize">
+                            <h5 class="resposiveTitle text-center mt-3">Precio: <span class="fw-bolder text-success">
+                                    750.5</span></h5>
+                        </div>
+
                     </div>
-
-                    <div class="me-5 responsiveIco">
-                        <img src="http://drive.google.com/uc?export=view&id=1bLeOFh5Tg5f7J3QOPKq8B_PCAGVeLopI " alt=""
-                            class="icoResponsive1 icoSize">
-                        <img src="http://drive.google.com/uc?export=view&id=1DC80BNiWNxAsxTK9ViClKkVpaREFQ76Z" alt=""
-                            class="icoResponsive2 ms-2 icoSize">
-                        <h5 class="resposiveTitle text-center mt-3">Precio: <span class="fw-bolder text-success">
-                                750.5</span></h5>
-                    </div>
-
                 </div>
 
 
@@ -117,9 +145,11 @@
                 </div>
 
             </div>
+            
+            <div v-else-if="select == 'selectStep2'" class="steepTwoDelivery p-5 animate__animated animate__bounceInRight">
 
 
-            <div v-else-if="select == 'selectStep2'" class="steepTwoDelivery">
+             
                 <H2>2.Seleccionar método de envio</H2>
 
                 <div class="d-flex justify-content-evenly responsiveBlock">
@@ -180,7 +210,7 @@
 
                         <div class="input-group mb-3">
                             <div class="input-group-text">
-                                <input class="form-check-input mt-0" type="radio" name="envio"  value=""
+                                <input class="form-check-input mt-0" type="radio" name="envio" value=""
                                     aria-label="Radio button for following text input">
                             </div>
                             <input type="text" class="form-control" aria-label="Text input with radio button"
@@ -189,7 +219,7 @@
 
                         <div class="input-group mb-3">
                             <div class="input-group-text">
-                                <input class="form-check-input mt-0" type="radio" name="envio"  value=""
+                                <input class="form-check-input mt-0" type="radio" name="envio" value=""
                                     aria-label="Radio button for following text input">
                             </div>
                             <input type="text" class="form-control" aria-label="Text input with radio button"
@@ -198,8 +228,8 @@
 
                     </div>
 
-                    <div class="d-flex flex-column mx-auto mt-2" style="background-color: rgba(128, 128, 128, 0.636);">
-                        <h4>Resumen de compra:</h4>
+                    <div class="d-flex flex-column mx-auto mt-2 resumeBuy">
+                        <h4 class="p-3">Resumen de compra:</h4>
                         <div class="d-flex mt-3">
                             <img src="http://drive.google.com/uc?export=view&id=1b8yk95jE6064tRUT3MKsRoYo1bZ-02GF"
                                 alt="" class="imgResponsive ms-2 imgExampleAlbum2">
@@ -213,28 +243,29 @@
 
                         </div>
                         <hr class="bg-danger">
-                                <div class="text-center d-flex flex-column">
-                                    <h7 class="p-2">Precio del producto: <span class="fw-bolder ps-1">$300</span> </h7>
-                                    <h7 class="p-2">Costo de envio: <span class="fw-bolder ps-1">$300</span> </h7>
-                                </div>
-                                
-                                <hr class="bg-danger">
-                                <div class="text-center">
-                                    <h6>Total: <span class="fw-bolder ps-1">$600</span> </h6>
-                                </div>
+                        <div class="text-center d-flex flex-column">
+                            <h6 class="p-2">Precio del producto: <span class="fw-bolder ps-1">$300</span> </h6>
+                            <h6 class="p-2">Costo de envio: <span class="fw-bolder ps-1">$300</span> </h6>
+                        </div>
+
+                        <hr class="bg-danger">
+                        <div class="text-center">
+                            <h6>Total: <span class="fw-bolder ps-1">$600</span> </h6>
+                        </div>
 
                     </div>
 
                 </div>
 
                 <div class="d-flex justify-content-between">
-                    <button @click="backStep('selectStep1')" type="button" class="btn btn-primary ms-5 mt-5">volver al paso anterior</button>
+                    <button @click="backStep('selectStep1')" type="button" class="btn btn-primary ms-5 mt-5">volver al
+                        paso anterior</button>
                     <button @click="selectStep('selectStep3')" type="button"
                         class="btn btn-primary me-5 mt-5">Continue</button>
                 </div>
             </div>
 
-            <div v-else-if="select == 'selectStep3'" class="steepThreePayment">
+            <div v-else-if="select == 'selectStep3'" class="steepThreePayment p-5 animate__animated animate__bounceInRight">
 
                 <H2>3.Seleccionar método de pago</H2>
 
@@ -259,8 +290,10 @@
                         </div>
                         <div class="d-flex justify-content-start align-items-center">
                             <h4 class="m-4 fw-bolder">Titular de la tarjeta</h4>
-                            <img src="http://drive.google.com/uc?export=view&id=1lR0yFDIrNeDgTZ09K5UDrQazLBghccbX" class="icoSize">
-                            <img src="http://drive.google.com/uc?export=view&id=1kbHjuu35kWjmEMo0fWeZ-f5sxA_EgNKl" class="icoSize">
+                            <img src="http://drive.google.com/uc?export=view&id=1lR0yFDIrNeDgTZ09K5UDrQazLBghccbX"
+                                class="icoSize">
+                            <img src="http://drive.google.com/uc?export=view&id=1kbHjuu35kWjmEMo0fWeZ-f5sxA_EgNKl"
+                                class="icoSize">
                         </div>
                         <div class="d-flex">
                             <input class="form-control me-2 responsiveInput" type="text" placeholder="nombre"
@@ -269,8 +302,8 @@
 
                         <h4 class="m-4 fw-bolder">Numero de tarjeta</h4>
                         <div class="d-flex">
-                            <input class="form-control me-2 responsiveInput" type="number" placeholder="4407 **** **** ****"
-                                aria-label="default input example" >
+                            <input class="form-control me-2 responsiveInput" type="number"
+                                placeholder="4407 **** **** ****" aria-label="default input example">
                         </div>
                         <div class="d-flex">
                             <h4 class="m-4 fw-bolder">Vencimiento</h4>
@@ -291,18 +324,18 @@
                                 <option value="11">Noviembre</option>
                                 <option value="12">Diciembre</option>
                             </select>
-                            <input class="form-control w-25 ms-2" type="number" min="2022" max="2099" step="1"/>
+                            <input class="form-control w-25 ms-2" type="number" min="2022" max="2099" step="1" />
                         </div>
                         <div>
                             <h4 class="m-4 fw-bolder">CVV</h4>
                             <input type="number" class="form-control w-50" placeholder="***">
                         </div>
 
-                        
+
                     </div>
 
                     <div class="d-flex flex-column resumen_compra">
-                        <div class="d-flex flex-column mx-auto mt-2 resume_detail">
+                        <div class="d-flex flex-column mx-auto  resume_detail">
                             <div class="p-4">
                                 <h4>Resumen de compra:</h4>
                                 <div class="d-flex mt-3">
@@ -316,31 +349,54 @@
                                         </div>
                                     </div>
                                 </div>
+                                <hr>
+                                <div class="d-flex mt-3">
+                                    <img src="http://drive.google.com/uc?export=view&id=1b8yk95jE6064tRUT3MKsRoYo1bZ-02GF"
+                                        alt="" class="imgResponsive ms-2 imgExampleAlbum2">
+                                    <div>
+                                        <p class="fw-bolder ms-3 me-3">Guasones - Como animales</p>
+                                        <div class="d-flex justify-content-evenly">
+                                            <p>Cantidad: <span class="fw-bold">2</span></p>
+                                            <p>Precio: <span class="fw-bold">$158</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="d-flex mt-3">
+                                    <img src="http://drive.google.com/uc?export=view&id=1b8yk95jE6064tRUT3MKsRoYo1bZ-02GF"
+                                        alt="" class="imgResponsive ms-2 imgExampleAlbum2">
+                                    <div>
+                                        <p class="fw-bolder ms-3 me-3">Guasones - Como animales</p>
+                                        <div class="d-flex justify-content-evenly">
+                                            <p>Cantidad: <span class="fw-bold">2</span></p>
+                                            <p>Precio: <span class="fw-bold">$158</span></p>
+                                        </div>
+                                    </div>
+                                </div>
                                 <hr class="bg-danger">
                                 <div class="text-center d-flex flex-column">
-                                    <h7 class="p-2">Precio del producto: <span class="fw-bolder ps-1">$300</span> </h7>
-                                    <h7 class="p-2">Costo de envio: <span class="fw-bolder ps-1">$300</span> </h7>
+                                    <h6 class="p-2">Precio del producto: <span class="fw-bolder ps-1">$300</span> </h6>
+                                    <h6 class="p-2">Costo de envio: <span class="fw-bolder ps-1">$300</span> </h6>
                                 </div>
-                                
+
                                 <hr class="bg-danger">
                                 <div class="text-center">
                                     <h6>Total: <span class="fw-bolder ps-1">$600</span> </h6>
                                 </div>
 
                             </div>
-                            
+
                         </div>
-                        <div>
-                            <button type="button" class="btn btn-warning ms-5 mt-5 w-75 button_responsive">Finalizar compra</button>
+                        <div class="pb-3" style=" background-color: rgba(209, 209, 209, 0.322);">
+                            <button type="button" class="btn btn-warning ms-5 w-75 button_responsive">Finalizar
+                                compra</button>
                         </div>
                     </div>
                 </div>
 
-
-
-
                 <div class="d-flex justify-content-between">
-                    <button @click="backStep('selectStep2')" type="button" class="btn btn-primary ms-5 mt-5 responsive_button_back">Back to
+                    <button @click="backStep('selectStep2')" type="button"
+                        class="btn btn-primary ms-5 mt-5 responsive_button_back">Back to
                         Step two</button>
                 </div>
             </div>
