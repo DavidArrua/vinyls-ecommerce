@@ -17,7 +17,7 @@ public class Product {
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
 
-    private String name, author, releaseDate, brand;
+    private String name, author, releaseDate, brand, description;
     @ElementCollection
     private List<String> image;
 
@@ -39,9 +39,10 @@ public class Product {
     public Product() {
     }
 
-    public Product(String name, String author, String releaseDate, List<String> image, Set<String> genres, Integer stock, double price, Boolean firstHand, ProductType productType, String brand) {
+    public Product(String name, String author, String description,String releaseDate, List<String> image, Set<String> genres, Integer stock, double price, Boolean firstHand, ProductType productType, String brand) {
         this.name = name;
         this.author = author;
+        this.description = description;
         this.releaseDate = releaseDate;
         this.image = image;
         this.genres = genres;
@@ -155,5 +156,16 @@ public class Product {
         this.brand = brand;
     }
 
-     public void subtractStock(){this.stock -= 1;}
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void subtractStock(){this.stock -= 1;}
+
+
 }

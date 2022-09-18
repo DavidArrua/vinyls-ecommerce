@@ -37,14 +37,13 @@ public class BillController {
     ClientService clientService;
 
     @PostMapping("/api/bills")
-    public ResponseEntity <Object> bills (@RequestBody Set<ProductSelectDTO> productSelectDTOSet, @RequestParam String delivery, Authentication authentication){
+    public ResponseEntity<Object> bills (@RequestBody Set<ProductSelectDTO> productSelectDTOSet, @RequestParam String delivery, Authentication authentication){
 
         Client client = clientService.getClientByEmail(authentication.getName());
 
             if(client == null){
                 return new ResponseEntity<>("El cliente no existe", HttpStatus.FORBIDDEN);
             }
-
 
         Map<Product,Integer> productToSell = new HashMap<>();
 
@@ -68,7 +67,6 @@ public class BillController {
         if(delivery.isEmpty()){
             return new ResponseEntity<>("The delivery data is missing",HttpStatus.FORBIDDEN);
         }
-
 
 
         Bill bill = new Bill("11",0.0, Delivery.valueOf(delivery), 0.0, 0.0, 0.0 ,LocalDateTime.now(),client);

@@ -30,10 +30,11 @@ public class VinilysEcommerceApplication {
 			Client client1 = new Client("Facu","Araujo", "facu@mindhub.com", passwordEncoder.encode("123"), true);
 			clientRepository.save(client1);
 
-			Product product1 = new Product("Fine Line", "Harry Styles", "2019", List.of( "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg"), Set.of("Pop","Pop Rock"), 0, 2000.0, true, ProductType.VINYLS, "-");
-			Product product2 = new Product("Fine Line", "Harry Styles", "2019", List.of( "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg"), Set.of("Pop","Pop Rock"), 2, 2000.0, true, ProductType.VINYLS, "-");
-			Product product3 = new Product("Dual Lipa album", "Dua Lipa", "2019", List.of( "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg"), Set.of("Pop","Pop Rock"), 0, 1000.0, true, ProductType.VINYLS, "-");
-			Product product4 = new Product("Toro Rojo", "Guasones", "2019", List.of( "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg"), Set.of("Pop","Pop Rock"), 10, 1000.0, true, ProductType.VINYLS, "-");
+			Product product1 = new Product("Fine Line", "Harry Styles","asdfasdfasdfasd" ,"2019", List.of( "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg"), Set.of("Pop","Pop Rock"), 0, 2000.0, true, ProductType.VINYLS, "-");
+			Product product2 = new Product("Fine Line", "Harry Styles","asdfasdfasdfasd" ,"2019", List.of( "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg"), Set.of("Pop","Pop Rock"), 2, 2000.0, true, ProductType.VINYLS, "-");
+			Product product3 = new Product("Dual Lipa album", "Dua Lipa","asdfasdfasdfasd" ,"2019", List.of( "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg"), Set.of("Pop","Pop Rock"), 0, 1000.0, true, ProductType.VINYLS, "-");
+			Product product4 = new Product("Toro Rojo", "Guasones", "asdfasdfasdfasd","2019", List.of( "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg"), Set.of("Pop","Pop Rock"), 10, 1000.0, true, ProductType.VINYLS, "-");
+
 
 			productRepository.save(product1);
 			productRepository.save(product2);

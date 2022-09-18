@@ -38,7 +38,7 @@ public class ProductController {
 
     @PostMapping("/add/vinyl/products")
     public ResponseEntity<Object> addProductsVinyl(
-            @RequestParam String name, @RequestParam String author,
+            @RequestParam String name, @RequestParam String author, @RequestParam String description,
             @RequestParam String releaseDate, @RequestParam List<String> image,
             @RequestParam Set<String> genres, @RequestParam Integer stock,
             @RequestParam Double price, @RequestParam Boolean firstHand,
@@ -54,7 +54,7 @@ public class ProductController {
         }
 
 
-        Product newProduct = new Product(name, author,releaseDate,image,genres,stock,price,firstHand, ProductType.valueOf(productType), brand);
+        Product newProduct = new Product(name, author, description ,releaseDate,image,genres,stock,price,firstHand, ProductType.valueOf(productType), brand);
         productService.saveProduct(newProduct);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

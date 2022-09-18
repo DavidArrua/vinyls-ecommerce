@@ -12,7 +12,7 @@ import java.util.Set;
 public class ProductDTO {
     private long id;
 
-    private String name,author, releaseDate, brand ;
+    private String name,author, releaseDate, brand, description ;
 
     private List<String> image;
     private Set<String> genres;
@@ -32,6 +32,7 @@ public class ProductDTO {
         this.id = product.getId();
         this.name = product.getName();
         this.author = product.getAuthor();
+        this.description = product.getDescription();
         this.releaseDate = product.getReleaseDate();
         this.image = product.getImage();
         this.genres = product.getGenres();
@@ -85,5 +86,9 @@ public class ProductDTO {
 
     public String getBrand() {
         return brand;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }
