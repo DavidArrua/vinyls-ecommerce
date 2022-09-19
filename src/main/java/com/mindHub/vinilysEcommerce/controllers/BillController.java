@@ -37,13 +37,13 @@ public class BillController {
     ClientService clientService;
 
     @PostMapping("/api/bills")
-    public ResponseEntity<Object> bills (@RequestBody Set<ProductSelectDTO> productSelectDTOSet, @RequestParam String delivery, Authentication authentication){
+    public ResponseEntity<Object> bills (@RequestBody Set<ProductSelectDTO> productSelectDTOSet, Authentication authentication){
 
         Client client = clientService.getClientByEmail(authentication.getName());
 
-            if(client == null){
-                return new ResponseEntity<>("El cliente no existe", HttpStatus.FORBIDDEN);
-            }
+        if(client == null){
+            return new ResponseEntity<>("El cliente no existe", HttpStatus.FORBIDDEN);
+        }
 
         Map<Product,Integer> productToSell = new HashMap<>();
 
@@ -64,12 +64,12 @@ public class BillController {
             }
         }
 
-        if(delivery.isEmpty()){
-            return new ResponseEntity<>("The delivery data is missing",HttpStatus.FORBIDDEN);
-        }
+//        if(delivery.isEmpty()){
+//            return new ResponseEntity<>("The delivery data is missing",HttpStatus.FORBIDDEN);
+//        }
 
 
-        Bill bill = new Bill("11",0.0, Delivery.valueOf(delivery), 0.0, 0.0, 0.0 ,LocalDateTime.now(),client);
+        Bill bill = new Bill("11",0.0, Delivery.valueOf("CABA"), 0.0, 0.0, 0.0 ,LocalDateTime.now(),client);
         billRepository.save(bill);
         List<Product>productList = new ArrayList<>();
 
@@ -91,22 +91,22 @@ public class BillController {
        bill.setNetAmount(bill.getGrossAmount() * 1.21);
 
 
-        switch (delivery) {
-            case "CABA":
-                bill.setDeliveryAmount(300.00);
-                bill.setTotalAmount(bill.getNetAmount() + 300.00);
-                break;
-            case "AMBA":
-                bill.setDeliveryAmount(500.00);
-                bill.setTotalAmount(bill.getNetAmount() + 500.00);
-                break;
-            case "INTERIOR":
-                bill.setDeliveryAmount(700.00);
-                bill.setTotalAmount(bill.getNetAmount() + 700.00);
-                break;
-            default:
-                return new ResponseEntity<>("The delivery data is missing", HttpStatus.FORBIDDEN);
-        }
+//        switch (delivery) {
+//            case "CABA":
+//                bill.setDeliveryAmount(300.00);
+//                bill.setTotalAmount(bill.getNetAmount() + 300.00);
+//                break;
+//            case "AMBA":
+//                bill.setDeliveryAmount(500.00);
+//                bill.setTotalAmount(bill.getNetAmount() + 500.00);
+//                break;
+//            case "INTERIOR":
+//                bill.setDeliveryAmount(700.00);
+//                bill.setTotalAmount(bill.getNetAmount() + 700.00);
+//                break;
+//            default:
+//                return new ResponseEntity<>("The delivery data is missing", HttpStatus.FORBIDDEN);
+//        }
 
             billRepository.save(bill);
             return new ResponseEntity<>("productList",HttpStatus.CREATED);

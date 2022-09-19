@@ -9,238 +9,392 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- glider css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
     <link rel="stylesheet" href="./assets/style/catalog.css">
 </head>
 
 <body>
-<div id="app">
-    <div id="myCarousel" class="carousel slide container carrousel-bgd-color">
-        <div class="carousel-inner w-100">
-          <div class="carousel-item active">
-            <div class="col-md-3">
-              <div class="card card-body">
-                <img class="img-fluid" src="https://m.media-amazon.com/images/I/81S1qo7-NJL._SL1425_.jpg">
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="col-md-3">
-              <div class="card card-body">
-                <img class="img-fluid" src="https://storyofsong.com/wp-content/uploads/2021/05/BTS_-_Butter.png">
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="col-md-3">
-              <div class="card card-body">
-                <img class="img-fluid" src="https://m.media-amazon.com/images/I/41Fp0rWkFJL.jpg">
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="col-md-3">
-              <div class="card card-body">
-                <img class="img-fluid" src="https://m.media-amazon.com/images/I/71v1pBcehfL._SY355_.jpg">
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="col-md-3">
-              <div class="card card-body">
-                <img class="img-fluid" src="https://m.media-amazon.com/images/I/61xIlFDKtGL._SX466_.jpg">
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="col-md-3">
-              <div class="card card-body">
-                <img class="img-fluid" src="https://target.scene7.com/is/image/Target/GUEST_0fa190e7-d67f-4bb0-867e-b377994f0db2?wid=488&hei=488&fmt=pjpeg">
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="col-md-3">
-              <div class="card card-body">
-                <img class="img-fluid" src="http://discobole.gr/images/detailed/48/kiss_-_destroyer.jpg">
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="col-md-3">
-              <div class="card card-body">
-                <img class="img-fluid" src="https://target.scene7.com/is/image/Target/GUEST_b37338ac-b65e-4815-bfa2-694ba01a4b40?wid=488&hei=488&fmt=pjpeg">
-              </div>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    <main>
-
-        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="https://www.thomann.de/blog/wp-content/uploads/2017/06/vinyl-blog-header-thomann.jpg"
-                        class="d-block w-100 carrousel-catalog" alt="">
+    <div id="app">
+        <header class="fixed-top">
+            <nav class="navbar navbar-expand-lg bg-light">
+                <div class="container">
+                    <a class="navbar-brand me-5" href="#" style="color: #713E5A;">Logo</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item mx-3">
+                                <a class="nav-link" href="./index.html">Home</a>
+                            </li>
+                            <li class="nav-item active mx-3 current-page">
+                                <a class="nav-link" aria-current="page" href="#" style="color: #E38164;">Buy vinyl</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link" href="#">Inspiration</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <button class="btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                    height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"
+                                    style="color: #E38164;">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                </svg>
+                            </button>
+                            <input class="form-control me-5" type="search" placeholder="Search" v-model="input" aria-label="Search"
+                                style="border: 1px solid #E38164">{{filterSerch}}
+                        </form>
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <button class="btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-suit-heart" viewBox="0 0 16 16"
+                                        style="color: #E38164;">
+                                        <path
+                                            d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595L8 6.236zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.55 7.55 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z" />
+                                    </svg></button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-person" viewBox="0 0 16 16"
+                                        style="color: #E38164;">
+                                        <path
+                                            d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                                    </svg></button>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./trolley.html" class="btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16"
+                                        style="color: #E38164;">
+                                        <path
+                                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                                    </svg></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                    <img src="https://media.gq-magazine.co.uk/photos/5d139bc67fcc8e76bb8201d7/master/pass/Record-hp-GQ-7Jun17_istock_b.jpg"
-                        class="d-block w-100 carrousel-catalog" alt="">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://cityspideynews.s3.amazonaws.com/uploads/spidey/202108/vinyl-1628253021.jpg"
-                        class="d-block w-100 carrousel-catalog" alt="">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
-        <!-- Sale -->
+            </nav>
+        </header>
+        <main>
 
 
 
-
-
-        <!-- Vinyls Records -->
-
-        <div class="container">
-            <h2>Vinyls Records</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="https://i.discogs.com/iAKI0hWYyxhjrjlP6lmuIuhpGBuMy26-1FVa1HuAAJ8/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIzMjk5/MjY1LTE2NTMxMDEw/NjMtNDYwNS5qcGVn.jpeg"
-                        class="img-fluid" alt="">
-                    <p>Blues</p>
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
                 </div>
-                <div class="col-md-4">
-                    <img src="https://m.media-amazon.com/images/I/719SroNweJL._SL1500_.jpg" class="img-fluid" alt="">
-                    <p>Pop</p>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="https://www.thomann.de/blog/wp-content/uploads/2017/06/vinyl-blog-header-thomann.jpg"
+                            class="d-block w-100 carrousel-catalog" alt="">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="https://media.gq-magazine.co.uk/photos/5d139bc67fcc8e76bb8201d7/master/pass/Record-hp-GQ-7Jun17_istock_b.jpg"
+                            class="d-block w-100 carrousel-catalog" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://cityspideynews.s3.amazonaws.com/uploads/spidey/202108/vinyl-1628253021.jpg"
+                            class="d-block w-100 carrousel-catalog" alt="">
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <img src="https://images-eu.ssl-images-amazon.com/images/I/71Ok8Ljr-FL._AC_UL600_SR600,600_.jpg"
-                        class="img-fluid" alt="">
-                    <p>Jazz</p>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <!-- Sale -->
+            <div class="container mt-5">
+                <div class="carousel">
+                    <div class="carousel__caontainer">
+                        <button aria-label="Previus" class="carousel__previous">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+                        <div class="carousel__list">
+                            <div class="carousel__element">
+                                <img src="https://i.discogs.com/iAKI0hWYyxhjrjlP6lmuIuhpGBuMy26-1FVa1HuAAJ8/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIzMjk5/MjY1LTE2NTMxMDEw/NjMtNDYwNS5qcGVn.jpeg"
+                                    alt="">
+                            </div>
+
+                            <div class="carousel__element">
+                                <img src="https://m.media-amazon.com/images/I/719SroNweJL._SL1500_.jpg" alt="">
+                            </div>
+
+                            <div class="carousel__element">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/I/71Ok8Ljr-FL._AC_UL600_SR600,600_.jpg"
+                                    alt="">
+                            </div>
+
+                            <div class="carousel__element">
+                                <img src="https://http2.mlstatic.com/D_NQ_NP_761011-MLA26128367222_102017-O.jpg" alt="">
+                            </div>
+
+                            <div class="carousel__element">
+                                <img src="https://i.discogs.com/iAKI0hWYyxhjrjlP6lmuIuhpGBuMy26-1FVa1HuAAJ8/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIzMjk5/MjY1LTE2NTMxMDEw/NjMtNDYwNS5qcGVn.jpeg"
+                                    alt="">
+                            </div>
+
+                            <div class="carousel__element">
+                                <img src="https://m.media-amazon.com/images/I/719SroNweJL._SL1500_.jpg" alt="">
+                            </div>
+
+                            <div class="carousel__element">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/I/71Ok8Ljr-FL._AC_UL600_SR600,600_.jpg"
+                                    alt="">
+                            </div>
+
+                            <div class="carousel__element">
+                                <img src="https://http2.mlstatic.com/D_NQ_NP_761011-MLA26128367222_102017-O.jpg" alt="">
+                            </div>
+
+                            <div class="carousel__element">
+                                <img src="https://i.discogs.com/iAKI0hWYyxhjrjlP6lmuIuhpGBuMy26-1FVa1HuAAJ8/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIzMjk5/MjY1LTE2NTMxMDEw/NjMtNDYwNS5qcGVn.jpeg"
+                                    alt="">
+                            </div>
+
+                            <div class="carousel__element">
+                                <img src="https://m.media-amazon.com/images/I/719SroNweJL._SL1500_.jpg" alt="">
+                            </div>
+
+                            <div class="carousel__element">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/I/71Ok8Ljr-FL._AC_UL600_SR600,600_.jpg"
+                                    alt="">
+                            </div>
+
+                            <div class="carousel__element">
+                                <img src="https://http2.mlstatic.com/D_NQ_NP_761011-MLA26128367222_102017-O.jpg" alt="">
+                            </div>
+
+                            <div class="carousel__element">
+                                <img src="https://i.discogs.com/iAKI0hWYyxhjrjlP6lmuIuhpGBuMy26-1FVa1HuAAJ8/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIzMjk5/MjY1LTE2NTMxMDEw/NjMtNDYwNS5qcGVn.jpeg"
+                                    alt="">
+                            </div>
+
+                            <div class="carousel__element">
+                                <img src="https://m.media-amazon.com/images/I/719SroNweJL._SL1500_.jpg" alt="">
+                            </div>
+
+                            <div class="carousel__element">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/I/71Ok8Ljr-FL._AC_UL600_SR600,600_.jpg"
+                                    alt="">
+                            </div>
+
+                            <div class="carousel__element">
+                                <img src="https://http2.mlstatic.com/D_NQ_NP_761011-MLA26128367222_102017-O.jpg" alt="">
+                            </div>
+
+                        </div>
+
+                        <button aria-label="Next" class="carousel__next">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div role="tablist" class="caousel__indicadores"></div>
                 </div>
             </div>
 
-            <!-- New Arrival -->
-            <h2>New Arrival</h2>
-            <div class="row">
-                <div class="col-md-3">
-                    <img src="https://http2.mlstatic.com/D_NQ_NP_761011-MLA26128367222_102017-O.jpg" class="img-fluid"
-                        alt="">
-                    <p>Lorem ipsum dolor sit arnet</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="https://http2.mlstatic.com/D_NQ_NP_666080-MLA43008866863_082020-W.jpg" class="img-fluid"
-                        alt="">
-                    <p>Lorem ipsum dolor sit arnet</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="https://http2.mlstatic.com/D_NQ_NP_626578-MLA48853644574_012022-O.jpg" class="img-fluid"
-                        alt="">
-                    <p>Lorem ipsum dolor sit arnet</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="https://m.media-amazon.com/images/I/51ghtAXhnJL._SX355_.jpg" class="img-fluid" alt="">
-                    <p>Lorem ipsum dolor sit arnet</p>
-                </div>
-            </div>
 
 
-        </div>
-        <div class="container-fluid">
-            <hr>
-        </div>
-        <div class="container">
-            <!-- filters -->
-            <div class="d-flex justify-content-center">
-                <button class="col-4 col-md-3 col-xl-2">ALL</button>
-                <button class="col-4 col-md-3 col-xl-2">Best Sellers</button>
-                <button class="col-4 col-md-3 col-xl-2">New Arrivals</button>
-            </div>
-            <hr>
-            <div class="row sticky-top">
-                <div class="col-lg-2 ">
-                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                        <option selected>Order</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                        <option selected>Genere</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                        <option selected>Type</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                        <option selected>Relase year</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
+            <!-- Vinyls Records -->
+
+            <div class="container">
+                <h2>Vinyls Records</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="https://i.discogs.com/iAKI0hWYyxhjrjlP6lmuIuhpGBuMy26-1FVa1HuAAJ8/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIzMjk5/MjY1LTE2NTMxMDEw/NjMtNDYwNS5qcGVn.jpeg"
+                            class="img-fluid" alt="">
+                        <p>Blues</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="https://m.media-amazon.com/images/I/719SroNweJL._SL1500_.jpg" class="img-fluid"
+                            alt="">
+                        <p>Pop</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="https://images-eu.ssl-images-amazon.com/images/I/71Ok8Ljr-FL._AC_UL600_SR600,600_.jpg"
+                            class="img-fluid" alt="">
+                        <p>Jazz</p>
+                    </div>
                 </div>
-                <div class="col-lg-10">
-                    <div class="row">
-                        <div class="col-md-4 col-xl-3 col-12">
-                            <div v-for="product in products" class="card">
-                                <img :src="product.image"
-                                    class="card-img-top" alt="">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{product.name}}</h5>
-                                    <p class="card-text">{{product.author}}</p>
-                                    <a href="#" class="btn btn-primary">{{}}</a>
+
+                <!-- New Arrival -->
+                <h2>New Arrival</h2>
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_761011-MLA26128367222_102017-O.jpg"
+                            class="img-fluid" alt="">
+                        <p>Lorem ipsum dolor sit arnet</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_666080-MLA43008866863_082020-W.jpg"
+                            class="img-fluid" alt="">
+                        <p>Lorem ipsum dolor sit arnet</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_626578-MLA48853644574_012022-O.jpg"
+                            class="img-fluid" alt="">
+                        <p>Lorem ipsum dolor sit arnet</p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="https://m.media-amazon.com/images/I/51ghtAXhnJL._SX355_.jpg" class="img-fluid" alt="">
+                        <p>Lorem ipsum dolor sit arnet</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="container-fluid">
+                <hr>
+            </div>
+            <div class="container">
+                <!-- filters -->
+                <div class="d-flex justify-content-center">
+                    <button class="col-4 col-md-3 col-xl-2" @click="sendProducts()">Todos los productos</button>
+                    <button class="col-4 col-md-3 col-xl-2" @click="mostSold">Mas vendidos</button>
+                    <button class="col-4 col-md-3 col-xl-2" @click="newProducts">Nuevos Productos</button>
+                </div>
+                <hr>
+                <div class="row sticky-top">
+                    <div class="col-lg-2 ">
+                        <select class="form-select form-select-lg mb-3" v-model="orderProduct" @change="orderProducts" aria-label=".form-select-lg example">
+                            <option selected value="order">Ordenar</option>
+                            <option value="precioMasBajo">precio mas bajo</option>
+                            <option value="precioMasAlto">precio mas alto</option>
+                            <option value="laconchadetumadre">A-Z</option>
+                            <option value="zA">Z-A</option>
+                        </select>
+                        <select class="form-select form-select-lg mb-3" v-model="genresValue" @change="orderGenres(genresValue)" aria-label=".form-select-lg example">
+                            <option selected value="allGenere">Genero</option>
+                            <option v-for="genere in selectGenres" :value="genere">{{genere}}</option>
+                        </select>
+                        <select class="form-select form-select-lg mb-3" v-model="productType" @change="orderByType(productType)" aria-label=".form-select-lg example">
+                            <option selected value="allType">Tipo</option>
+                            <option value="VINYLS">Vinilos</option>
+                            <option value="RECORDPLAYER">Toca discos</option>
+                        </select>
+                        <select class="form-select form-select-lg mb-3" v-model="condition" @change="productCondition(condition)" aria-label=".form-select-lg example">
+                            <option selected value="allCondition" >Codicion</option>
+                            <option value="new" >Nuevo</option>
+                            <option value="used" >Usado</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="row">
+                            <div v-for="product in productsFilter" class="col-md-4 col-xl-3 col-12">
+                                <div  class="card_ border">
+                                    <img :src="product.image" alt="">
+                                    <div>
+                                        <h5 class="card-title text-center">{{product.name}}</h5>
+                                        <p class="card-text text-center">{{product.resalaseDate}}</p>
+                                        <div class="d-flex justify-content-around">
+                                            <p class="fw-semibold">{{formattedNumber(product.price)}}</p>
+                                            <button class="buy-button">Buy <svg xmlns="http://www.w3.org/2000/svg"
+                                                    width="16" height="16" fill="currentColor" class="bi bi-cart">
+                                                    <path
+                                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
+        <footer id="footer">
+            <hr>
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
 
-    <footer></footer>
+                        <div class="col-lg-4 col-md-6 footer-contact">
+                            <h3>Orpheus</h3>
+                            <p>A108 Adam Street </p>
+                            <p>New York, NY 535022</p>
+                            <p>United States </p>
+                            <p>
+                                <strong>Phone:</strong> +1 5589 55488 55<br>
+                                <strong>Email:</strong> info@example.com<br>
+                            </p>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 footer-links">
+                            <h4>Links</h4>
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 footer-newsletter">
+                            <h4>Nuestro Newsletter</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta aliquam alias excepturi
+                                dolorum.</p>
+                            <form action="" method="post">
+                                <input type="email" name="email"><input type="submit" value="Suscribirse">
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container d-lg-flex py-4">
+
+                <div class="me-lg-auto text-center text-lg-start">
+                    <div class="copyright">
+                        &copy; Copyright <strong><span>Orpheus</span></strong>. Todos los derechos reservados
+                    </div>
+                </div>
+                <div class="social-links text-center text-lg-right pt-3 pt-lg-0">
+                    <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </footer><!-- End Footer -->
+
+    </div>
 
 
-</div>    <!-- JavaScript Bundle with Popper -->
+    <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-        crossorigin="anonymous">
-    </script>
-
-    <script src="https://unpkg.com/vue@3"></script>
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
+        </script>
+    <!-- glider js -->
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
+    <!-- axios -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
+    <!-- vue -->
+    <script src="https://unpkg.com/vue@3"></script>
+    <!-- carousel-->
+    <script src="./assets/js/catalog-carousel.js"></script>
     <script src="./assets/js/catalog.js"></script>
 </body>
 
