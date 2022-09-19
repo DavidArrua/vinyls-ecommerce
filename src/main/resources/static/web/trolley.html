@@ -178,7 +178,7 @@
 
                         <div class="input-group mb-3">
                             <div class="input-group-text">
-                                <input class="form-check-input mt-0" type="radio" name="envio" value=""
+                                <input class="form-check-input mt-0" type="radio" v-model="caba" value="CABA" @click="selectDelivery"  name="envio" 
                                     aria-label="Radio button for following text input">
                             </div>
                             <input type="text" class="form-control" aria-label="Text input with radio button"
@@ -187,7 +187,7 @@
 
                         <div class="input-group mb-3">
                             <div class="input-group-text">
-                                <input class="form-check-input mt-0" type="radio" name="envio" value=""
+                                <input class="form-check-input mt-0" type="radio" v-model="amba" name="envio" value="AMBA"
                                     aria-label="Radio button for following text input">
                             </div>
                             <input type="text" class="form-control" aria-label="Text input with radio button"
@@ -196,7 +196,7 @@
 
                         <div class="input-group mb-3">
                             <div class="input-group-text">
-                                <input class="form-check-input mt-0" type="radio" name="envio" value=""
+                                <input class="form-check-input mt-0" type="radio" v-model="interior" name="envio" value="INTERIOR"
                                     aria-label="Radio button for following text input">
                             </div>
                             <input type="text" class="form-control" aria-label="Text input with radio button"

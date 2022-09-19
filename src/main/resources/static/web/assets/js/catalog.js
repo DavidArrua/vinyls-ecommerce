@@ -12,15 +12,6 @@ createApp({
             productsFilter:[],
             input:"",
             condition:"allCondition",
-            // carrito:[{
-            //     "id":4,
-            //     "quantity":2,
-            // },
-            // {
-            //     "id":2,
-            //     "quantity":2
-            // }],
-            // delivery:"CABA"
             trolley:[],
             trolleyInStorage:[],
             selectProducts:[],
@@ -36,7 +27,7 @@ createApp({
                 this.productsFilter = this.products
                 this.selectProducts = this.productsFilter
                 let trolleyInStorage = JSON.parse(localStorage.getItem("productos"))
-                if(carritoInStorage){
+                if(trolleyInStorage){
                     this.trolley = trolleyInStorage
                 }
             })
@@ -158,7 +149,8 @@ createApp({
                     price: product.price,
                     firstHand: product.firstHand,
                     productType: product.productType,
-                    quantity:1
+                    quantity:1,
+                    delivery:"CABA"
                 }
                 this.trolley.push(products)
                 localStorage.setItem("products",JSON.stringify(this.trolley))

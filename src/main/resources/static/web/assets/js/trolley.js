@@ -4,21 +4,22 @@ const app = Vue.
         data() {
             return {
                 select: "selectStep1",
-                productStorage:[]
+                productStorage:[],
+                buy:[],
+                caba:"",
+                amba:"",
+                interior:""
             }
         },
         created() {
-            // this.productStorage = localStorage.products;   
-            this.productStorage = JSON.parse(localStorage.getItem('products'))  
+            this.productStorage = JSON.parse(localStorage.getItem('products'))
         },
         methods: {
-            
             selectStep (value){      
                 this.select = value
                 var valueStep = document.getElementById(value)
                 valueStep.classList.remove("filterSelect") 
             },
-
             backStep (value) {
                 var valueStep = document.getElementById(value)
                 this.select = value
@@ -43,6 +44,31 @@ const app = Vue.
                     this.productStorage = []
                 })
             },
+            // selectDelivery(){
+            //     this.productStorage.forEach(product => {
+            //         if(this.caba == "CABA"){
+            //             let products = {
+            //                 id: product.id,
+            //                 name: product.name,
+            //                 author: product.author,
+            //                 releaseDate: product.releaseDate,
+            //                 brand: product.brand,
+            //                 description: product.description,
+            //                 image: [product.image],
+            //                 genres: [product.genres],
+            //                 stock: product.stock,
+            //                 price: product.price,
+            //                 firstHand: product.firstHand,
+            //                 productType: product.productType,
+            //                 quantity:product.quantity,
+            //                 delivery:"AMBA"
+            //             }
+            //             this.buy.push(products)
+            //             localStorage.setItem("buy",this.buy)
+            //         }
+                    
+            //     });
+            // }
         },
         computed: {
             totalAPagar() {
