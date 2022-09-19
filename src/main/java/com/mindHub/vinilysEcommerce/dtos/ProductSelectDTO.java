@@ -9,13 +9,16 @@ public class ProductSelectDTO {
 
     private Integer quantity;
 
+    private String delivery;
+
 
     public ProductSelectDTO() {
     }
 
-    public ProductSelectDTO(Long id, Integer quantity, Delivery delivery) {
+    public ProductSelectDTO(Long id, Integer quantity, String delivery) {
         this.id = id;
         this.quantity = quantity;
+        this.delivery = delivery;
     }
 
     public Long getId() {
@@ -30,4 +33,7 @@ public class ProductSelectDTO {
         this.quantity = quantity;
     }
 
+    public String getDelivery() {
+        return delivery;
+    }
 }

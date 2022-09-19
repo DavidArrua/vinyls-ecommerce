@@ -135,10 +135,8 @@ public class VinilysEcommerceApplication {
 			productRepository.save(product48);
 
 
-
 //			Product product50 = new Product("Wish you were here", "Pink Floyd","Wish You Were Here —en español: Ojalá estuvieras aquí— es el noveno álbum de estudio de la banda británica de rock Pink Floyd, lanzado en septiembre de 1975 e inspirado en el material que compusieron durante su gira europea de 1974 y que grabaron en los Abbey Road Studios de Londres. ", "2011", List.of("https://drive.google.com/file/d/1F1FW-NycrXZGUFdd-oEpl_SG56UvdQ1U/view?usp=sharing"), Set.of("Rock"), 42, 14540.0, true, ProductType.VINYLS, "-");
 //			productRepository.save(product50);
-
 
 
 			Bill bill1 = new Bill("11111 1111",200.00 ,Delivery.AMBA , 1000.00, 900.00, 1200.00 ,LocalDateTime.now(), client1);

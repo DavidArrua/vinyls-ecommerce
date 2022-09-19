@@ -12,16 +12,18 @@ createApp({
             productsFilter:[],
             input:"",
             condition:"allCondition",
-            carrito:[{
-                "id":4,
-                "quantity":2,
-            },
-            {
-                "id":2,
-                "quantity":2
-            }],
-            delivery:"CABA"
-
+            // carrito:[{
+            //     "id":4,
+            //     "quantity":2,
+            // },
+            // {
+            //     "id":2,
+            //     "quantity":2
+            // }],
+            // delivery:"CABA"
+            trolley:[],
+            trolleyInStorage:[],
+            selectProducts:[],
         }
     },
 
@@ -29,8 +31,14 @@ createApp({
         axios.get("/api/products")
             .then(response => {
                 this.products = response.data;
+                
                 this.genresFilter()  
                 this.productsFilter = this.products
+                this.selectProducts = this.productsFilter
+                let trolleyInStorage = JSON.parse(localStorage.getItem("productos"))
+                if(carritoInStorage){
+                    this.trolley = trolleyInStorage
+                }
             })
             .catch((error) =>{
                 console.log(error);
@@ -129,10 +137,80 @@ createApp({
         sendProducts(){
             axios.post('/api/bills',this.carrito)
             .then(alert("anda"))
-        }
+        },
+        trolleyPurchase(product){
+            let products = this.trolley.filter(item => item.id == product.id)[0]
+            if(products != undefined){
+                products.quantity++
+                localStorage.setItem("products",JSON.stringify(this.trolley))
+                
+            }else{
+                let products = {
+                    id: product.id,
+                    name: product.name,
+                    author: product.author,
+                    releaseDate: product.releaseDate,
+                    brand: product.brand,
+                    description: product.description,
+                    image: [product.image],
+                    genres: [product.genres],
+                    stock: product.stock,
+                    price: product.price,
+                    firstHand: product.firstHand,
+                    productType: product.productType,
+                    quantity:1
+                }
+                this.trolley.push(products)
+                localStorage.setItem("products",JSON.stringify(this.trolley))
+            }
+            product.stock--
+        },
+        trolleyRemove(product){
+            let products = this.trolley.filter(item => item.id == product.id)[0]
+            if(products != undefined){
+                products.quantity--
+                localStorage.setItem("products",JSON.stringify(this.trolley))
+                
+            }else{
+                let products = {
+                    id: product.id,
+                    name: product.name,
+                    author: product.author,
+                    releaseDate: product.releaseDate,
+                    brand: product.brand,
+                    description: product.description,
+                    image: [product.image],
+                    genres: [product.genres],
+                    stock: product.stock,
+                    price: product.price,
+                    firstHand: product.firstHand,
+                    productType: product.productType,
+                    quantity:1
+                }
+                this.trolley.push(products)
+                localStorage.setItem("products",JSON.stringify(this.trolley))
+            }
+            products.stock--
+        },
+        removeProduct(product){
+            let products = this.allProducts.filter(item => item._id == product._id)[0]
+            products.stock += product.cantidad
+            let productIndice = 0
+            this.trolley.forEach((item, i) =>
+                item.id == product._id ? (productIndice = i) : null
+            );
+            this.trolley.splice(productIndice, 1);
+            localStorage.setItem("products",JSON.stringify(this.trolley))
+        },
 
     },
     computed: {
+        cantidadDeProductos() {
+            return this.trolley.reduce((acc, item) => acc + item.quantity, 0)
+        },
+        totalAPagar() {
+            return this.trolley.reduce((acc, item) => acc + item.quantity * item.price, 0);
+        },
         filterSerch() {
             this.productsFilter = this.products.filter(item => item.name.toLowerCase().includes(this.input.toLowerCase()))
         }
