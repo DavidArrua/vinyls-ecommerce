@@ -64,12 +64,30 @@ public class BillController {
             }
         }
 
-//        if(delivery.isEmpty()){
-//            return new ResponseEntity<>("The delivery data is missing",HttpStatus.FORBIDDEN);
-//        }
+        Map<Product,String> productDelivery = new HashMap<>();
+
+        productSelectDTOSet.forEach(productSelectDTO -> {
+            productDelivery.put(productService.getProductById(productSelectDTO.getId()),productSelectDTO.getDelivery());
+        });
 
 
-        Bill bill = new Bill("11",0.0, Delivery.valueOf("CABA"), 0.0, 0.0, 0.0 ,LocalDateTime.now(),client);
+        String delivery = " ";
+
+        for (Map.Entry<Product, String> product: productDelivery.entrySet()){
+
+            delivery = product.getValue();
+            break;
+        }
+
+
+        if(delivery.isEmpty()){
+            return new ResponseEntity<>("The delivery data is missing",HttpStatus.FORBIDDEN);
+        }
+
+        String randomNumber = getRandomNumber(1000000, 9999999) + " " + getRandomNumber(1000000, 9999999);
+
+
+        Bill bill = new Bill(randomNumber,0.0, Delivery.valueOf(delivery), 0.0, 0.0, 0.0 ,LocalDateTime.now(),client);
         billRepository.save(bill);
         List<Product>productList = new ArrayList<>();
 
@@ -91,24 +109,28 @@ public class BillController {
        bill.setNetAmount(bill.getGrossAmount() * 1.21);
 
 
-//        switch (delivery) {
-//            case "CABA":
-//                bill.setDeliveryAmount(300.00);
-//                bill.setTotalAmount(bill.getNetAmount() + 300.00);
-//                break;
-//            case "AMBA":
-//                bill.setDeliveryAmount(500.00);
-//                bill.setTotalAmount(bill.getNetAmount() + 500.00);
-//                break;
-//            case "INTERIOR":
-//                bill.setDeliveryAmount(700.00);
-//                bill.setTotalAmount(bill.getNetAmount() + 700.00);
-//                break;
-//            default:
-//                return new ResponseEntity<>("The delivery data is missing", HttpStatus.FORBIDDEN);
-//        }
+        switch (delivery) {
+            case "CABA":
+                bill.setDeliveryAmount(300.00);
+                bill.setTotalAmount(bill.getNetAmount() + 300.00);
+                break;
+            case "AMBA":
+                bill.setDeliveryAmount(500.00);
+                bill.setTotalAmount(bill.getNetAmount() + 500.00);
+                break;
+            case "INTERIOR":
+                bill.setDeliveryAmount(700.00);
+                bill.setTotalAmount(bill.getNetAmount() + 700.00);
+                break;
+            default:
+                return new ResponseEntity<>("The delivery data is missing", HttpStatus.FORBIDDEN);
+        }
 
             billRepository.save(bill);
             return new ResponseEntity<>("productList",HttpStatus.CREATED);
+    }
+
+    public int getRandomNumber(int min, int max) {
+        return (int) ((Math.random() * (max - min)) + min);
     }
 }
