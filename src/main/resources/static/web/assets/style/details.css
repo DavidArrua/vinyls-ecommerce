@@ -6,6 +6,8 @@
     background-color: #f5f5f5;
 }
 
+
+
 .details {
     display: flex;
     flex-direction: column;
@@ -56,7 +58,113 @@ h2 {
     padding: 0.2rem;
 }
 
-/* naranja: #E38164 */
-/* blanco: #f5f5f5 */
-/* violeta: #713E5A */
-/* negro: #20231B */
+
+********************************************************
+
+.trolleyCanvas {
+    margin-left: 50px;
+    height: 40px;
+    
+}
+
+.trolleyCanvas:hover {
+    transform: scale(1.5);
+    
+    animation: rotate 1s linear;
+}
+
+.offcanvas2 { 
+    background-color:#101213a2!important;
+}
+
+.column2 {
+    color: #E38164;
+}
+
+.group {
+    text-decoration: underline;
+  
+}
+
+.actualPrice { 
+    text-decoration: underline;
+}
+
+.previusPrice { 
+    text-decoration:line-through;
+}
+
+
+
+.icoSize {
+    width: 90px;
+    height: 90px;
+}
+
+.carritoPosition {
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 95%;
+    -webkit-transform: translate3d(-50%,-50%,0);
+    transform: translate3d(-50%,-50%,0);
+    background-color: #E38164;
+
+}
+
+.carritoPositionFather{
+    width: 20vw;
+    height: fit-content;
+    background-image: gray !important;
+}
+
+.carritoPosition2 {
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    position: absolute;
+    top: 42%;
+    left: 95%;
+    -webkit-transform: translate3d(-50%,-50%,0);
+    transform: translate3d(-50%,-50%,0);
+    background-color: #E38164;
+
+}
+.carritoPosition3 {
+   
+    padding: 10px;
+    position: absolute;
+    top: 65vh;    
+
+
+}
+
+.offcanvasScale {
+    width: 32vw !important;
+    max-width: none !important;
+}
+
+
+.carritoPositionFather2{
+    width: 20vw;
+    height: fit-content;
+    background-image: gray !important;
+}
+
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }}
+
+
+
+***********************************************************

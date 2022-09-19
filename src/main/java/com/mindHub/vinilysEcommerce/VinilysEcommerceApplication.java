@@ -42,10 +42,7 @@ public class VinilysEcommerceApplication {
 			productRepository.save(product4);
 
 
-
 			//http://drive.google.com/uc?export=FIELD
-
-
 
 
 			Product product99 = new Product("A Rush of blood to the head", "Coldplay", "Es el segundo álbum de estudio de la banda británica Coldplay. Lanzado el 26 de agosto de 2002 bajo el sello de la discográfica Parlophone, el álbum fue producido por la banda junto a Ken Nelson 2012", "2020", List.of( "http://drive.google.com/uc?export=view&id=1tjw3hSYS2VZ6vObLn8FHj_GcXbIcqVcE"), Set.of("Rock", "Pop"), 35, 6205.0, true, ProductType.VINYLS, "-");
@@ -136,20 +133,12 @@ public class VinilysEcommerceApplication {
 			productRepository.save(product47);
 			Product product48 = new Product("Romántico en el Teatro Colon", "Luciano Pereyra","Lo mejor de Luciano en una obra exquisita en el gran Teatro Colón", "2019", List.of("http://drive.google.com/uc?export=view&id=1wn59GQ7kekipFddHW3TXnxoGfhxgOn5a"), Set.of("Folklore"), 25, 3438.0, true, ProductType.VINYLS, "-");
 			productRepository.save(product48);
+
+
+
 //			Product product50 = new Product("Wish you were here", "Pink Floyd","Wish You Were Here —en español: Ojalá estuvieras aquí— es el noveno álbum de estudio de la banda británica de rock Pink Floyd, lanzado en septiembre de 1975 e inspirado en el material que compusieron durante su gira europea de 1974 y que grabaron en los Abbey Road Studios de Londres. ", "2011", List.of("https://drive.google.com/file/d/1F1FW-NycrXZGUFdd-oEpl_SG56UvdQ1U/view?usp=sharing"), Set.of("Rock"), 42, 14540.0, true, ProductType.VINYLS, "-");
 //			productRepository.save(product50);
 
-
-
-			//record player
-			Product recordPlayer1 = new Product("Sp-t90", "Spica","Tocadiscos Vinilo Bluetooth Spica Sp-t90 Vintage Parlante", "2020", List.of("https://educacion30.b-cdn.net/wp-content/uploads/2021/12/1-by-one.jpg"), Set.of("Parlante", "Tocadiscos "), 7, 29999.0, true, ProductType.RECORDPLAYER, "-");
-			productRepository.save(recordPlayer1);
-			Product recordPlayer2 = new Product("C-71h", "Sincron","Detalles: el equipo fue guardado funcionando hace muchos años.", "2000", List.of("https://http2.mlstatic.com/D_NQ_NP_637488-MLA42472178180_072020-O.webp"), Set.of("Parlante", "Tocadiscos "), 1, 20000.0, false, ProductType.RECORDPLAYER, "-");
-			productRepository.save(recordPlayer2);
-			Product recordPlayer3 = new Product("Soundix6", "Gadnic","Tocadisco Vinilo Vintage Disco Bluetooth Sd Rca Aux Gadnic", "2016", List.of("https://www.sopitas.com/wp-content/uploads/2021/09/fender-lanza-tocadiscos-edicion-limitada.png?w=1120"), Set.of("Parlante", "Tocadiscos "), 15, 65999.0, true, ProductType.RECORDPLAYER, "-");
-			productRepository.save(recordPlayer3);
-			Product recordPlayer4 = new Product("Stereo HI-FI Turntable", "General","En muy buen estado de conservacion.", "1989", List.of("https://http2.mlstatic.com/D_NQ_NP_810199-MLA40797984109_022020-O.webp"), Set.of("Tocadiscos"), 8, 24999.0, false, ProductType.RECORDPLAYER, "-");
-			productRepository.save(recordPlayer4);
 
 
 			Bill bill1 = new Bill("11111 1111",200.00 ,Delivery.AMBA , 1000.00, 900.00, 1200.00 ,LocalDateTime.now(), client1);
