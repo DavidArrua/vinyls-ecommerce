@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 body{
@@ -15,10 +15,8 @@ video{
     position: absolute;
     bottom: 0;
     left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: -1;
 }
@@ -27,19 +25,35 @@ main{
     padding-top: 5rem;
 }
 
-header{
-    min-height: 100vh;
-    /* background-image: url(https://images.pexels.com/photos/3007347/pexels-photo-3007347.jpeg); */
-    background-size: cover;
-    object-fit: cover;
+/* <-------------------------------------------------NAV---------------------------------------------------------------> */
+
+.enlaceNav {
+    text-decoration: none;
+    color: white;
+    padding: 0.8rem;
+    font-size: 18px;
+    font-weight: bold;
 }
 
+.enlaceNav:hover {
+    color: wheat;
+}
+
+header{
+    min-height: 100vh;
+}
 
 .sticky1{
     background-color: black;
     color: white !important;
-    
 }
+
+.logo{
+    width: 5rem;
+}
+
+
+/* <------------------------------------------LANDING--------------------------------------------------------------> */
 
 .btnLanding{
     position: absolute;
@@ -49,12 +63,26 @@ header{
 
 .onlineStore{
     width: 100%;
-    height: 20rem;
-    background-image: url(https://images.pexels.com/photos/351265/pexels-photo-351265.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    height: 30rem;
+    background-image: url(../manosindex.jpg);
     object-fit: cover;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
+.onlineStore h2{
+    color: yellow;
+    background-color:black;
+    border-radius: 30px;
+    font-size: 35px;
+    font-weight: bolder;
+    padding: .8rem;
+}
+
+
+
+/* <--------------------------------------------------------------ACORDEON-------------------------------------------------> */
 .carrousel{
     width: 100vw;
 }
@@ -79,6 +107,8 @@ header{
     flex-basis: 30vw;
 }
 
+/* <------------------------------------------------------------MAPA CONTACT -----------------------------------------------------> */
+
 iframe{
     margin-top: 4rem;
     width: 100%;
@@ -89,7 +119,7 @@ iframe{
     width: 23rem;
     position: absolute;
     right: 80px;
-    top: 119rem;
+    top: 130rem;
 }
 
 footer{
@@ -102,4 +132,42 @@ footer{
 .social a{
     text-decoration: none;
     color: black;
+}
+
+
+
+@media (max-width: 1200px){
+    .videoIndex{
+        display: none;
+    }
+    header{
+        background-image: url(../fondotablet.jpg);
+        background-size: cover;
+        object-fit: cover;
+        background-position: center;
+    }
+    .onlineStore{
+        height: 20rem;
+    }
+}
+
+@media (max-width: 900px){
+    .onlineStore{
+        height: 15rem;
+    }
+}
+
+@media (max-width: 700px){
+    .onlineStore{
+        height: 12rem;
+    }
+}
+
+@media (max-width: 480px){
+    header{
+        background-image: url(../fondoCelular.jpg);
+    }
+    .onlineStore{
+        height: 10em;
+    }
 }
