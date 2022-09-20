@@ -29,17 +29,15 @@ main{
 /* <-------------------------------------------------NAV---------------------------------------------------------------> */
 
 .enlaceNav {
-    text-decoration: none;
-    color: white;
-    padding: 0.8rem;
-    font-size: 18px;
-    font-weight: 600;
+  text-decoration: none;
+  color: white;
+  padding: 0.8rem;
+  font-size: 18px;
 }
 
 .enlaceNav:hover {
-    color: wheat;
+  color: orange;
 }
-
 
 .sticky1{
     background-color: black;
@@ -63,9 +61,6 @@ header{
     top: 88%;
     right: 48%;
     width:90px;
-}
-
-.flechaAbajo{
 }
 
 
@@ -119,15 +114,8 @@ header{
 
 iframe{
     margin-top: 4rem;
-    width: 100%;
+    width: 80%;
     height: 35rem;
-    z-index: -1;
-}
-.formContact{
-    width: 23rem;
-    position: absolute;
-    right: 80px;
-    top: 130rem;
 }
 
 
