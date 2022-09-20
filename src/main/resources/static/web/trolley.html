@@ -193,17 +193,17 @@
                         <div class="d-flex flex-column ms-3">
 
                             <label for="opt1" class="radio ">
-                                <input type="radio" name="rdo" id="opt1" class="hidden" v-model="caba" value="CABA" @click="selectDelivery"/>
+                                <input type="radio" name="rdo" id="opt1" class="hidden" value="CABA" @click="selectDelivery('CABA')"/>
                                 <span class="label"></span><p>Capital Federal</p>
                             </label>
 
                             <label for="opt2" class="radio">
-                                <input type="radio" name="rdo" id="opt2" class="hidden" v-model="amba"  value="AMBA"/>
+                                <input type="radio" name="rdo" id="opt2" class="hidden" value="AMBA" @click="selectDelivery('AMBA')"/>
                                 <span class="label"></span><p>Provincia de Buenos Aires</p>
                             </label>
 
                             <label for="opt3" class="radio">
-                                <input type="radio" name="rdo" id="opt3" class="hidden" v-model="interior"  value="INTERIOR"/>
+                                <input type="radio" name="rdo" id="opt3" class="hidden" value="INTERIOR" @click="selectDelivery('INTERIOR')"/>
                                 <span class="label"></span><p>Interior del pais</p>
                             </label>
 

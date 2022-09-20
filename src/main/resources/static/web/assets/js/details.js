@@ -1,0 +1,28 @@
+let urlParams = new URLSearchParams(window.location.search);
+let urlName = urlParams.get("id");
+
+const app = Vue.
+
+createApp({
+    data() {
+        return {
+            products: [],
+            productId:[]
+
+        }
+    },
+
+    created(){
+        axios.get("/api/products")
+            .then(response => {
+                this.products = response.data;
+                this.productId = this.products.find(product => product.id == urlName)
+            })
+            .catch((error) =>{
+                console.log(error);
+            });
+    },
+    methods: {
+       
+    },
+}).mount('#app');
