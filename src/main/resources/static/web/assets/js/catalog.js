@@ -149,8 +149,7 @@ createApp({
                     price: product.price,
                     firstHand: product.firstHand,
                     productType: product.productType,
-                    quantity:1,
-                    delivery:"CABA"
+                    quantity:1
                 }
                 this.trolley.push(products)
                 localStorage.setItem("products",JSON.stringify(this.trolley))

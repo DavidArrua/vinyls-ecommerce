@@ -5,14 +5,15 @@ const app = Vue.
             return {
                 select: "selectStep1",
                 productStorage:[],
-                buy:[],
-                caba:"",
-                amba:"",
-                interior:""
+                buy:[]
             }
         },
         created() {
             this.productStorage = JSON.parse(localStorage.getItem('products'))
+            let trolleyInStorage = JSON.parse(localStorage.getItem('buy'))
+            if(trolleyInStorage){
+                    this.buy = trolleyInStorage
+            }
         },
         methods: {
             selectStep (value){      
@@ -39,40 +40,40 @@ const app = Vue.
                 return balance = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(balance)
             },
             sendProducts(){
-                axios.post('/api/bills',this.productStorage)
+                axios.post('/api/bills',this.buy)
                 .then(() => {
-                    this.productStorage = []
+                    this.productStorage = localStorage.removeItem("products")
+                    this.buy = localStorage.removeItem("buy")
                 })
             },
-            // selectDelivery(){
-            //     this.productStorage.forEach(product => {
-            //         if(this.caba == "CABA"){
-            //             let products = {
-            //                 id: product.id,
-            //                 name: product.name,
-            //                 author: product.author,
-            //                 releaseDate: product.releaseDate,
-            //                 brand: product.brand,
-            //                 description: product.description,
-            //                 image: [product.image],
-            //                 genres: [product.genres],
-            //                 stock: product.stock,
-            //                 price: product.price,
-            //                 firstHand: product.firstHand,
-            //                 productType: product.productType,
-            //                 quantity:product.quantity,
-            //                 delivery:"AMBA"
-            //             }
-            //             this.buy.push(products)
-            //             localStorage.setItem("buy",this.buy)
-            //         }
-                    
-            //     });
-            // }
+            selectDelivery(place){
+                this.productStorage.forEach(product => {
+                        let products = {
+                            id: product.id,
+                            name: product.name,
+                            author: product.author,
+                            releaseDate: product.releaseDate,
+                            brand: product.brand,
+                            description: product.description,
+                            image: [product.image],
+                            genres: [product.genres],
+                            stock: product.stock,
+                            price: product.price,
+                            firstHand: product.firstHand,
+                            productType: product.productType,
+                            quantity:product.quantity,
+                            delivery:place
+                        }
+                        this.buy.push(products)
+                        localStorage.setItem("buy",JSON.stringify(this.buy))
+                });
+            }
         },
         computed: {
             totalAPagar() {
-                return this.formattedNumber(this.productStorage.reduce((acc, item) => acc + item.quantity * item.price, 0));
+                if(this.productStorage != null){
+                    return this.formattedNumber(this.productStorage.reduce((acc, item) => acc + item.quantity * item.price, 0));
+                }
             }
             
         }
