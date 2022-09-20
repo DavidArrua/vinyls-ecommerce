@@ -93,7 +93,14 @@
                         <div class="d-flex flex-column align-items-center">
                             <h5 class="resposiveTitle text-center">Nombre del disco:</h5>
                             <h5 class="resposiveTitle text-center fw-bolder">{{product.author}} - {{product.name}}</h5>
-                            <input type="number" class="inputStock mt-3">
+                            <p class="card-text">cantidad: {{product.quantity}}</p>
+                            <button  v-if="product.quantity == 1" class="bg-danger" disabled @click="restar(product)">-</button>
+                            <button v-else="" class="bg-danger" @click="trolleyRemove(product)">-</button>
+                            <button  v-if="product.totalStock == product.quantity" class="bg-danger" disabled @click="trolleyPurchase(product)">+</button>
+                            <button v-else class="bg-primary" @click="trolleyPurchase(product)">+</button>
+                            <button class="eliminar bg-danger btn text-light"
+                                @click="removeProduct(product)">Eliminar
+                            </button>
                         </div>
 
                         <div class="me-5 responsiveIco">
@@ -207,8 +214,6 @@
                                 <span class="label"></span><p>Interior del pais</p>
                             </label>
 
-
-
                         </div>
 
         
@@ -231,7 +236,7 @@
                         <div class="text-center d-flex flex-column">
                             <h6 class="p-2">Precio del producto: <span class="fw-bolder ps-1">{{totalAPagar}}</span>
                             </h6>
-                            <h6 class="p-2">Costo de envio: <span class="fw-bolder ps-1 text-danger">$300</span> </h6>
+                            <h6 class="p-2">Costo de envio: <span class="fw-bolder ps-1 text-danger"></span>300</h6>
                         </div>
 
                         <hr class="bg-danger">

@@ -573,3 +573,6 @@ font-size: 1.2em;
       transform: translate3d(0px, 0px, 0px) rotateZ(40deg);
   }
 }
+.contenedor{
+  width: 80%;
+}

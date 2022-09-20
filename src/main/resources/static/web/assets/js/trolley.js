@@ -66,7 +66,75 @@ const app = Vue.
                         }
                         this.buy.push(products)
                         localStorage.setItem("buy",JSON.stringify(this.buy))
-                });
+                })
+            },
+            trolleyPurchase(product){
+                let products = this.productStorage.filter(item => item.id == product.id)[0]
+                if(products != undefined){
+                    products.quantity++
+                    localStorage.setItem("products",JSON.stringify(this.productStorage))
+                    
+                }else{
+                    let products = {
+                        id: product.id,
+                        name: product.name,
+                        author: product.author,
+                        releaseDate: product.releaseDate,
+                        brand: product.brand,
+                        description: product.description,
+                        image: [product.image],
+                        genres: [product.genres],
+                        stock: product.stock,
+                        totalStock:product.stock,
+                        price: product.price,
+                        firstHand: product.firstHand,
+                        productType: product.productType,
+                        quantity:product.quantity,
+                        delivery:""
+                    }
+                    this.buy.push(products)
+                    localStorage.setItem("products",JSON.stringify(this.buy))
+                }
+                product.stock--
+            },
+            trolleyRemove(product){
+                let products = this.productStorage.filter(item => item.id == product.id)[0]
+                if(products != undefined){
+                    products.quantity--
+                    localStorage.setItem("products",JSON.stringify(this.productStorage))
+                    
+                }else{
+                    let products = {
+                        id: product.id,
+                        name: product.name,
+                        author: product.author,
+                        releaseDate: product.releaseDate,
+                        brand: product.brand,
+                        description: product.description,
+                        image: [product.image],
+                        genres: [product.genres],
+                        stock: product.stock,
+                        totalStock:product.stock,
+                        price: product.price,
+                        firstHand: product.firstHand,
+                        productType: product.productType,
+                        quantity:product.quantity,
+                        delivery:""
+                    }
+                    this.buy.push(products)
+                    localStorage.setItem("products",JSON.stringify(this.buy))
+                }
+                products.stock++
+            },
+            removeProduct(product){
+                let products = this.productStorage.filter(item => item.id == product.id)[0]
+                products.stock += product.quantity
+                let productIndice = 0
+                this.productStorage.forEach((item, i) =>
+                    item.id == product.id ? (productIndice = i) : null
+                );
+                this.productStorage.splice(productIndice, 1);
+                localStorage.setItem("products",JSON.stringify(this.buy))
             }
         },
         computed: {
@@ -74,7 +142,6 @@ const app = Vue.
                 if(this.productStorage != null){
                     return this.formattedNumber(this.productStorage.reduce((acc, item) => acc + item.quantity * item.price, 0));
                 }
-            }
-            
+            },
         }
     }).mount('#app');

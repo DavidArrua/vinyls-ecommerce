@@ -139,6 +139,27 @@ public class VinilysEcommerceApplication {
 //			productRepository.save(product50);
 
 
+			Product tocadisco1 = new Product("Tocadisco", "-","Tocadisco retro vinilo con usb, aux, mp3, Cd + Radio", "2022", List.of("https://drive.google.com/file/d/14Z9Qq-FupZNazS7hz-gEj4exR_0f29-I/view?usp=sharing", "https://drive.google.com/file/d/1rxUQuer2rYXpInydeSvhqOE3riV-E5Q9/view?usp=sharing"), Set.of("Tocadiscos, reproductor de vinilos, bandeja giradisco"), 20, 224979.99, true, ProductType.RECORDPLAYER, "Victrola");
+			productRepository.save(tocadisco1);
+			Product tocadisco2 = new Product("Tocadisco", "-","Tocadiscos Vintage en madera con mueble y radio, 220V, para pasar 2 tamaños de disco (33 y 78)", "1970", List.of("https://drive.google.com/file/d/1JCrDsrtlZZI9bU9eAYkyUi61m0yZxO3_/view?usp=sharing", "https://drive.google.com/file/d/1GfS96DYtOqzpEn4OfirnZwZHwDdELw20/view?usp=sharing"), Set.of("Tocadiscos, reproductor de vinilos, bandeja giradisco"), 1, 18000.00, false, ProductType.RECORDPLAYER, "Winco");
+			productRepository.save(tocadisco2);
+			Product tocadisco3 = new Product("Tocadisco", "-","Tocadiscos Vinilo Winco, incluye 2 altavoces stereo, echo en madera", "2022", List.of("https://drive.google.com/file/d/1hcoBOPhz5VdgpuUG1WjTVNex6TpiIt7O/view?usp=sharing", "https://drive.google.com/file/d/1a4WuHJFAR6aDcrk6DG3z6NmfALVgpn_K/view?usp=sharing"), Set.of("Tocadiscos, reproductor de vinilos, bandeja giradisco"), 8, 26999.00, false, ProductType.RECORDPLAYER, "Winco Fon");
+			productRepository.save(tocadisco3);
+			Product tocadisco4 = new Product("Tocadisco", "-","Bandeja Maratz totalmente funcional, porta capsula original, sonido stereo, 110V", "1980", List.of("https://drive.google.com/file/d/15zYex5tCVrYGR0i5ixNqSSoFZsNpkF3N/view?usp=sharing", "https://drive.google.com/file/d/1Y7_Vuq913AR3ldaJDSQiAABWFk42NU2L/view?usp=sharing"), Set.of("Tocadiscos, reproductor de vinilos, bandeja giradisco"), 1, 169500.00, false, ProductType.RECORDPLAYER, "Marantz");
+			productRepository.save(tocadisco4);
+			Product tocadisco5 = new Product("Tocadisco", "-","Tocadiscos de accionamiento directo con retorno automático. Plato: aleación de aluminio fundido a presión de 320 mm", "1978", List.of("https://drive.google.com/file/d/1_WL9-6WHsYqUobZ2UBKsL1CjbseeRCab/view?usp=sharing", "https://drive.google.com/file/d/1qmgpXO9FcRY-6zmpM9cGIG29_AQZoVJ-/view?usp=sharing"), Set.of("Tocadiscos, reproductor de vinilos, bandeja giradisco"), 1, 155000.00, false, ProductType.RECORDPLAYER, "Pioneer PL-540");
+			productRepository.save(tocadisco5);
+			Product tocadisco6 = new Product("Tocadisco", "-","Tocadisco Vinilo Vintage Disco Bluetooth Sd Rca Aux Gadnic. Conexión Bluetooth 5.0. Reproduce discos de 7, 10 ó 12 pulgadas.3 velocidades de reproducción 33, 45 y 78 rpm", "2022", List.of("https://drive.google.com/file/d/1mBnnSPF-HPwpZSTQ5rGQUC092EiNan1A/view?usp=sharing", "https://drive.google.com/file/d/1LsGspMwGT-7QI8C4kFCE_P1_tDN0jXXl/view?usp=sharing"), Set.of("Tocadiscos, reproductor de vinilos, bandeja giradisco"), 12, 155000.00, true, ProductType.RECORDPLAYER, "Gadnic Soundix6");
+			productRepository.save(tocadisco6);
+			Product tocadisco7 = new Product("Tocadisco", "-","Tocadisco Bluetooth Gadnic Portatil Vinilo Vintage SD Rca + Puas + Cargador, 220V", "2022", List.of("https://drive.google.com/file/d/1mBnnSPF-HPwpZSTQ5rGQUC092EiNan1A/view?usp=sharing", "https://drive.google.com/file/d/1LsGspMwGT-7QI8C4kFCE_P1_tDN0jXXl/view?usp=sharing"), Set.of("Tocadiscos, reproductor de vinilos, bandeja giradisco"), 22, 31299.00, true, ProductType.RECORDPLAYER, "Gadnic TOCADIS1X");
+			productRepository.save(tocadisco7);
+			Product tocadisco8 = new Product("Tocadisco", "-","Tocadiscos Vinilo Bluetooth Spica Sp-T90 Vintage Parlante. Batería interna recargable de 2500 mAh. Luz led", "2022", List.of("https://drive.google.com/file/d/1BUwcwNdOqXEbg6lwjv60K91cwgTEW3qs/view?usp=sharing", "https://drive.google.com/file/d/1g4iIvznKVarF8H65QQtpDhNJ_tACsz-P/view?usp=sharing"), Set.of("Tocadiscos, reproductor de vinilos, bandeja giradisco"), 10, 29999.00, true, ProductType.RECORDPLAYER, "Spica");
+			productRepository.save(tocadisco8);
+			Product tocadisco9 = new Product("Tocadisco", "-","El tocadiscos es elaborado en acero, inserciones de alumino y madera de nogal de bosques norteamericanos", "2017", List.of("https://drive.google.com/file/d/1AqPPVODNdvV8411iBxrYy4-oJcfbKKe9/view?usp=sharing", "https://drive.google.com/file/d/1dgPBXwx6ONCD3rSkNnDSSFnvYOiD-bYF/view?usp=sharing"), Set.of("Tocadiscos, reproductor de vinilos, bandeja giradisco"), 10, 880000.00, true, ProductType.RECORDPLAYER, "Loft");
+			productRepository.save(tocadisco9);
+			Product tocadisco10 = new Product("Tocadisco", "-","Consola estéreo de los años 60 con tocadiscos, radio y cassette, modelo RG 87 5-ET, de la casa española VICA. Tocadiscos automático, estereofónico, de cuatro velocidades y tres diámetros de disco.", "1960", List.of("https://drive.google.com/file/1Njz5VEfLcRh0m07XjjHsAIlC1aw9pWSE/view?usp=sharing", "https://drive.google.com/file/d/1VtWJ5r4kAwUsDKD2Erf-ommgh7Ilmvfh/view?usp=sharing"), Set.of("Tocadiscos, reproductor de vinilos, bandeja giradisco"), 2, 60000.00, false, ProductType.RECORDPLAYER, "VICA");
+			productRepository.save(tocadisco10);
+
 			Bill bill1 = new Bill("11111 1111",200.00 ,Delivery.AMBA , 1000.00, 900.00, 1200.00 ,LocalDateTime.now(), client1);
 			Bill bill2 = new Bill("2222 2222", 300.00,Delivery.CABA, 1000.00, 900.00, 1300.00 ,LocalDateTime.now(), client1);
 			billRepository.save(bill1);

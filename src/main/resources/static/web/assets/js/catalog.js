@@ -24,11 +24,10 @@ createApp({
         axios.get("/api/products")
             .then(response => {
                 this.products = response.data;
-                
                 this.genresFilter()  
                 this.productsFilter = this.products
                 this.selectProducts = this.productsFilter
-                let trolleyInStorage = JSON.parse(localStorage.getItem("productos"))
+                let trolleyInStorage = JSON.parse(localStorage.getItem("products"))
                 if(trolleyInStorage){
                     this.trolley = trolleyInStorage
                 }
@@ -129,7 +128,6 @@ createApp({
         },
         sendProducts(){
             axios.post('/api/bills',this.carrito)
-            .then(alert("anda"))
         },
         trolleyPurchase(product){
             let products = this.trolley.filter(item => item.id == product.id)[0]
@@ -148,6 +146,7 @@ createApp({
                     image: [product.image],
                     genres: [product.genres],
                     stock: product.stock,
+                    totalStock:product.stock,
                     price: product.price,
                     firstHand: product.firstHand,
                     productType: product.productType,
@@ -175,6 +174,7 @@ createApp({
                     image: [product.image],
                     genres: [product.genres],
                     stock: product.stock,
+                    totalStock:product.stock,
                     price: product.price,
                     firstHand: product.firstHand,
                     productType: product.productType,
@@ -183,14 +183,14 @@ createApp({
                 this.trolley.push(products)
                 localStorage.setItem("products",JSON.stringify(this.trolley))
             }
-            products.stock--
+            products.stock++
         },
         removeProduct(product){
-            let products = this.allProducts.filter(item => item._id == product._id)[0]
-            products.stock += product.cantidad
+            let products = this.products.filter(item => item.id == product.id)[0]
+            products.stock += product.quantity
             let productIndice = 0
             this.trolley.forEach((item, i) =>
-                item.id == product._id ? (productIndice = i) : null
+                item.id == product.id ? (productIndice = i) : null
             );
             this.trolley.splice(productIndice, 1);
             localStorage.setItem("products",JSON.stringify(this.trolley))
