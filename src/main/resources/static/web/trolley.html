@@ -132,77 +132,86 @@
                 <div class="d-flex justify-content-evenly responsiveBlock">
 
                     <div class="blockSize">
-                        <div class="input-group mt-3">
-                            <div class="input-group-text">
-                                <input class="form-check-input mt-0" type="radio" value=""
-                                    aria-label="Radio button for following text input">
-                            </div>
-                            <input type="text" class="form-control" aria-label="Text input with radio button"
-                                placeholder="Some delivery information">
-                        </div>
+                  
                         <h4 class="m-4 fw-bolder">1.Informacion personal</h4>
-                        <div class="d-flex">
-                            <input class="form-control me-2 responsiveInput" type="text" placeholder="Nombre"
-                                aria-label="default input example">
-                            <input class="form-control ms-2 responsiveInput" type="text" placeholder="Apellido"
-                                aria-label="default input example">
+
+                        <div class=" d-flex">
+                            <div class="d-flex w-50 inputGroup">
+                                <input type="text" required="" autocomplete="off">
+                                <label for="nombre">Nombre</label>
+                            </div>
+                            <div class="d-flex w-50 inputGroup ms-3">
+                                <input type="text" required="" autocomplete="off">
+                                <label for="apellido">Apellido</label>
+                            </div>
                         </div>
-                        <div class="d-flex">
-                            <input class="form-control mt-2 me-2 responsiveInput" type="text" placeholder="Telefono"
-                                aria-label="default input example ">
-                            <input class="form-control mt-2 ms-2 responsiveInput" type="email" placeholder="Email"
-                                aria-label="default input example">
+
+                        <div class=" d-flex">
+                            <div class="d-flex  w-50 inputGroup">
+                                <input type="text" required="" autocomplete="off">
+                                <label for="telefono">Telefono</label>
+                            </div>
+                            <div class="d-flex  w-50 inputGroup ms-3">
+                                <input type="text" required="" autocomplete="off">
+                                <label for="email">Email</label>
+                            </div>
                         </div>
 
                         <h4 class="m-4 fw-bolder">2.Direccion</h4>
-                        <div class="d-flex">
-                            <input class="form-control me-2 responsiveInput" type="text" placeholder="Calle"
-                                aria-label="default input example">
-                            <input class="form-control ms-2 responsiveInput" type="text" placeholder="Casa/Departamento"
-                                aria-label="default input example">
+                        <div class=" d-flex">
+                            <div class="d-flex  w-50 inputGroup">
+                                <input type="text" required="" autocomplete="off">
+                                <label for="calle">Calle</label>
+                            </div>
+                            <div class="d-flex  w-50 inputGroup ms-3">
+                                <input type="text" required="" autocomplete="off">
+                                <label for="casaDepa">Casa/Departamento</label>
+                            </div>
                         </div>
-                        <div class="d-flex">
-                            <input class="form-control mt-2 me-2 responsiveInput" type="text" placeholder="Ciudad"
-                                aria-label="default input example">
-                            <input class="form-control mt-2 ms-2 responsiveInput" type="email"
-                                placeholder="Codigo postal" aria-label="default input example">
+                        <div class=" d-flex">
+                            <div class="d-flex  w-50 inputGroup">
+                                <input type="text" required="" autocomplete="off">
+                                <label for="Ciudad">Ciudad</label>
+                            </div>
+                            <div class="d-flex  w-50 inputGroup ms-3">
+                                <input type="text" required="" autocomplete="off">
+                                <label for="codigo">Codigo postal</label>
+                            </div>
                         </div>
-
                         <h4 class="m-4 fw-bolder">3.Comentarios</h4>
 
 
-                        <textarea class="form-control responsiveInput2" id="exampleFormControlTextarea1"
-                            rows="3"></textarea>
+                        <div class="d-flex w-100 inputGroup ms-3 comentariosInput">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="comentarios">Comentarios</label>
+                        </div>
 
                         <h4 class="m-4 fw-bolder">4.Opciones de envio</h4>
 
-                        <div class="input-group mb-3">
-                            <div class="input-group-text">
-                                <input class="form-check-input mt-0" type="radio" value="CABA" @click="selectDelivery('CABA')"  name="envio" 
-                                    aria-label="Radio button for following text input">
-                            </div>
-                            <input type="text" class="form-control" aria-label="Text input with radio button"
-                                placeholder="Capital Federal">
+
+
+                        <div class="d-flex flex-column ms-3">
+
+                            <label for="opt1" class="radio ">
+                                <input type="radio" name="rdo" id="opt1" class="hidden" v-model="caba" value="CABA" @click="selectDelivery"/>
+                                <span class="label"></span><p>Capital Federal</p>
+                            </label>
+
+                            <label for="opt2" class="radio">
+                                <input type="radio" name="rdo" id="opt2" class="hidden" v-model="amba"  value="AMBA"/>
+                                <span class="label"></span><p>Provincia de Buenos Aires</p>
+                            </label>
+
+                            <label for="opt3" class="radio">
+                                <input type="radio" name="rdo" id="opt3" class="hidden" v-model="interior"  value="INTERIOR"/>
+                                <span class="label"></span><p>Interior del pais</p>
+                            </label>
+
+
+
                         </div>
 
-                        <div class="input-group mb-3">
-                            <div class="input-group-text">
-                                <input class="form-check-input mt-0" type="radio" name="envio" value="AMBA" @click="selectDelivery('AMBA')"
-                                    aria-label="Radio button for following text input">
-                            </div>
-                            <input type="text" class="form-control" aria-label="Text input with radio button"
-                                placeholder="Provincia de Buenos Aires">
-                        </div>
-
-                        <div class="input-group mb-3">
-                            <div class="input-group-text">
-                                <input class="form-check-input mt-0" type="radio" name="envio" value="INTERIOR" @click="selectDelivery('INTERIOR')"
-                                    aria-label="Radio button for following text input">
-                            </div>
-                            <input type="text" class="form-control" aria-label="Text input with radio button"
-                                placeholder="Interior del pais">
-                        </div>
-
+        
                     </div>
 
                     <div class="d-flex flex-column mx-auto mt-2 resumeBuy">
@@ -250,21 +259,11 @@
                 <div class="d-flex justify-content-evenly responsiveBlock">
 
                     <div class="blockSize">
-                        <div class="input-group mt-3">
-                            <div class="input-group-text">
-                                <input class="form-check-input mt-0" type="radio" value=""
-                                    aria-label="Radio button for following text input">
-                            </div>
-                            <input type="text" class="form-control" aria-label="Text input with radio button"
-                                placeholder="Pago contra reembolso">
-                        </div>
-                        <div class="input-group mt-3">
-                            <div class="input-group-text">
-                                <input class="form-check-input mt-0" type="radio" value=""
-                                    aria-label="Radio button for following text input">
-                            </div>
-                            <input type="text" class="form-control" aria-label="Text input with radio button"
-                                placeholder="Pagos con tarjeta en linea">
+                       
+                        <div class="d-flex flex-column ms-3">
+
+
+
                         </div>
                         <div class="d-flex justify-content-start align-items-center">
                             <h4 class="m-4 fw-bolder">Titular de la tarjeta</h4>
@@ -274,20 +273,23 @@
                                 class="icoSize">
                         </div>
                         <div class="d-flex">
-                            <input class="form-control me-2 responsiveInput" type="text" placeholder="nombre"
-                                aria-label="default input example">
+                            <div class="d-flex w-100 inputGroup">
+                                <input type="text" required="" autocomplete="off">
+                                <label for="nombre">Nombre</label>
+                            </div>
                         </div>
 
                         <h4 class="m-4 fw-bolder">Numero de tarjeta</h4>
-                        <div class="d-flex">
-                            <input class="form-control me-2 responsiveInput" type="number"
-                                placeholder="4407 **** **** ****" aria-label="default input example">
+                        <div class="d-flex w-100 inputGroup">
+                            <input type="text" required="" autocomplete="off">
+                            <label for="nombre">Numero de tarjeta: 4407 **** **** ****"</label>
+                          
                         </div>
                         <div class="d-flex">
                             <h4 class="m-4 fw-bolder">Vencimiento</h4>
                         </div>
                         <div class="d-flex">
-                            <select class="form-select w-25" aria-label="Default select example">
+                            <select class="form-select w-50" aria-label="Default select example">
                                 <option selected>Mes</option>
                                 <option value="1">Enero</option>
                                 <option value="2">Febrero</option>
@@ -302,7 +304,8 @@
                                 <option value="11">Noviembre</option>
                                 <option value="12">Diciembre</option>
                             </select>
-                            <input class="form-control w-25 ms-2" type="number" min="2022" max="2099" step="1" />
+                          
+                            <input placeholder="Año de vencimiento" class="form-control w-50 ms-2" type="number" min="2022" max="2099" step="1" id="año"/>
                         </div>
                         <div>
                             <h4 class="m-4 fw-bolder">CVV</h4>
@@ -346,7 +349,8 @@
 
                         </div>
                         <div class="pb-3" style=" background-color: rgba(209, 209, 209, 0.322);">
-                            <button type="button" @click="sendProducts()" class="btn btn-warning ms-5 w-75 button_responsive">Finalizar
+                            <button type="button" @click="sendProducts()"
+                                class="btn btn-warning ms-5 w-75 button_responsive">Finalizar
                                 compra</button>
                         </div>
                     </div>
