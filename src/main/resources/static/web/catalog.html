@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogo</title>
+    <title>Catalogo - Orpheus</title>
     <!-- product -->
     <link rel="stylesheet" href="./assets/style/product.css">
     <!-- CSS only -->
@@ -15,7 +15,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <!-- glider css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="http://drive.google.com/uc?export=view&id=1qDlEsKlMgfBtrEil_CeOfLa6DYbdWSBs"
+        type="image/x-icon">
     <!-- catalog -->
     <link rel="stylesheet" href="./assets/style/catalog.css">
 
@@ -23,74 +30,6 @@
 
 <body>
     <div id="app">
-        <!-- <header class="fixed-top">
-            <nav class="navbar navbar-expand-lg bg-light">
-                <div class="container">
-                    <a class="navbar-brand me-5" href="#" style="color: #713E5A;">Logo</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item mx-3">
-                                <a class="nav-link" href="./index.html">Home</a>
-                            </li>
-                            <li class="nav-item active mx-3 current-page">
-                                <a class="nav-link" aria-current="page" href="#" style="color: #E38164;">Buy vinyl</a>
-                            </li>
-                            <li class="nav-item mx-3">
-                                <a class="nav-link" href="#">Inspiration</a>
-                            </li>
-                            <li class="nav-item mx-3">
-                                <a class="nav-link" href="#">Contact</a>
-                            </li>
-                        </ul>
-                        <form class="d-flex" role="search">
-                            <button class="btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="32"
-                                    height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"
-                                    style="color: #E38164;">
-                                    <path
-                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                                </svg>
-                            </button>
-                            <input class="form-control me-5" type="search" placeholder="Search" v-model="input" aria-label="Search"
-                                style="border: 1px solid #E38164">{{filterSerch}}
-                        </form>
-                        <ul class="navbar-nav mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <button class="btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                        fill="currentColor" class="bi bi-suit-heart" viewBox="0 0 16 16"
-                                        style="color: #E38164;">
-                                        <path
-                                            d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595L8 6.236zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.55 7.55 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z" />
-                                    </svg></button>
-                            </li>
-                            <li class="nav-item">
-                                <button class="btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                        fill="currentColor" class="bi bi-person" viewBox="0 0 16 16"
-                                        style="color: #E38164;">
-                                        <path
-                                            d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-                                    </svg></button>
-                            </li>
-                            <li class="nav-item">
-                                <a href="./trolley.html" class="btn trolleyCanvas"
-                                alt="" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16"
-                                        style="color: #E38164;">
-                                        <path
-                                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                                    </svg>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header> -->
         <video playsinline autoplay muted loop src="./assets/estatica.mp4"></video>
         <section class="sectionCatalogoInicio">
             <nav class="navbar navbar-expand-lg fixed-top">
@@ -98,26 +37,41 @@
                     <a class="navbar-brand" href="./index.html"><img
                             src="http://drive.google.com/uc?export=view&id=1x0PkozmdxhQtg9f3UE1iQuPq7X8bOGj3" alt="logo"
                             class="logo p-0"></a>
+                            <div>
+                                <h3 class="text-light">{{client.firstName}}</h3>
+                            </div>
+                            <div>
+
+                            </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                         aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        <span>
+                            <label for="check" class="bar">
+                                <input id="check" type="checkbox">
+                                <span class="top"></span>
+                                <span class="middle"></span>
+                                <span class="bottom"></span>
+                            </label>
+                        </span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="enlaceNav" aria-current="page" href="#">Buy Vinyls</a>
+                                <a class="enlaceNav" aria-current="page" href="#">Compra vinilos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="enlaceNav" href="#contactUs">Contact us</a>
+                                <a class="enlaceNav" href="#">Contactanos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="enlaceNav login" href="#">Login or Sing Up</a>
+                                <a class="enlaceNav login" href="./login.html">Ingresa o Registrate</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./trolley.html" class="btn trolleyCanvas" alt="" data-bs-toggle="offcanvas"
-                                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                <a href="./trolley.html"
+                                    class="btn trolleyCanvas" alt=""
+                                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                    aria-controls="offcanvasRight">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                                         class="bi bi-cart" viewBox="0 0 16 16" style="color: #E38164;">
                                         <path
                                             d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
@@ -153,198 +107,182 @@
             aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header text-bg-dark">
                 <h5 class="offcanvas-title fs-2" id="offcanvasRightLabel">Tu carrito:</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
             </div>
             <div class="offcanvas-body d-flex flex-column align-items-center text-bg-dark">
-                <div v-for="product in trolley" class="d-flex flex-column itemCarrito my-3">
+                <div v-for="product in trolley" class="d-flex flex-column itemCarrito my-2">
                     <div class="d-flex flex-column">
                         <img :src="product.image" :alt="product.name" class="imgCarrito">
-                        <div class="text-light d-flex flex-column mt-3">
-                            <h6 class="group">{{product.name}}</h6>
-                            <p>{{product.author}}</p>
-                            <div class="d-flex">
-                                <p class="card-text">cantidad: {{product.quantity}}</p>
-                                <button v-if="product.quantity == 1" class="bg-danger" disabled
-                                    @click="restar(product)">-</button>
-                                <button v-else="" class="bg-danger" @click="trolleyRemove(product)">-</button>
-                                <button v-if="product.totalStock == product.quantity" class="bg-danger" disabled
-                                    @click="trolleyPurchase(product)">+</button>
-                                <button v-else class="bg-primary" @click="trolleyPurchase(product)">+</button>
+                        <div class="text-light d-flex flex-column mt-2 flex-wrap">
+                            <div class="d-flex justify-content-center align-items-center flex-column">
+                                <h6 class="group pb-2">{{product.name}}</h6>
+                                <p class="fw-semibold pb-2">{{product.author}}</p>
+                                <div class="d-flex">
+                                    <p>c/u <span class="fw-semibold"> ${{product.price}}</span></p>
+                                </div>
                             </div>
-                            <button class="eliminar bg-danger btn text-light" @click="removeProduct(product)">Eliminar
-                            </button>
-                            <div class="d-flex">
-                                <p>c/u ${{product.price}}</p>
+                            <div class="d-flex align-items-center p-1">
+                                <p class="card-text p-2 mt-3 ms-3">Cantidad: {{product.quantity}}</p>
+                                <button v-if="product.quantity == 1"
+                                    class="btn-quick-view4 text-light fw-bold rounded text-center m-1" disabled
+                                    @click="restar(product)">-</button>
+                                <button v-else="" class="btn-quick-view4 text-light fw-bold rounded text-center m-1"
+                                    @click="trolleyRemove(product)">-</button>
+                                <button v-if="product.totalStock == product.quantity"
+                                    class="btn-quick-view4 text-light fw-bold rounded text-center m-1" disabled
+                                    @click="trolleyPurchase(product)">+</button>
+                                <button v-else class="btn-quick-view4 text-light fw-bold rounded text-center m-1"
+                                    @click="trolleyPurchase(product)">+</button>
+                            </div>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <button
+                                    class="eliminar button-styles px-5 w-50 d-flex justify-content-center align-items-center"
+                                    @click="removeProduct(product)">Eliminar</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="d-flex flex-column align-items-center">
-                    <p class="totalAPagar">Total a pagar: ${{totalAPagar}}</p>
-                    <a href="./trolley.html"><button class="btn btn-primary mt-4">a pagar</button></a>
+                    <p class="totalAPagar mt-3">Total a pagar: ${{totalAPagar}}</p>
+                    <a href="./trolley.html" class="text-decoration-none w-25"><button class="button-styles mt-3">A
+                            pagar</button></a>
                 </div>
-                <div class=" d-flex justify-content-center">
-                </div>
-                <!-- <div class="mt-5 carritoPosition3">
-                    <h6 class="">Lunes a viernes: 9-20hs</h6>
-                    <h6 class="">Sabado a domingo: cerrado</h6>
-                    <h6 class="">orpheus@music.com</h6>
-                    <h6 class="">+54 9 2616120111</h6>
-                    <h6 class="">Siguenos</h6>
-                    <div class="d-flex ms-3">
-                        <div class="social ">
-                            <svg class="ms-2 " xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                class="bi bi-whatsapp" viewBox="0 0 16 16">
-                                <path
-                                    d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
-                            </svg>
-                            <svg class="ms-2" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                class="bi bi-instagram" viewBox="0 0 16 16">
-                                <path
-                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
-                            </svg>
-                            <svg class="ms-2" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                class="bi bi-cart" viewBox="0 0 16 16">
-                                <path
-                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                            </svg>
+        </div>   
+        </div>     
+                <main>
+                    <!-- Sale -->
+                    <div class=" d-flex justify-content-center mt-3">
+                        <div id="wrapper">
+                            <div id="carousel">
+                                <div id="content">
+                                    <a href="./detalles.html?id=7"><img class="item"
+                                            src="http://drive.google.com/uc?export=view&id=1CuMJrc6C4Idybf3QZXGHR9dAEGsqp_Xj" /></a>
+                                    <a href="./detalles.html?id=30"><img class="item"
+                                            src="http://drive.google.com/uc?export=view&id=1cuLMBOFHB0VnXznuIs_uW_zcRjHcw1bl" /></a>
+                                    <a href="./detalles.html?id=40"><img class="item"
+                                            src="http://drive.google.com/uc?export=view&id=1C7n31c8i9DsxH3eieYKcMIYxXALYnYwa" /></a>
+                                    <a href="./detalles.html?id=17"><img class="item"
+                                            src="http://drive.google.com/uc?export=view&id=1ukyR4gU5EA6Qs9QTv2fh-nSrPbsRQiFu" /></a>
+                                    <a href="./detalles.html?id=31"><img class="item"
+                                            src="http://drive.google.com/uc?export=view&id=1OgjauXvk7ab0dPeJaGA33C436KJbPrNW" /></a>
+                                    <a href="./detalles.html?id=44"><img class="item"
+                                            src="http://drive.google.com/uc?export=view&id=1PJw4WLxBP2mK4sy6NOXnL4KPxOQ9baEB" /></a>
+                                    <a href="./detalles.html?id=42"><img class="item"
+                                            src="http://drive.google.com/uc?export=view&id=1uEosMENdZYBCy4nRICz2fqeny90LqCNB" /></a>
+                                    <a href="./detalles.html?id=29"><img class="item"
+                                            src="http://drive.google.com/uc?export=view&id=1o3gkg4SzzWjlF7pkKFBxmVK8qyWHoMI4" /></a>
+                                    <a href="./detalles.html?id=8"><img class="item"
+                                            src="http://drive.google.com/uc?export=view&id=1uQ08kj7w5Nr4mdZOBZpv1a4Gk_fWqCnq" /></a>
+
+
+                                </div>
+                            </div>
+                            <button id="prev">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path fill="none" d="M0 0h24v24H0V0z" />
+                                    <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+                                </svg>
+                            </button>
+                            <button id="next">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path fill="none" d="M0 0h24v24H0V0z" />
+                                    <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+                                </svg>
+                            </button>
                         </div>
                     </div>
-                </div> -->
-            </div>
-        </div>
-        <main>
-            <!-- Sale -->
-            <div class=" d-flex justify-content-center mt-3">
-                <div id="wrapper">
-                    <div id="carousel">
-                        <div id="content">
-                            <a href="./detalles.html?id=7"><img class="item"
-                                    src="http://drive.google.com/uc?export=view&id=1CuMJrc6C4Idybf3QZXGHR9dAEGsqp_Xj" /></a>
-                            <a href="./detalles.html?id=30"><img class="item"
-                                    src="http://drive.google.com/uc?export=view&id=1cuLMBOFHB0VnXznuIs_uW_zcRjHcw1bl" /></a>
-                            <a href="./detalles.html?id=40"><img class="item"
-                                    src="http://drive.google.com/uc?export=view&id=1C7n31c8i9DsxH3eieYKcMIYxXALYnYwa" /></a>
-                            <a href="./detalles.html?id=17"><img class="item"
-                                    src="http://drive.google.com/uc?export=view&id=1ukyR4gU5EA6Qs9QTv2fh-nSrPbsRQiFu" /></a>
-                            <a href="./detalles.html?id=31"><img class="item"
-                                    src="http://drive.google.com/uc?export=view&id=1OgjauXvk7ab0dPeJaGA33C436KJbPrNW" /></a>
-                            <a href="./detalles.html?id=44"><img class="item"
-                                    src="http://drive.google.com/uc?export=view&id=1PJw4WLxBP2mK4sy6NOXnL4KPxOQ9baEB" /></a>
-                            <a href="./detalles.html?id=42"><img class="item"
-                                    src="http://drive.google.com/uc?export=view&id=1uEosMENdZYBCy4nRICz2fqeny90LqCNB" /></a>
-                            <a href="./detalles.html?id=29"><img class="item"
-                                    src="http://drive.google.com/uc?export=view&id=1o3gkg4SzzWjlF7pkKFBxmVK8qyWHoMI4" /></a>
-                            <a href="./detalles.html?id=8"><img class="item"
-                                    src="http://drive.google.com/uc?export=view&id=1uQ08kj7w5Nr4mdZOBZpv1a4Gk_fWqCnq" /></a>
 
 
+
+                    <!-- Vinyls Records -->
+
+                    <div class="container mt-3">
+                        <h2 class="mt-5">Vinyls Records</h2>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="https://i.discogs.com/iAKI0hWYyxhjrjlP6lmuIuhpGBuMy26-1FVa1HuAAJ8/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIzMjk5/MjY1LTE2NTMxMDEw/NjMtNDYwNS5qcGVn.jpeg"
+                                    class="img-fluid" alt="">
+                                <p>Blues</p>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="https://m.media-amazon.com/images/I/719SroNweJL._SL1500_.jpg"
+                                    class="img-fluid" alt="">
+                                <p>Pop</p>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="https://images-eu.ssl-images-amazon.com/images/I/71Ok8Ljr-FL._AC_UL600_SR600,600_.jpg"
+                                    class="img-fluid" alt="">
+                                <p>Jazz</p>
+                            </div>
+                        </div>
+
+                        <!-- New Arrival -->
+                        <h2 id="NewArrival" class="mt-4">Lo Nuevo</h2>
+                        <div class="newArrivals__container">
+                            <a class="box" href="./detalles.html?id=33">
+                                <img class="img-fluid"
+                                    src="http://drive.google.com/uc?export=view&id=1aV4hP4YA_vmmEu4G4vKsir7DLyg8N0Xe">
+                            </a>
+                            <a class="box" href="./detalles.html?id=11">
+                                <img class="img-fluid"
+                                    src="http://drive.google.com/uc?export=view&id=1-vLMWZxJeMhI3gGW_cl0OgjO62ib51Yq">
+                            </a>
+                            <a class="box" href="./detalles.html?id=6">
+                                <img class="img-fluid"
+                                    src="http://drive.google.com/uc?export=view&id=1dWQZ0kK24vfeKKVLPPzlkb_N6mqzL7go">
+                            </a>
+                            <a class="box" href="./detalles.html?id=5">
+                                <img class="img-fluid"
+                                    src="http://drive.google.com/uc?export=view&id=1tjw3hSYS2VZ6vObLn8FHj_GcXbIcqVcE">
+                            </a>
                         </div>
                     </div>
-                    <button id="prev">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <path fill="none" d="M0 0h24v24H0V0z" />
-                            <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
-                        </svg>
-                    </button>
-                    <button id="next">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                            <path fill="none" d="M0 0h24v24H0V0z" />
-                            <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-
-
-            <!-- Vinyls Records -->
-
-            <div class="container mt-3">
-                <h2 class="mt-5">Vinyls Records</h2>
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="https://i.discogs.com/iAKI0hWYyxhjrjlP6lmuIuhpGBuMy26-1FVa1HuAAJ8/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIzMjk5/MjY1LTE2NTMxMDEw/NjMtNDYwNS5qcGVn.jpeg"
-                            class="img-fluid" alt="">
-                        <p>Blues</p>
+                    <div class="container-fluid">
+                        <hr>
                     </div>
-                    <div class="col-md-4">
-                        <img src="https://m.media-amazon.com/images/I/719SroNweJL._SL1500_.jpg" class="img-fluid"
-                            alt="">
-                        <p>Pop</p>
-                    </div>
-                    <div class="col-md-4">
-                        <img src="https://images-eu.ssl-images-amazon.com/images/I/71Ok8Ljr-FL._AC_UL600_SR600,600_.jpg"
-                            class="img-fluid" alt="">
-                        <p>Jazz</p>
-                    </div>
-                </div>
-
-                <!-- New Arrival -->
-                <h2 id="NewArrival" class="mt-4">Lo Nuevo</h2>
-                <div class="newArrivals__container">
-                    <a class="box" href="./detalles.html?id=33">
-                        <img class="img-fluid"
-                            src="http://drive.google.com/uc?export=view&id=1aV4hP4YA_vmmEu4G4vKsir7DLyg8N0Xe">
-                    </a>
-                    <a class="box" href="./detalles.html?id=11">
-                        <img class="img-fluid"
-                            src="http://drive.google.com/uc?export=view&id=1-vLMWZxJeMhI3gGW_cl0OgjO62ib51Yq">
-                    </a>
-                    <a class="box" href="./detalles.html?id=6">
-                        <img class="img-fluid"
-                            src="http://drive.google.com/uc?export=view&id=1dWQZ0kK24vfeKKVLPPzlkb_N6mqzL7go">
-                    </a>
-                    <a class="box" href="./detalles.html?id=5">
-                        <img class="img-fluid"
-                            src="http://drive.google.com/uc?export=view&id=1tjw3hSYS2VZ6vObLn8FHj_GcXbIcqVcE">
-                    </a>
-                </div>
-            </div>
-            <div class="container-fluid">
-                <hr>
-            </div>
-            <div class="d-flex justify-content-center align-items-center">
-                <div class="contenedor">
-                    <!-- filters -->
-                    <div class="d-flex justify-content-center">
-                        <button class="col-4 col-md-3 col-xl-2" @click="allProducts()">Todos los productos</button>
-                        <button class="col-4 col-md-3 col-xl-2" @click="mostSold">Mas vendidos</button>
-                        <button class="col-4 col-md-3 col-xl-2" @click="newProducts">Nuevos Productos</button>
-                    </div>
-                    <hr>
-                    <div class="row sticky-top">
-                        <div class="col-lg-2 ">
-                            <select class="form-select form-select-lg mb-3" v-model="orderProduct"
-                                @change="orderProducts" aria-label=".form-select-lg example">
-                                <option selected value="order">Ordenar</option>
-                                <option value="precioMasBajo">precio mas bajo</option>
-                                <option value="precioMasAlto">precio mas alto</option>
-                                <option value="laconchadetumadre">A-Z</option>
-                                <option value="zA">Z-A</option>
-                            </select>
-                            <select class="form-select form-select-lg mb-3" v-model="genresValue"
-                                @change="orderGenres(genresValue)" aria-label=".form-select-lg example">
-                                <option selected value="allGenere">Genero</option>
-                                <option v-for="genere in selectGenres" :value="genere">{{genere}}</option>
-                            </select>
-                            <select class="form-select form-select-lg mb-3" v-model="productType"
-                                @change="orderByType(productType)" aria-label=".form-select-lg example">
-                                <option selected value="allType">Tipo</option>
-                                <option value="VINYLS">Vinilos</option>
-                                <option value="RECORDPLAYER">Toca discos</option>
-                            </select>
-                            <select class="form-select form-select-lg mb-3" v-model="condition"
-                                @change="productCondition(condition)" aria-label=".form-select-lg example">
-                                <option selected value="allCondition">Codicion</option>
-                                <option value="new">Nuevo</option>
-                                <option value="used">Usado</option>
-                            </select>
-                        </div>
-                        <div class="col-lg-10">
-                            <div class="row">
-                                <div v-for="product in productsFilter" class="col-md-4 col-xl-3 col-12 mt-3">
-                                    <!-- <div class="card_ border">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="contenedor">
+                            <!-- filters -->
+                            <div class="d-flex justify-content-center">
+                                <button class="col-4 col-md-3 col-xl-2" @click="allProducts()">Todos los
+                                    productos</button>
+                                <button class="col-4 col-md-3 col-xl-2" @click="mostSold">Mas vendidos</button>
+                                <button class="col-4 col-md-3 col-xl-2" @click="newProducts">Nuevos Productos</button>
+                            </div>
+                            <hr>
+                            <div class="row sticky-top">
+                                <div class="col-lg-2 ">
+                                    <select class="form-select form-select-lg mb-3" v-model="orderProduct"
+                                        @change="orderProducts" aria-label=".form-select-lg example">
+                                        <option selected value="order">Ordenar</option>
+                                        <option value="precioMasBajo">precio mas bajo</option>
+                                        <option value="precioMasAlto">precio mas alto</option>
+                                        <option value="laconchadetumadre">A-Z</option>
+                                        <option value="zA">Z-A</option>
+                                    </select>
+                                    <select class="form-select form-select-lg mb-3" v-model="genresValue"
+                                        @change="orderGenres(genresValue)" aria-label=".form-select-lg example">
+                                        <option selected value="allGenere">Genero</option>
+                                        <option v-for="genere in selectGenres" :value="genere">{{genere}}</option>
+                                    </select>
+                                    <select class="form-select form-select-lg mb-3" v-model="productType"
+                                        @change="orderByType(productType)" aria-label=".form-select-lg example">
+                                        <option selected value="allType">Tipo</option>
+                                        <option value="VINYLS">Vinilos</option>
+                                        <option value="RECORDPLAYER">Toca discos</option>
+                                    </select>
+                                    <select class="form-select form-select-lg mb-3" v-model="condition"
+                                        @change="productCondition(condition)" aria-label=".form-select-lg example">
+                                        <option selected value="allCondition">Codicion</option>
+                                        <option value="new">Nuevo</option>
+                                        <option value="used">Usado</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-10">
+                                    <div class="row">
+                                        <div v-for="product in productsFilter" class="col-md-4 col-xl-3 col-12 mt-3">
+                                            <!-- <div class="card_ border">
                                     <img :src="product.image" alt="">
                                      <span v-show="product.stock <= 5" class="position-absolute top-50 start-50 translate-middle badge rounded-pill bg-danger">
                                         quedan pocas unidades!   
@@ -367,114 +305,117 @@
                                         </div>
                                     </div>
                                 </div> -->
-                                    <div class="wrapper">
-                                        <div class="card1">
-                                            <div class="img-container">
-                                                <img class="" :src="product.image" />
-                                                <div class="overlay">
+                                            <div class="wrapper">
+                                                <div class="card1">
+                                                    <div class="img-container">
+                                                        <img class="" :src="product.image" />
+                                                        <div class="overlay">
 
-                                                    <a :href="'./detalles.html?id='+product.id"
-                                                        class="link-text text-decoration-none btn-quick-view icon"><i
-                                                            class="fa fa-search"></i> DETALLES</a>
+                                                            <a :href="'./detalles.html?id='+product.id"
+                                                                class="link-text text-decoration-none btn-quick-view icon"><i
+                                                                    class="fa fa-search"></i> DETALLES</a>
 
-                                                    <div @click="trolleyPurchase(product)" class="btn-quick-view icon2">
-                                                        <i class="fa fa-search"></i> COMPRAR
+                                                            <div @click="trolleyPurchase(product)"
+                                                                class="btn-quick-view icon2">
+                                                                <i class="fa fa-search"></i> COMPRAR
+                                                            </div>
+                                                        </div>
                                                     </div>
+
+                                                    <h4 class="title mt-3">{{product.name}}</h4>
+                                                    <p class="promotion mt-3 text-muted"
+                                                        v-show="product.productType == 'VINYLS'">{{product.author}}</p>
+                                                    <p class="promotion mt-3 text-muted"
+                                                        v-show="product.productType == 'RECORDPLAYER'">{{product.brand}}
+                                                    </p>
+                                                    <h5 class="mt-4 fw-bold">{{formattedNumber(product.price)}}</h5>
                                                 </div>
                                             </div>
-
-                                            <h4 class="title mt-2">{{product.name}}</h4>
-                                            <p class="promotion  mt-2">{{product.author}}</p>
-                                            <h5 class="mt-4 fw-bold">{{formattedNumber(product.price)}}</h5>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </main>
-        <footer id="footer">
-            <hr>
-            <div class="footer-top">
-                <div class="container">
-                    <div class="row">
+                </main>
+                <footer id="footer">
+                    <div class="footer-top">
+                        <div class="container">
+                            <div class="row">
 
-                        <div class="col-lg-4 col-md-6 footer-contact">
-                            <h3>Orpheus</h3>
-                            <p>A108 Adam Street </p>
-                            <p>New York, NY 535022</p>
-                            <p>United States </p>
-                            <p>
-                                <strong>Phone:</strong> +1 5589 55488 55<br>
-                                <strong>Email:</strong> info@example.com<br>
-                            </p>
+                                <div class="col-lg-4 col-md-6 footer-contact">
+                                    <h3>Orpheus</h3>
+                                    <p>Av. Pedro Luro 1044 </p>
+                                    <p>Mendoza</p>
+                                    <p>Argentina</p>
+                                    <p>
+                                        <strong>Phone:</strong> +54 011 5493 5110<br>
+                                        <strong>Email:</strong> info@orpheus.com<br>
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 footer-links">
+                                    <h4>Enlaces</h4>
+                                    <ul>
+                                        <li><i class="bx bx-chevron-right"></i> <a href="#">Inicio</a></li>
+                                        <li><i class="bx bx-chevron-right"></i> <a href="#">
+                                                <!-- CREAR -->Sobre Nosotros
+                                            </a></li>
+                                        <li><i class="bx bx-chevron-right"></i> <a href="./catalog.html">Catalogo</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 footer-newsletter">
+                                    <h4>Nuestras Novedades</h4>
+                                    <form action="" method="post">
+                                        <input type="email" name="email" placeholder="e-mail@orpheus.com"><input
+                                            type="submit" value="Suscribirse">
+                                    </form>
+                                </div>
+
+                            </div>
                         </div>
-
-                        <div class="col-lg-4 col-md-6 footer-links">
-                            <h4>Links</h4>
-                            <ul>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 footer-newsletter">
-                            <h4>Nuestro Newsletter</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta aliquam alias excepturi
-                                dolorum.</p>
-                            <form action="" method="post">
-                                <input type="email" name="email"><input type="submit" value="Suscribirse">
-                            </form>
-                        </div>
-
                     </div>
-                </div>
-            </div>
 
-            <div class="container d-lg-flex py-4">
+                    <div class="container d-lg-flex py-4">
 
-                <div class="me-lg-auto text-center text-lg-start">
-                    <div class="copyright">
-                        &copy; Copyright <strong><span>Orpheus</span></strong>. Todos los derechos reservados
+                        <div class="me-lg-auto text-center text-lg-start">
+                            <div class="copyright">
+                                &copy; Copyright <strong><span>Orpheus</span></strong>. Todos los derechos reservados
+                            </div>
+                        </div>
+                        <div class="social-links text-center text-lg-right pt-3 pt-lg-0">
+                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        </div>
                     </div>
-                </div>
-                <div class="social-links text-center text-lg-right pt-3 pt-lg-0">
-                    <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                </div>
-            </div>
-        </footer><!-- End Footer -->
-
-    </div>
-
-    <script>
-        window.addEventListener("scroll", function () {
-            var nav = document.querySelector("nav")
-            nav.classList.toggle("sticky1", window.scrollY > 150)
-        })
-    </script>
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
-        </script>
-    <!-- glider js -->
-    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
-    <!-- axios -->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <!-- vue -->
-    <script src="https://unpkg.com/vue@3"></script>
-    <!-- carousel-->
-    <script src="./assets/js/catalog-carousel.js"></script>
-    <!-- cards -->
-    <script src="./assets/js/cards.js"></script>
-    <script src="./assets/js/catalog.js"></script>
+                </footer><!-- End Footer -->
+</div>
+                <script>
+                    window.addEventListener("scroll", function () {
+                        var nav = document.querySelector("nav")
+                        nav.classList.toggle("sticky1", window.scrollY > 150)
+                    })
+                </script>
+                <!-- JavaScript Bundle with Popper -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+                    crossorigin="anonymous">
+                    </script>
+                <!-- glider js -->
+                <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
+                <!-- axios -->
+                <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+                <!-- vue -->
+                <script src="https://unpkg.com/vue@3"></script>
+                <!-- carousel-->
+                <script src="./assets/js/catalog-carousel.js"></script>
+                <!-- cards -->
+                <script src="./assets/js/cards.js"></script>
+                <script src="./assets/js/catalog.js"></script>
 </body>
 
 </html>
