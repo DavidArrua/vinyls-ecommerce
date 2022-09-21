@@ -84,35 +84,38 @@
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog ">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Contactate con nosotros:</h5>
+                        <div class="modal-header bg-dark text-light">
+                            <h4 class=" mt-4 fw-bolder" id="exampleModalLabel">Contactate con nosotros:</h4>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
+
+                        <div class="modal-body bg-dark text-light">
                                 <form action="" id="contactUs">
-                                    <div class="d-flex flex-column ">
-                                        <label for="name" >Nombre y Apellido:</label>
-                                        <input type="text"  id="name">
+                                    <div class=" d-flex">
+                                        <div class="d-flex w-100 inputGroup">
+                                            <input type="text" required="" autocomplete="off">
+                                            <label for="nombre">Nombre y Apellido</label>
+                                        </div>
                                     </div>
-                                    <div class="d-flex flex-column inputGroup">
-                                        <label for="email" >Email:</label>
-                                        <input type="text" id="email">
+                                    <div class=" d-flex">
+                                        <div class="d-flex  w-50 inputGroup">
+                                            <input type="text" required="" autocomplete="off">
+                                            <label for="telefono">Telefono</label>
+                                        </div>
+                                        <div class="d-flex  w-50 inputGroup ms-1">
+                                            <input type="text" required="" autocomplete="off">
+                                            <label for="email">Email</label>
+                                        </div>
+                                    </div>        
+                                    <h4 class=" fw-bolder">Tus comentarios:</h4>
+                                    <div class="d-flex w-100 inputGroup  comentariosInput">
+                                        <input type="text" required="" autocomplete="off">
+                                        <label for="comentarios">Comentarios</label>
                                     </div>
-                                    <div class="d-flex flex-column inputGroup">
-                                        <label for="phone">Telefono</label>
-                                        <input type="text" id="phone">
-                                    </div>
-                                    <div class="d-flex flex-column ">
-                                        <label for="coment">Tu comentario:</label>
-                                        <textarea name="coment" id="coment" cols="30" rows="10"></textarea>
-                                    </div>
-                                    <button class="btn-contact" type="submit">Send</button>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn-contact">Save changes</button>
+                                    <button class="btn-contact d-flex justify-content-end" type="submit">Enviar</button>
+                                </form>
                         </div>
                     </div>
                 </div>
