@@ -18,6 +18,7 @@ const app = Vue.
                 trolleyInStorage: [],
                 selectProducts: [],
                 client: {},
+                verifired: false,
             }
         },
 
@@ -39,8 +40,9 @@ const app = Vue.
             axios.get("/api/clients/current")
                 .then(response => {
                     this.client = response.data;
-                    console.log(this.client)
+                    this.verifired = this.client.validation
                 })
+
         },
         methods: {
             orderProducts() {
@@ -163,15 +165,15 @@ const app = Vue.
                 }
                 product.stock--
 
-        
-                    Swal.fire({
-                     position: 'top-end',
-                     icon: 'success',
-                     title: 'Producto agregado',
-                     showConfirmButton: false,
-                     timer: 1900,
-                    })
-            
+
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Producto agregado',
+                    showConfirmButton: false,
+                    timer: 1900,
+                })
+
             },
             trolleyRemove(product) {
                 let products = this.trolley.filter(item => item.id == product.id)[0]
@@ -207,10 +209,10 @@ const app = Vue.
                     title: "Producto removido",
                     showConfirmButton: false,
                     timer: 1500,
-                
+
 
                 })
-            
+
             },
 
             confirmarModal(product) {
@@ -236,7 +238,28 @@ const app = Vue.
                         Swal.fire("Eliminado!", "El producto fue eliminado.", "success")
                     }
                 })
-            }
+            },
+            logOut() {
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "Do you want to exit the app?",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: "Yes, I'm sure!",
+                    showCloseButton: true,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        axios.post('/api/logout')
+                            .then(response => location.href = '/web/index.html')
+                            .then(response => location.href = '/web/index.html')
+                            .catch(function (error) {
+                                alert(error);
+                            })
+                    }
+                })
+            },
 
 
         },
@@ -282,8 +305,8 @@ prev.addEventListener("click", e => {
 let width = carousel.offsetWidth;
 window.addEventListener("resize", e => (width = carousel.offsetWidth));
 
-var typed = new Typed('.typed',{
-    strings: ['Harry Styles','Born To Die', 'Future Nostalgia'],
+var typed = new Typed('.typed', {
+    strings: ['Harry Styles', 'Born To Die', 'Future Nostalgia'],
     typeSpeed: 75,
     startDelay: 1200,
     backSpeed: 75,

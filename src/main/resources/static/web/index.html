@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="http://drive.google.com/uc?export=view&id=1qDlEsKlMgfBtrEil_CeOfLa6DYbdWSBs"
         type="image/x-icon">
+        
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -21,173 +23,178 @@
 </head>
 
 <body>
-    <header class="" id="header">
-        <video playsinline autoplay muted loop class="videoIndex" src="./assets/indexvideo2.mp4"></video>
-        <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container-fluid d-flex align-items-center">
-                <a class="navbar-brand" href="#"><img
-                        src="http://drive.google.com/uc?export=view&id=1x0PkozmdxhQtg9f3UE1iQuPq7X8bOGj3" alt="logo"
-                        class="logo p-0"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span>
-                        <label for="check" class="bar">
-                            <input id="check" type="checkbox">
-                            <span class="top"></span>
-                            <span class="middle"></span>
-                            <span class="bottom"></span>
-                        </label>
-                    </span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="enlaceNav" aria-current="page" href="./catalog.html">Compra vinilos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="enlaceNav" href="#contactUs">Contactanos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="enlaceNav login" href="./login.html">Ingresa o Registrate</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div class="circulo">
-            <a href="#onlineStore" class="flechaAbajo"><img class="btnLanding" src="./assets/style/giphy.gif"
-                    alt=""></a>
-        </div>
-    </header>
-    <main>
-        <div id="onlineStore" class="onlineStore d-flex justify-content-center align-items-end ">
-            <a href="./catalog.html" class="pb-3"><button class="btn-quick-view mb-5 ">Go shop</button></a>
-        </div>
-        <section>
-            <div class="containerCarrousel">
-                <div class="accordion"
-                    style="background-image: url(http://drive.google.com/uc?export=view&id=1pBa-xKCVSCAtHUMDYBZakqcd6mj_AAy6)">
-                </div>
-
-                <div class="accordion"
-                    style="background-image: url(http://drive.google.com/uc?export=view&id=1bSLlwwMIZ_fytApfHR5aTEeVg3k9WOxk)">
-                </div>
-                <div class="accordion"
-                    style="background-image: url(http://drive.google.com/uc?export=view&id=15mj91KbXCTtz4DfbuJ0MjYrr02m_YsyQ)">
-                </div>
-                <div class="accordion"
-                    style="background-image: url(https://www.megastorage.com.pa/wp-content/uploads/2022/01/MEGA-Storage-Condado-del-Rey.jpeg)">
-                </div>
-
-
-            </div>
-        </section>
-        <section class="d-flex align-items-center justify-content-between">
-            <iframe id="contactUs"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26274.693404883415!2d-58.42589326407136!3d-34.59564712228752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac112e8f981%3A0xf48745deb18c4fc8!2sBrujas!5e0!3m2!1ses-419!2sar!4v1663252830781!5m2!1ses-419!2sar"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn-contact2" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Contactanos
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog ">
-                    <div class="modal-content">
-                        <div class="modal-header bg-dark text-light">
-                            <h4 class=" mt-4 fw-bolder" id="exampleModalLabel">Contactate con nosotros:</h4>
-                            <button type="button" id="contactUs" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                        </div>
-
-                        <div class="modal-body bg-dark text-light">
-                            <form action="" id="contactUs">
-                                <div class=" d-flex">
-                                    <div class="d-flex w-100 inputGroup">
-                                        <input type="text" required="" autocomplete="off">
-                                        <label for="nombre">Nombre y Apellido</label>
-                                    </div>
-                                </div>
-                                <div class=" d-flex">
-                                    <div class="d-flex  w-50 inputGroup">
-                                        <input type="text" required="" autocomplete="off">
-                                        <label for="telefono">Telefono</label>
-                                    </div>
-                                    <div class="d-flex  w-50 inputGroup ms-1">
-                                        <input type="text" required="" autocomplete="off">
-                                        <label for="email">Email</label>
-                                    </div>
-                                </div>
-                                <h4 class=" fw-bolder">Tus comentarios:</h4>
-                                <div class="d-flex w-100 inputGroup  comentariosInput">
-                                    <input type="text" required="" autocomplete="off">
-                                    <label for="comentarios">Comentarios</label>
-                                </div>
-                                <button class="btn-contact d-flex justify-content-end" type="submit">Enviar</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer id="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-4 col-md-6 footer-contact">
-                        <h3>Orpheus</h3>
-                        <p>Av. Pedro Luro 1044 </p>
-                        <p>Mendoza</p>
-                        <p>Argentina</p>
-                        <p>
-                            <strong>Phone:</strong> +54 011 5493 5110<br>
-                            <strong>Email:</strong> info@orpheus.com<br>
-                        </p>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 footer-links">
-                        <h4>Enlaces</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Inicio</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">
-                                    <!-- CREAR -->Sobre Nosotros
-                                </a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="./catalog.html">Catalogo</a></li>
+    <div id="app">
+        <header class="" id="header">
+            <video playsinline autoplay muted loop class="videoIndex" src="./assets/indexvideo2.mp4"></video>
+            <nav class="navbar navbar-expand-lg fixed-top">
+                <div class="container-fluid d-flex align-items-center">
+                    <a class="navbar-brand" href="#"><img
+                            src="http://drive.google.com/uc?export=view&id=1x0PkozmdxhQtg9f3UE1iQuPq7X8bOGj3" alt="logo"
+                            class="logo p-0"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span>
+                            <label for="check" class="bar">
+                                <input id="check" type="checkbox">
+                                <span class="top"></span>
+                                <span class="middle"></span>
+                                <span class="bottom"></span>
+                            </label>
+                        </span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="enlaceNav" aria-current="page" href="./catalog.html">Compra vinilos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="enlaceNav" href="#contactUs">Contactanos</a>
+                            </li>
+                            <li v-if="verifired == false" class="nav-item">
+                                <a class="enlaceNav login" href="./login.html">Ingresa o Registrate</a>
+                            </li>
+                            <li v-else class="nav-item">
+                                <button @click="logOut" class="bg-transparent"><img src="./assets/img/switch.png" alt="logOut"></button>
+                            </li>
                         </ul>
                     </div>
-
-                    <div class="col-lg-4 col-md-6 footer-newsletter">
-                        <h4>Nuestras Novedades</h4>
-                        <form action="" method="post">
-                            <input type="email" name="email" placeholder="e-mail@orpheus.com"><input type="submit"
-                                value="Suscribirse">
-                        </form>
+                </div>
+            </nav>
+            <div class="circulo">
+                <a href="#onlineStore" class="flechaAbajo"><img class="btnLanding" src="./assets/style/giphy.gif"
+                        alt=""></a>
+            </div>
+        </header>
+        <main>
+            <div id="onlineStore" class="onlineStore d-flex justify-content-center align-items-end ">
+                <a href="./catalog.html" class="pb-3"><button class="btn-quick-view mb-5 ">Go shop</button></a>
+            </div>
+            <section>
+                <div class="containerCarrousel">
+                    <div class="accordion"
+                        style="background-image: url(http://drive.google.com/uc?export=view&id=1pBa-xKCVSCAtHUMDYBZakqcd6mj_AAy6)">
                     </div>
 
+                    <div class="accordion"
+                        style="background-image: url(http://drive.google.com/uc?export=view&id=1bSLlwwMIZ_fytApfHR5aTEeVg3k9WOxk)">
+                    </div>
+                    <div class="accordion"
+                        style="background-image: url(http://drive.google.com/uc?export=view&id=15mj91KbXCTtz4DfbuJ0MjYrr02m_YsyQ)">
+                    </div>
+                    <div class="accordion"
+                        style="background-image: url(https://www.megastorage.com.pa/wp-content/uploads/2022/01/MEGA-Storage-Condado-del-Rey.jpeg)">
+                    </div>
+
+
+                </div>
+            </section>
+            <section class="d-flex align-items-center justify-content-between">
+                <iframe id="contactUs"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26274.693404883415!2d-58.42589326407136!3d-34.59564712228752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac112e8f981%3A0xf48745deb18c4fc8!2sBrujas!5e0!3m2!1ses-419!2sar!4v1663252830781!5m2!1ses-419!2sar"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn-contact2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Contactanos
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog ">
+                        <div class="modal-content">
+                            <div class="modal-header bg-dark text-light">
+                                <h4 class=" mt-4 fw-bolder" id="exampleModalLabel">Contactate con nosotros:</h4>
+                                <button type="button" id="contactUs" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body bg-dark text-light">
+                                <form action="" id="contactUs">
+                                    <div class=" d-flex">
+                                        <div class="d-flex w-100 inputGroup">
+                                            <input type="text" required="" autocomplete="off">
+                                            <label for="nombre">Nombre y Apellido</label>
+                                        </div>
+                                    </div>
+                                    <div class=" d-flex">
+                                        <div class="d-flex  w-50 inputGroup">
+                                            <input type="text" required="" autocomplete="off">
+                                            <label for="telefono">Telefono</label>
+                                        </div>
+                                        <div class="d-flex  w-50 inputGroup ms-1">
+                                            <input type="text" required="" autocomplete="off">
+                                            <label for="email">Email</label>
+                                        </div>
+                                    </div>
+                                    <h4 class=" fw-bolder">Tus comentarios:</h4>
+                                    <div class="d-flex w-100 inputGroup  comentariosInput">
+                                        <input type="text" required="" autocomplete="off">
+                                        <label for="comentarios">Comentarios</label>
+                                    </div>
+                                    <button class="btn-contact d-flex justify-content-end" type="submit">Enviar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer id="footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-4 col-md-6 footer-contact">
+                            <h3>Orpheus</h3>
+                            <p>Av. Pedro Luro 1044 </p>
+                            <p>Mendoza</p>
+                            <p>Argentina</p>
+                            <p>
+                                <strong>Phone:</strong> +54 011 5493 5110<br>
+                                <strong>Email:</strong> info@orpheus.com<br>
+                            </p>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 footer-links">
+                            <h4>Enlaces</h4>
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Inicio</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">
+                                        <!-- CREAR -->Sobre Nosotros
+                                    </a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="./catalog.html">Catalogo</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 footer-newsletter">
+                            <h4>Nuestras Novedades</h4>
+                            <form action="" method="post">
+                                <input type="email" name="email" placeholder="e-mail@orpheus.com"><input type="submit"
+                                    value="Suscribirse">
+                            </form>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="container d-lg-flex py-4">
+            <div class="container d-lg-flex py-4">
 
-            <div class="me-lg-auto text-center text-lg-start">
-                <div class="copyright">
-                    &copy; Copyright <strong><span>Orpheus</span></strong>. Todos los derechos reservados
+                <div class="me-lg-auto text-center text-lg-start">
+                    <div class="copyright">
+                        &copy; Copyright <strong><span>Orpheus</span></strong>. Todos los derechos reservados
+                    </div>
+                </div>
+                <div class="social-links text-center text-lg-right pt-3 pt-lg-0">
+                    <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
                 </div>
             </div>
-            <div class="social-links text-center text-lg-right pt-3 pt-lg-0">
-                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
         crossorigin="anonymous"></script>
@@ -197,6 +204,11 @@
             nav.classList.toggle("sticky1", window.scrollY > 150)
         })
     </script>
+        <!-- SWEET ALERT-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/index.js"></script>
 </body>
 
 </html>

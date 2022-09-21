@@ -48,6 +48,9 @@ public class ClientController {
         if (clientService.getClientByEmail(email) != null) {
             return new ResponseEntity<>("Name already in use", HttpStatus.FORBIDDEN);
         }
+        if(password.length() < 8){
+            return new ResponseEntity<>(" La contraseña debe contener al menos 8 carecteres", HttpStatus.FORBIDDEN);
+        }
 
 
         Client registerClient = new Client(firstName, lastName, email, passwordEncoder.encode(password), false);

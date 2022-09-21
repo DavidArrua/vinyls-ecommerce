@@ -42,7 +42,7 @@ public class BillController {
     ClientService clientService;
 
     @PostMapping("/api/bills")
-    public ResponseEntity<Object> bills (HttpServletResponse response, @RequestBody Set<ProductSelectDTO> productSelectDTOSet, Authentication authentication) throws DocumentException, FileNotFoundException {
+    public ResponseEntity<Object> bills (@RequestBody Set<ProductSelectDTO> productSelectDTOSet, Authentication authentication) throws DocumentException, FileNotFoundException {
 
         Client client = clientService.getClientByEmail(authentication.getName());
 

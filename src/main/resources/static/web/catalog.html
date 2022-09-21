@@ -39,12 +39,6 @@
                     <a class="navbar-brand" href="./index.html"><img
                             src="http://drive.google.com/uc?export=view&id=1x0PkozmdxhQtg9f3UE1iQuPq7X8bOGj3" alt="logo"
                             class="logo p-0"></a>
-                    <div>
-                        <h3 class="text-light">{{client.firstName}}</h3>
-                    </div>
-                    <div>
-
-                    </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -65,8 +59,11 @@
                             <li class="nav-item">
                                 <a class="enlaceNav" href="#">Contactanos</a>
                             </li>
-                            <li class="nav-item">
+                            <li v-if="verifired == false" class="nav-item">
                                 <a class="enlaceNav login" href="./login.html">Ingresa o Registrate</a>
+                            </li>
+                            <li v-else class="nav-item">
+                                <button @click="logOut" class="bg-transparent px-4"><img src="./assets/img/switch.png" alt="logOut"></button>
                             </li>
                             <li class="nav-item">
                                 <a href="./trolley.html" class="btn trolleyCanvas" alt="" data-bs-toggle="offcanvas"
@@ -93,7 +90,6 @@
 
                 <figure class="disco">
                     <h2 class="tituloCatalogo text-center mb-3 ">Clasico destacado de la semana</h2>
-                    <!-- <a class="aDisco" href="https://www.youtube.com/watch?v=RRKJiM9Njr8&list=RDzMbIipvQL0c&index=27"> -->
                     <div class="disco--cover"></div>
                     <div class="disco--vinilo"></div>
                     <figcaption class="disco--caption">
