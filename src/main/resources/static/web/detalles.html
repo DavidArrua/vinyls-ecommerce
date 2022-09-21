@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/style/detalles.css">
     <title>Document</title>
 </head>
@@ -46,7 +47,9 @@
             </nav>
         </header>
         <main>
-            <div class="banner"></div>
+            <div class="banner d-flex justify-content-center align-items-center">
+                <h1 class="text-light">Experimenta el sonido analogico</h1>
+            </div>
             <section class="detallesSection w-75 mt-5">
                 <div class="discardo">
                     <img class="disco" :src="productId.image" alt="tapa del disco">
@@ -55,21 +58,36 @@
                 <div class="textDetalles">
                     <h1></h1>
                     <h2>{{productId.name}}</h2>
-                    <h4>Autor: {{productId.author}}</h4>
+                    <h4><span class="fw-bold">Autor:</span> {{productId.author}}</h4>
                     <div class="d-flex">
-                        <h4 v-for="genere in productId.genres">Genero: {{genere}}</h4>
+                        <h4 v-for="genere in productId.genres"><span class="fw-bold">Genero:</span> {{genere}}</h4>
                     </div>
-                    <h3>{{productId.price}}</h3>
-                    <p>{{productId.description}}.</p>
+                    <p class="mt-3">{{productId.description}}.</p>
+                    <h3 class="fw-bold">{{formattedNumber(productId.price)}}</h3>
                     <div class="d-flex justify-content-end me-3">
-                        <button class="btn btn-primary">Comprar</button>
+                        <button class="btn-quick-view">Agregar al carrito</button>
                     </div>
                 </div>
             </section>
             <section class="my-5 d-flex flex-column w-100">
-                <h2 class="my-5 text-center">Tambien te recomendamos:</h2>
-                <div class="d-flex justify-content-evenly container flex-wrap">
-                    <div class="col-4 divRelacionados my-3">
+                <h2 class="my-5 text-center">Tambien te pueden interesar:</h2>
+                <div class="container">
+                    <div class="newArrivals__container">
+                        <a class="box" href="./detalles.html?id=38" >
+                            <img class="img-fluid" src="http://drive.google.com/uc?export=view&id=1ZBGLIOZBHXvS2naq4JvtZ-nMfMJRjnOa">
+                        </a>
+                        <a class="box" href="./detalles.html?id=26">
+                            <img class="img-fluid" src="http://drive.google.com/uc?export=view&id=10BHlI5Qnk5QMe-tSckDI2ChwnMk0A351">
+                        </a> 
+                        <a class="box" href="./detalles.html?id=18">
+                            <img class="img-fluid" src="http://drive.google.com/uc?export=view&id=1AlYJhPIkl0TVo41qoBUfY6gCVFx-YfpM">
+                        </a>
+                        <a class="box" href="./detalles.html?id=16">
+                            <img class="img-fluid" src="http://drive.google.com/uc?export=view&id=1zr_tM5fR2mkLza_4wUypHPjsWvK00UeG">
+                        </a>
+                    </div>
+
+                    <!-- <div class="col-4 divRelacionados my-3">
                         <div class="d-flex align-items-center flex-column">
                             <img class="discosRelacionados"
                                 src="https://jenesaispop.com/wp-content/uploads/2021/06/taylorswift-red-696x691.jpg"
@@ -107,7 +125,7 @@
                             <h5 class="ps-3">$1000.00</h5>
                             <button class="btn btn-primary  m-3">agregar</button>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </section>
         </main>
@@ -171,7 +189,7 @@
     <script>
         window.addEventListener("scroll", function () {
             var nav = document.querySelector("nav")
-            nav.classList.toggle("sticky1", window.scrollY > 150)
+            nav.classList.toggle("sticky1", window.scrollY > 1)
         })
     </script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
