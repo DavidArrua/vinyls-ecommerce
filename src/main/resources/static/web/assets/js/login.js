@@ -15,7 +15,15 @@ const app = Vue.createApp({
                   headers: { "content-type": "application/x-www-form-urlencoded" },
               })
               .then((response) => (location.href = "/web/index.html"))
-              .catch((response) => console.log(error));
+              .catch((response) => 
+              Swal.fire({
+                icon: 'error',
+                title: 'Algo salio mal!',
+                color: '#ffd22afe',
+                text: 'Por favor verifica todos los campos'
+
+            })
+            );
       },
 
       register() {
@@ -26,9 +34,16 @@ const app = Vue.createApp({
                   { headers: { "content-type": "application/x-www-form-urlencoded" } }
               )
               .then((response) => (location.href = "/web/index.html"))
-              .catch(function (error) {
-                  console.log(error);
-              });
+              .catch((error) => 
+              Swal.fire({
+                icon: 'error',
+                title: 'Algo salio mal!',
+                color: '#ffd22afe',
+                text: `${error.response.data}`,
+              
+                
+            }))
+     
       },
   },
 }).mount("#app");

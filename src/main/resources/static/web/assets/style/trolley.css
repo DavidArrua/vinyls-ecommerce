@@ -5,11 +5,92 @@
 
 }
 
-header {
-    height: 15vh;
-    background-color: #713e5a;
+/* <-------------------------------------------------NAV---------------------------------------------------------------> */
 
+.enlaceNav {
+    text-decoration: none;
+    color: black;
+    padding: 0.7rem;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .enlaceNav:hover {
+    color: #FFD12B;
+  }
+  
+
+  nav { 
+    background-color: #ffffff;
+  }
+  .logo{
+      width: 4rem;
+  }
+
+  
+/* <----------------------------------------------------------------------------------------------------------------> */
+.icoResponsive1{ 
+  cursor: pointer;
 }
+
+.icoResponsive1:hover{ 
+  transform: scale(1.2);
+}
+.btn-contact2{
+    
+    right: 150px;
+   
+    font-size: 1rem;
+    background-color: #1e1d1d;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .1s ease;
+    letter-spacing: 0.15em;
+    font-weight: 300;
+  }
+  
+  .btn-contact2:hover {
+    color: black;
+   
+    background-color: gray;
+    font-weight: bolder !important;
+  }
+.btn-quick-view {
+    font-size: 1rem;
+    background-color: #1e1d1ddf;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .1s ease;
+    letter-spacing: 0.15em;
+    font-weight: 300;
+  }
+  
+  .btn-quick-view:hover {
+    background-color: #000000;
+    font-weight: bolder !important;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 main {
     min-height: 100vh;
