@@ -17,10 +17,12 @@ createApp({
             .then(response => {
                 this.products = response.data;
                 this.productId = this.products.find(product => product.id == urlName)
+                console.log(this.productId.productType)
             })
             .catch((error) =>{
                 console.log(error);
             });
+
     },
     methods: {
         formattedNumber(balance){

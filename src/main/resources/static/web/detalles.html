@@ -22,7 +22,7 @@
         <header>
             <nav class="navbar navbar-expand-lg fixed-top">
                 <div class="container-fluid d-flex align-items-center">
-                    <a class="navbar-brand" href="#"><img
+                    <a class="navbar-brand" href="./index.html"><img
                             src="http://drive.google.com/uc?export=view&id=1x0PkozmdxhQtg9f3UE1iQuPq7X8bOGj3" alt="logo"
                             class="logo p-0"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -54,13 +54,14 @@
                 <div class="discardo">
                     <img class="disco" :src="productId.image" alt="tapa del disco">
                 </div>
-                <img class="vinilo" src="./assets/img/viniloOrpheus.png" alt="disco de vinilo">
+                <img class="vinilo" v-show="productId.productType == 'VINYLS'" src="./assets/img/viniloOrpheus.png" alt="disco de vinilo">
                 <div class="textDetalles">
                     <h1></h1>
                     <h2>{{productId.name}}</h2>
-                    <h4><span class="fw-bold">Autor:</span> {{productId.author}}</h4>
+                    <h4 v-show="productId.productType == 'VINYLS'"><span class="fw-bold">Autor:</span> {{productId.author}}</h4>
+                    <h4 v-show="productId.productType == 'RECORDPLAYER'"><span class="fw-bold">Marca:</span> {{productId.brand}}</h4>
                     <div class="d-flex">
-                        <h4 v-for="genere in productId.genres"><span class="fw-bold">Genero:</span> {{genere}}</h4>
+                        <h4 v-for="genere in productId.genres" v-show="productId.productType == 'VINYLS'"><span class="fw-bold">Genero:</span> {{genere}}</h4>
                     </div>
                     <p class="mt-3">{{productId.description}}.</p>
                     <h3 class="fw-bold">{{formattedNumber(productId.price)}}</h3>
