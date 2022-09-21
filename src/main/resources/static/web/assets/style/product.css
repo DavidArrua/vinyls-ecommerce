@@ -4,12 +4,14 @@
     box-sizing: border-box;
     text-align: center;
     width: 17em;
-    height: 22em;
+    height: 23em;
 
 
     border-radius: 10px;
     /* background-color: rgb(255, 255, 255); */
-    background: linear-gradient(156deg, rgba(243, 241, 240, 0.4) 28%, rgba(168, 159, 165, 0.263) 71%);
+    /* background: linear-gradient(156deg, rgba(243, 241, 240, 0.4) 28%, rgba(168, 159, 165, 0.263) 71%); */
+    background-image: url(../img/fondoCards.jpg);
+    background-size: cover;
     justify-items: center;
     transition: all 0.2s;
 }
@@ -42,20 +44,24 @@ p {
 
 .promotion {
     font-weight: 400;
-    font-size: .9em;
-    color: #C4941C;
+    font-size: 1em;
+    /* color: #C4941C; */
 }
 
 .card1 h4 {
+    font-family: 'Sawarabi Mincho', serif;
+    font-weight: bold;
     font-size: 1.2em;
     line-height: 1em;
     letter-spacing: 0.05em;
+    color: white;
 }
 
 .card1 h5 {
     font-weight: 300;
-    font-size: 1.1em;
+    font-size: 1.2em;
     line-height: .5em;
+    color: #C4941C;
 }
 
 .buttonCards {
@@ -85,11 +91,17 @@ p {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 22em;
+    height: 23em;
     width: 17em;
     opacity: 0;
     border-radius: 10px;
     transition: .2s ease;
+}
+
+.overlay a:hover {
+    color: #b5b5b5;
+    font-weight: bolder !important;
+    background-color: #000000;
 }
 
 .card1:hover .overlay {
@@ -134,5 +146,4 @@ p {
 
 .btn-quick-view:hover {
     background-color: #000000;
-    font-weight: bolder !important;
 }
