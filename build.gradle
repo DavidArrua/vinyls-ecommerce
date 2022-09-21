@@ -25,6 +25,7 @@ dependencies {
 	runtimeOnly 'com.h2database:h2'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'com.itextpdf.maven:itextdoc:2.0.0'
+	implementation 'org.springframework.boot:spring-boot-starter-mail:2.7.3'
 }
 
 tasks.named('test') {

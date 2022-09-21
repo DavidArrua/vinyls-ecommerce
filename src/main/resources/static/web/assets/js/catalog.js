@@ -281,3 +281,12 @@ prev.addEventListener("click", e => {
 
 let width = carousel.offsetWidth;
 window.addEventListener("resize", e => (width = carousel.offsetWidth));
+
+var typed = new Typed('.typed',{
+    strings: ['Harry Styles','Born To Die', 'Future Nostalgia'],
+    typeSpeed: 75,
+    startDelay: 1200,
+    backSpeed: 75,
+    backDelay: 1500,
+    loop: true,
+});

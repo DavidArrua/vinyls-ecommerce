@@ -318,12 +318,9 @@ button{
 
 }
 .carritoPosition3 {
- 
   padding: 10px;
   position: absolute;
   top: 65vh;    
-
-
 }
 
 .offcanvasScale {
@@ -351,7 +348,11 @@ button{
   }}
 
 
-
+.titulosCarros{
+  font-size: 45px;
+  font-family: 'Russo One', sans-serif;
+  font-weight: bolder;
+}
 
   
 video{

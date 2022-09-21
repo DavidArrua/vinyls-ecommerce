@@ -50,13 +50,24 @@ public class ClientController {
         }
 
 
-        Client registerClient = new Client(firstName, lastName, email, passwordEncoder.encode(password), true);
+        Client registerClient = new Client(firstName, lastName, email, passwordEncoder.encode(password), false);
         clientService.saveClient(registerClient);
 
+        String mailSubjet = "Mail de verificacion Orpheus";
+        String mailBody = "Casi esta todo listo, solo falta verificar tu cuenta, entra al siguiente link: localhost:8080/web/verified.html?id="+registerClient.getId();
+        clientService.sendVerificationMail(registerClient.getEmail(), mailSubjet,mailBody);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-        @RequestMapping("/api/clients/current")
+    @GetMapping("/clients/verify/{id}")
+    public ResponseEntity<Object> verifyClient(@PathVariable long id){
+        Client client = clientService.getClienteById(id);
+        client.setValidation(true);
+        clientService.saveClient(client);
+        return new ResponseEntity<>("Verificado!", HttpStatus.CREATED);
+    }
+
+        @RequestMapping("/clients/current")
         public ClientDTO getCurrent(Authentication authentication) {
             return new ClientDTO(clientService.getClientByEmail(authentication.getName()));
         }

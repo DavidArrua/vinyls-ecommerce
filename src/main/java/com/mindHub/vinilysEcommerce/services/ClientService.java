@@ -11,4 +11,8 @@ public interface ClientService {
     public List<Client> getAllClients();
 
     public Client getClientByEmail(String email);
+
+    public void sendVerificationMail(String email, String subject, String body);
+
+    public Client getClienteById (long id);
 }
