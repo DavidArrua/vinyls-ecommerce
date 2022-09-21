@@ -6,6 +6,7 @@ import com.mindHub.vinilysEcommerce.models.*;
 import com.mindHub.vinilysEcommerce.repositories.BillRepository;
 import com.mindHub.vinilysEcommerce.repositories.ProductBillRepository;
 import com.mindHub.vinilysEcommerce.services.ClientService;
+import com.mindHub.vinilysEcommerce.services.PdfService;
 import com.mindHub.vinilysEcommerce.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
@@ -37,7 +39,7 @@ public class BillController {
     ClientService clientService;
 
     @PostMapping("/api/bills")
-    public ResponseEntity<Object> bills (@RequestBody Set<ProductSelectDTO> productSelectDTOSet, Authentication authentication){
+    public ResponseEntity<Object> bills (HttpServletResponse response, @RequestBody Set<ProductSelectDTO> productSelectDTOSet, Authentication authentication){
 
         Client client = clientService.getClientByEmail(authentication.getName());
 
@@ -133,4 +135,7 @@ public class BillController {
     public int getRandomNumber(int min, int max) {
         return (int) ((Math.random() * (max - min)) + min);
     }
+
+
+
 }

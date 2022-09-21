@@ -6,6 +6,7 @@ import com.mindHub.vinilysEcommerce.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -55,4 +56,8 @@ public class ClientController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
+        @RequestMapping("/api/clients/current")
+        public ClientDTO getCurrent(Authentication authentication) {
+            return new ClientDTO(clientService.getClientByEmail(authentication.getName()));
+        }
 }

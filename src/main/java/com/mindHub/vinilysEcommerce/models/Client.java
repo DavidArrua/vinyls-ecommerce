@@ -86,4 +86,9 @@ public class Client {
     public void setBills(Set<Bill> bills) {
         this.bills = bills;
     }
+
+
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
 }
