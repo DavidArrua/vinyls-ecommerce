@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogo</title>
-    <!-- product -->
-    <link rel="stylesheet" href="./assets/style/product.css">
+    <title>Document</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -15,10 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <!-- glider css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
-
-    <!-- catalog -->
     <link rel="stylesheet" href="./assets/style/catalog.css">
-
 </head>
 
 <body>
@@ -163,18 +158,7 @@
                             <h6 class="group">{{product.name}}</h6>
                             <p>{{product.author}}</p>
                             <div class="d-flex">
-                                <p class="card-text">cantidad: {{product.quantity}}</p>
-                                <button v-if="product.quantity == 1" class="bg-danger" disabled
-                                    @click="restar(product)">-</button>
-                                <button v-else="" class="bg-danger" @click="trolleyRemove(product)">-</button>
-                                <button v-if="product.totalStock == product.quantity" class="bg-danger" disabled
-                                    @click="trolleyPurchase(product)">+</button>
-                                <button v-else class="bg-primary" @click="trolleyPurchase(product)">+</button>
-                            </div>
-                            <button class="eliminar bg-danger btn text-light" @click="removeProduct(product)">Eliminar
-                            </button>
-                            <div class="d-flex">
-                                <p>c/u ${{product.price}}</p>
+                                <p>${{product.price}}</p>
                             </div>
                         </div>
                     </div>
@@ -208,7 +192,9 @@
                                 <path
                                     d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                             </svg>
+
                         </div>
+
                     </div>
                 </div> -->
             </div>
@@ -368,87 +354,62 @@
             <div class="container-fluid">
                 <hr>
             </div>
-            <div class="d-flex justify-content-center align-items-center">
-                <div class="contenedor">
-                    <!-- filters -->
-                    <div class="d-flex justify-content-center">
-                        <button class="col-4 col-md-3 col-xl-2" @click="allProducts()">Todos los productos</button>
-                        <button class="col-4 col-md-3 col-xl-2" @click="mostSold">Mas vendidos</button>
-                        <button class="col-4 col-md-3 col-xl-2" @click="newProducts">Nuevos Productos</button>
+            <div class="container">
+                <!-- filters -->
+                <div class="d-flex justify-content-center">
+                    <button class="col-4 col-md-3 col-xl-2" @click="allProducts()">Todos los productos</button>
+                    <button class="col-4 col-md-3 col-xl-2" @click="mostSold">Mas vendidos</button>
+                    <button class="col-4 col-md-3 col-xl-2" @click="newProducts">Nuevos Productos</button>
+                </div>
+                <hr>
+                <div class="row sticky-top">
+                    <div class="col-lg-2 ">
+                        <select class="form-select form-select-lg mb-3" v-model="orderProduct" @change="orderProducts"
+                            aria-label=".form-select-lg example">
+                            <option selected value="order">Ordenar</option>
+                            <option value="precioMasBajo">precio mas bajo</option>
+                            <option value="precioMasAlto">precio mas alto</option>
+                            <option value="laconchadetumadre">A-Z</option>
+                            <option value="zA">Z-A</option>
+                        </select>
+                        <select class="form-select form-select-lg mb-3" v-model="genresValue"
+                            @change="orderGenres(genresValue)" aria-label=".form-select-lg example">
+                            <option selected value="allGenere">Genero</option>
+                            <option v-for="genere in selectGenres" :value="genere">{{genere}}</option>
+                        </select>
+                        <select class="form-select form-select-lg mb-3" v-model="productType"
+                            @change="orderByType(productType)" aria-label=".form-select-lg example">
+                            <option selected value="allType">Tipo</option>
+                            <option value="VINYLS">Vinilos</option>
+                            <option value="RECORDPLAYER">Toca discos</option>
+                        </select>
+                        <select class="form-select form-select-lg mb-3" v-model="condition"
+                            @change="productCondition(condition)" aria-label=".form-select-lg example">
+                            <option selected value="allCondition">Codicion</option>
+                            <option value="new">Nuevo</option>
+                            <option value="used">Usado</option>
+                        </select>
                     </div>
-                    <hr>
-                    <div class="row sticky-top">
-                        <div class="col-lg-2 ">
-                            <select class="form-select form-select-lg mb-3" v-model="orderProduct"
-                                @change="orderProducts" aria-label=".form-select-lg example">
-                                <option selected value="order">Ordenar</option>
-                                <option value="precioMasBajo">precio mas bajo</option>
-                                <option value="precioMasAlto">precio mas alto</option>
-                                <option value="laconchadetumadre">A-Z</option>
-                                <option value="zA">Z-A</option>
-                            </select>
-                            <select class="form-select form-select-lg mb-3" v-model="genresValue"
-                                @change="orderGenres(genresValue)" aria-label=".form-select-lg example">
-                                <option selected value="allGenere">Genero</option>
-                                <option v-for="genere in selectGenres" :value="genere">{{genere}}</option>
-                            </select>
-                            <select class="form-select form-select-lg mb-3" v-model="productType"
-                                @change="orderByType(productType)" aria-label=".form-select-lg example">
-                                <option selected value="allType">Tipo</option>
-                                <option value="VINYLS">Vinilos</option>
-                                <option value="RECORDPLAYER">Toca discos</option>
-                            </select>
-                            <select class="form-select form-select-lg mb-3" v-model="condition"
-                                @change="productCondition(condition)" aria-label=".form-select-lg example">
-                                <option selected value="allCondition">Codicion</option>
-                                <option value="new">Nuevo</option>
-                                <option value="used">Usado</option>
-                            </select>
-                        </div>
-                        <div class="col-lg-10">
-                            <div class="row">
-                                <div v-for="product in productsFilter" class="col-md-4 col-xl-3 col-12 mt-3">
-                                    <!-- <div class="card_ border">
+                    <div class="col-lg-10">
+                        <div class="row">
+                            <div v-for="product in productsFilter" class="col-md-4 col-xl-3 col-12">
+                                <div class="card_ border">
                                     <img :src="product.image" alt="">
-                                     <span v-show="product.stock <= 5" class="position-absolute top-50 start-50 translate-middle badge rounded-pill bg-danger">
-                                        quedan pocas unidades!   
-                                    </span> 
                                     <div>
                                         <h5 class="card-title text-center">{{product.name}}</h5>
                                         <p class="card-text text-center">{{product.resalaseDate}}</p>
                                         <div class="d-flex justify-content-around">
                                             <p class="fw-semibold">{{formattedNumber(product.price)}}</p>
-                                            <button class="buy-button" @click="trolleyPurchase(product)">Buy
-                                                
-                                                <svg
+                                            <button class="buy-button" @click="trolleyPurchase(product)">Buy <svg
                                                     xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                     fill="currentColor" class="bi bi-cart">
                                                     <path
                                                         d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                                                 </svg>
                                             </button>
-                                            <a :href="'./detalles.html?id='+product.id" class="link-text">detalles</a>
-                                        </div>
-                                    </div>
-                                </div> -->
-                                    <div class="wrapper">
-                                        <div class="card1">
-                                            <div class="img-container">
-                                                <img class="" :src="product.image" />
-                                                <div class="overlay">
-                                                   
-                                                        <a :href="'./detalles.html?id='+product.id" class="link-text text-decoration-none btn-quick-view icon"><i
-                                                                class="fa fa-search"></i> DETALLES</a>
-                                                    
-                                                    <div @click="trolleyPurchase(product)" class="btn-quick-view icon2">
-                                                        <i class="fa fa-search"></i> COMPRAR
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <h4 class="title mt-2">{{product.name}}</h4>
-                                            <p class="promotion  mt-2">{{product.author}}</p>
-                                            <h5 class="mt-4 fw-bold">{{formattedNumber(product.price)}}</h5>
+                                            <a :href="'./detalles.html?id='+product.id" class="link-text">
+                                                detalles
+                                              </a>
                                         </div>
                                     </div>
                                 </div>
@@ -535,8 +496,6 @@
     <script src="https://unpkg.com/vue@3"></script>
     <!-- carousel-->
     <script src="./assets/js/catalog-carousel.js"></script>
-    <!-- cards -->
-    <script src="./assets/js/cards.js"></script>
     <script src="./assets/js/catalog.js"></script>
 </body>
 
