@@ -1,5 +1,4 @@
 (function ($) {
-    
     // Ripple-effect animation
     $(".ripple-effect").click(function (e) {
         var rippler = $(this);
