@@ -133,6 +133,8 @@ public class VinilysEcommerceApplication {
 			productRepository.save(product47);
 			Product product48 = new Product("Romántico en el Teatro Colon", "Luciano Pereyra","Lo mejor de Luciano en una obra exquisita en el gran Teatro Colón", "2019", List.of("http://drive.google.com/uc?export=view&id=1wn59GQ7kekipFddHW3TXnxoGfhxgOn5a"), Set.of("Folklore"), 25, 3438.0, true, ProductType.VINYLS, "-");
 			productRepository.save(product48);
+			Product product51 = new Product("The Dark Side of the Moon", "Pink Floyd","El álbum está construido a partir de las ideas que Pink Floyd había explorado en sus conciertos y anteriores grabaciones", "1973", List.of("https://upload.wikimedia.org/wikipedia/commons/c/c7/The_Dark_Side_of_the_Moon_Cover.svg"), Set.of("Rock progresivo", "rock psicodélico"), 25, 4000.0, true, ProductType.VINYLS, "-");
+			productRepository.save(product51);
 
 
 //			Product product50 = new Product("Wish you were here", "Pink Floyd","Wish You Were Here —en español: Ojalá estuvieras aquí— es el noveno álbum de estudio de la banda británica de rock Pink Floyd, lanzado en septiembre de 1975 e inspirado en el material que compusieron durante su gira europea de 1974 y que grabaron en los Abbey Road Studios de Londres. ", "2011", List.of("https://drive.google.com/file/d/1F1FW-NycrXZGUFdd-oEpl_SG56UvdQ1U/view?usp=sharing"), Set.of("Rock"), 42, 14540.0, true, ProductType.VINYLS, "-");
