@@ -11,115 +11,184 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
     crossorigin="anonymous"></script>
-  <title>Document</title>
+  <title>Formá parte</title>
 </head>
 
 <body>
-  <main id="app">
-    <div class="container">
-      <div class="col-md-6 col-md-offset-3 col-xs-12">
-        <!-- @ Start login box wrapper -->
-        <div class="blmd-wrapp">
-          <div class="blmd-color-conatiner ripple-effect-All"></div>
-          <div class="blmd-header-wrapp ">
-            <div class="blmd-switches">
-              <button class="btn btn-circle btn-lg btn-blmd ripple-effect btn-success blmd-switch-button">
-                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-                  <path fill="#fff" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
-                </svg>
-              </button>
+
+  <div id="app">
+    <main>
+      <div class="container caja caja2">
+        <div class="col-md-6 col-md-offset-3 col-xs-12">
+          <!-- @ Start login box wrapper -->
+          <div class="blmd-wrapp">
+            <div class="blmd-color-conatiner ripple-effect-All"></div>
+            <div class="blmd-header-wrapp ">
+              <div class="blmd-switches">
+                <button class="btn btn-circle btn-lg btn-blmd ripple-effect btn-success blmd-switch-button">
+                  <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                    <path fill="#fff" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                  </svg>
+                </button>
+              </div>
+
             </div>
+            <div class="blmd-continer">
+              <!-- @ Login form container -->
+              <form action="post" class="clearfix" id="login-form">
+                <h1 style="color: rgba(0, 0, 0, 0.685);" class="fw-bolder">Inicio de sesión</h1>
+                <div class="col-md-12">
 
+                  <div class="input-group blmd-form">
+                    <div class="blmd-line">
+                      <div class="d-flex inputGroup">
+                        <input type="text" required="" autocomplete="off" v-model="email">
+                        <label for="nombre">Email</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-group blmd-form">
+                    <div class="blmd-line">
+
+                      <div class="inputGroup pt-2">
+                        <input type="passwordt" required="" autocomplete="off" v-model="pwd">
+                        <label for="name">Contraseña</label>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12 text-center">
+                  <button type="button" @click="login()"
+                    class="btn btn-blmd ripple-effect btn-warning btn-lg btn-block mt-2">Log
+                    in</button>
+                </div>
+                <br />
+              </form>
+              <!-- @ Login form container -->
+              <form action="post" class="clearfix form-hidden" id="Register-form">
+                <h1 style="color: rgba(0, 0, 0, 0.685);" class="fw-bolder">Registrate</h1>
+                <div class="col-md-12">
+
+                  <div class="input-group blmd-form ">
+                    <div class="blmd-line d-flex ">
+                      <div class="inputGroup  w-50">
+                        <input type="name" required="" autocomplete="off" v-model="firstName">
+                        <label for="name">Nombre</label>
+                      </div>
+                      <div class="inputGroup w-50 ps-1">
+                        <input type="lastName" required="" autocomplete="off" v-model="lastName">
+                        <label for="name">Apellido</label>
+                      </div>
+                    </div>
+
+                    <!-- </div><div class="input-group blmd-form">
+                  <div class="blmd-line w-50">
+                    
+                  </div>
+                </div> -->
+
+                    <div class="input-group blmd-form">
+                      <div class="blmd-line d-flex">
+                        <div class="inputGroup w-100 pt-3">
+                          <input type="passwordt" required="" autocomplete="off" v-model="email">
+                          <label for="name">Email</label>
+                        </div>
+                      </div>
+                      <div class="inputs inputGroup w-100 pt-4">
+                        <input type="password" id="password" data-type="password" required="" autocomplete="off"
+                          v-model="pwd">
+                        <label for="name">Contraseña</label>
+                      </div>
+                    </div>
+
+                    <!-- <div class="input-group blmd-form">
+                  <div class="blmd-line">
+                                        
+                        <div class="checkbox mt-3"> -->
+                    <div class='py'>
+
+                      <label>
+                        <input type="checkbox" class="option-input radio" name="example" data-validation="quantity"
+                          disabled value="" />
+                        La contraseña debe contener al menos 8 carecteres.
+                      </label>
+
+                    </div>
+
+
+                  </div>
+                  <div class='py'>
+
+                    <label>
+                      <input data-validation="lowerCase" disabled value="" type="checkbox" class="option-input radio"
+                        name="example" data-validation="quantity" disabled value="" />
+                      El nuevo password deberá contener al menos una letra minuscula
+                    </label>
+
+                  </div>
+
+                  <div class='py checkbox disabled'>
+
+                    <label>
+                      <input type="checkbox" class="option-input radio" name="example" data-validation="upperCase"
+                        disabled value="" />
+                      El nuevo password deberá
+                      contener al menos una letra mayuscula.
+                    </label>
+
+                  </div>
+
+                  <div class='py checkbox disabled'>
+
+                    <label>
+                      <input type="checkbox" class="option-input radio" name="example" data-validation="numbers"
+                        disabled value="" />
+                      La contraseña debe contener al menos un numero.
+                    </label>
+
+                  </div>
+
+
+                  <div class='py checkbox disabled'>
+
+                    <label>
+                      <input type="checkbox" class="option-input radio" data-validation="specialCharacters" disabled
+                        value="" />
+                      El nuevo password deberá contener al menos un caracter especial.
+                    </label>
+
+                  </div>
+
+
+
+                  <div class="col-sm-12 text-center">
+                    <button type="button"
+                      @click="register" class="btn btn-blmd ripple-effect btn-warning btn-lg btn-block mt-2">Registrate</button>
+                  </div>
+                </div>
+            </div>
           </div>
-          <div class="blmd-continer">
-            <!-- @ Login form container -->
-            <form @submit.prevent="login" action="post" class="clearfix" id="login-form">
-              <h1>Login Page</h1>
-              <div class="col-md-12">
-
-                <div class="input-group blmd-form">
-                  <div class="blmd-line">
-                    <div class="inputGroup">
-                      <input type="text" required="" autocomplete="off" >
-                      <label for="name">Name</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="input-group blmd-form">
-                  <div class="blmd-line">
-
-                    <div class="inputGroup">
-                      <input type="passwordt" required="" autocomplete="off" >
-                      <label for="name">password</label>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-12 text-center">
-                <button type="submit" class="btn btn-blmd ripple-effect btn-success btn-lg btn-block">Login</button>
-              </div>
-              <br />
-            </form>
-            <!-- @ Login form container -->
-            <form @submit.prevent="login" action="post" class="clearfix form-hidden" id="Register-form">
-              <h1>Register Page</h1>
-              <div class="col-md-12">
-
-                <div class="input-group blmd-form">
-                  <div class="blmd-line">
-                    <div class="inputGroup">
-                      <input type="name" v-model="firstName" required="" autocomplete="off" >
-                      <label for="name">FIrst name</label>
-                    </div>
-                  </div>
-                </div><div class="input-group blmd-form">
-                  <div class="blmd-line">
-                    <div class="inputGroup">
-                      <input type="lastName" v-model="lastName" required="" autocomplete="off" >
-                      <label for="name">Last name</label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="input-group blmd-form">
-                  <div class="blmd-line">
-                    <div class="inputGroup">
-                      <input type="email" v-model="email" required="" autocomplete="off" >
-                      <label for="name">Email</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="input-group blmd-form">
-                  <div class="blmd-line">
-                    <div class="inputGroup">
-                      <input type="passwordt" v-model="pwd" required="" autocomplete="off" >
-                      <label for="name">password</label>
-                    </div>
-                  </div>
-                </div>
-                
-              </div>
-              <div class="col-sm-12 text-center">
-                <button type="submit"  class="btn btn-blmd ripple-effect btn-warning btn-lg btn-block">Register</button>
-              </div>
-              <br />
-            </form>
-          </div>
-        </div>
-        <div class="signature" style="margin-left: -25px;margin-top: -25px;">
-
         </div>
       </div>
-    </div>
-  </main>
+
+
+
+      <br />
+      </form>
+
+
+
+    </main>
+  </div>
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <!-- VUE -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <!-- axios -->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <!-- VUE -->
-  <script src="https://unpkg.com/vue@3"></script>
+  <!-- JS -->
   <script src="./assets/js/login.js"></script>
 </body>
 

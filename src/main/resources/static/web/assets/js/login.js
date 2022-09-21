@@ -1,4 +1,52 @@
+const app = Vue.createApp({
+  data() {
+      return {
+          email: "",
+          pwd: "",
+          firstName: "",
+          lastName: "",
+      };
+  },
+  created() { },
+  methods: {
+      login() {
+          axios
+              .post("/api/login", `email=${this.email}&pwd=${this.pwd}`, {
+                  headers: { "content-type": "application/x-www-form-urlencoded" },
+              })
+              .then((response) => (location.href = "/web/index.html"))
+              .catch((response) => console.log(error));
+      },
+
+      register() {
+          axios
+              .post(
+                  "/api/clients",
+                  `firstName=${this.firstName}&lastName=${this.lastName}&email=${this.email}&password=${this.pwd}`,
+                  { headers: { "content-type": "application/x-www-form-urlencoded" } }
+              )
+              .then((response) => (location.href = "/web/index.html"))
+              .catch(function (error) {
+                  console.log(error);
+              });
+      },
+  },
+}).mount("#app");
+  
+
+
+
+
+
+
+
+
+
+
+
+
 (function ($) {
+    
     // Ripple-effect animation
     $(".ripple-effect").click(function (e) {
         var rippler = $(this);
@@ -130,3 +178,96 @@
         }
     })
 })(jQuery);
+
+/************************ VALIDADOR DE CONTRASEÑA ************************************/
+var validatePassword = function (elem) {
+    var validationRules = [
+      "quantity",
+      "lowerCase",
+      "upperCase",
+      "numbers",
+      "specialCharacters",
+    ];
+    var validationRules2 = [
+      {
+        name: "quantity",
+        test: "^.{8,}$"
+      },
+      {
+        name: "lowerCase",
+        test: "[a-z]"
+      },
+      {
+        name: "upperCase",
+        test: "[A-Z]"
+      },
+      {
+        name: "numbers",
+        test: "[0-9]"
+      },
+      {
+        name: "specialCharacters",
+        test: "[$#¿!%*?&]"
+      },
+    ];
+    var _str = $(elem).val();
+    for (i in validationRules2) {
+      if (
+        validationRules2[i].name != undefined 
+      ) {
+        var regEx = RegExp(validationRules2[i].test);
+        var _out = regEx.exec(_str);
+        if (_out != null)
+          $("[data-validation='" + validationRules2[i].name + "']")
+            .attr("checked", "checked")
+            .parent()
+            .addClass("work-compleate text-success");
+        else
+          $("[data-validation='" + validationRules2[i].name + "']")
+            .removeAttr("checked", "checked")
+            .parent()
+            .removeClass("work-compleate text-success");
+      } 
+    }
+  };
+  
+  var validarSecuencias = function (str, otra) {
+    var $error = false;
+    var secuencia = ["abcdefghijklmnopqrstuvwxyz", "1234567890"];
+    if (otra != undefined) {
+      secuencia.push(otra);
+    }
+  
+    var text = str;
+  
+    var _text = text.toLowerCase();
+    _text.split("");
+    if (_text.length >= 8) {
+      for (var count = 0; count < secuencia.length; count++) {
+        var _secuencia = secuencia[count];
+        _secuencia = _secuencia.split("");
+  
+        for (var i = 1; i < _text.length; i++) {
+          var compA = _text[i - 1];
+          var compB = _text[i];
+  
+          for (var j = 1; j < _secuencia.length; j++) {
+            if (_secuencia[j - 1] == compA) {
+              if (compB == _secuencia[j]) {
+                $error = true;
+              }
+            }
+          }
+        }
+      }
+    } else {
+      $error = true;
+    }
+    return $error;
+  };
+  
+  $("#password").keyup(function () {
+    validatePassword($(this));
+  });
+  
+  var valPass = new validatePassword($("#password"));
