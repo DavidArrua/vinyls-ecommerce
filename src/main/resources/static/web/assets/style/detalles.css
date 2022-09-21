@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .enlaceNav {
@@ -40,6 +41,7 @@
     display: flex;
     justify-content: space-between ;
     align-items: center;
+    margin-left: 20px !important;
 }
 
 .disco{
@@ -55,25 +57,27 @@
 
 .vinilo{
     position: absolute;
-    width: 700px;
-    right: 50%;
-    top: 22%;
+    width: 650px;
+    right: 48%;
+    top: 30%;
     z-index: -1;
     filter: drop-shadow(4px 4px 15px black)
 }
-
-
 
 
 .textDetalles{
     width: 40%;
 }
 
-
 main{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.textDetalles h2{
+  font-size: 45px;
+  font-weight: 600;
 }
 
 /* <---------------------------------------------------------RECOMENDADOS-------------------------------------------------------> */
@@ -89,14 +93,11 @@ main{
     
 }
 
-
 .divRelacionados:hover{
     transform: translateY(-5px);
     background-color: #918e8e37;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
 }
-
-
 
 
 #footer {
@@ -251,16 +252,37 @@ main{
     text-decoration: none;
   }
 
+
+  @media (max-width: 1650px){
+    .disco{
+      box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+      width: 700px;
+      transition: 0.5s;
+  }
+
+  .disco:hover{
+      transform: translate(-150px);
+  }
+  
+  .textDetalles{
+    margin-left: 2rem;
+    width: 80%;
+  }
+
+  .vinilo{
+      position: absolute;
+      width: 650px;
+      right: 45%;
+      top: 28%;
+  }
+  }
+
 @media (max-width: 1200px){
     .textDetalles{
         margin-top: 1rem;
         width: 80%;
     }
-    .detallesSection{
-        flex-direction: column;
-        align-items: center;
-    }
-    .intenta2{
+    .vinilo{
         display: none;
     }
 }

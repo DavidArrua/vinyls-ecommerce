@@ -7,9 +7,10 @@
 }
 
 body{
-    background-image: url(https://doc-04-7k-docs.googleusercontent.com/docs/securesc/8ooo764oc1gfl365fok1e0tegmud1vs0/hm7fgf40b5c0bfcm0n5lncqd0uamv4o9/1663538100000/16788346458400498553/10975064642661970887/1QklDfG9DJloUXSMMA6GigdGJQfjDC4CN?e=view&ax=ALW9-sDG6hwM28GY9GxpJla6B0W-OKi4ugScqoJha1h_9XnliMW4vqaZVToCTeByN2Cql1MT_hCSdC7Vh7VGx69HwzfYAdXS6NkZnxvOMLHazChnY0GcOdhfMFR9I5S6Eq6GLXi6JadXTzarSkgFt7yw3OvgFWvKqiwjEQVPzIEclQCa0sgeLr_6E00830nv5emwSyg2GCWK_QCFQffbtdLjiRJxEldz_2WZn_KCrYOudjeFVaZeRE5JfdD-k8PjQBh0PL0vj3E2WRx8zFUMRWMfFTrGw58pTZoauF3scW3w52yYFZLK4Ve0Pruf4tCYx3LXbtYQ5RYNKYTHBLK5Ojk9yM6BcrYQ5UEBApLbU1OIq6CDGVj4GEesfKxWBQf1j2RwOPUXoaHzRxLFlxEiCmDH6yR4rv-RR-R_stykEwDqgHN0ZLBt2Esn0aK0A22AzQWThjA75Ru_rejPPywbV8QtxRpWuJDQ9k4c4K_WpGw3_vMeRu1ZV3pTd253ATcG3IE8RQ6acSqTZBKwAFFzWlvjIyFKeGTYPVSMgTZdXnJ5G5k4gZIXEemL50H11JvmHN4QihPstsyC-E1sQprtztAQgbi_dI8A4pHpii5Fl4V3AeoeeHB0mpvnWvWj4oHRrH30rolaPeqF_l6akw_sqRNuCY7P8yDGV_L9u3W_cRBrEwQSl7fX8KEx_RyPMzQXrU2olvEeWC_4oYu7yUMjYSZbhwwvf0-lroL8LGSsX0dg2ZlvAj5QLIUCiY53JHNlSLZ1tvclhb_ThFoaDn7OK9RvHTPCAqjoBXuDSTuP9QUgCCTP2NBrIjubFaPIemtK7gcexUchL_4ZRzPSR1gA-xmWXFmuuU6W15ajB8zjEY6bm8O_3dy2JCXh4Ohe3tzORfL-l0MkWqbwYJhJDdK6Af_pdJwSWOwGUzhp9w&uuid=3113ba0e-b46f-4eec-9bd7-b6aea89187ee&authuser=0&nonce=75tp7sg39a2ne&user=10975064642661970887&hash=1gmjtgdiflr0r25o7rdjehs2it9kf15c);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-image: url(../img/fondoLanding.jpg);
+    background-size: contain;
+    /* background-attachment: fixed; */
+    
 }
 
 video{
@@ -23,6 +24,7 @@ video{
 }
 
 main{
+  background-image: url();
     padding-top: 5rem;
 }
 
@@ -30,13 +32,14 @@ main{
 
 .enlaceNav {
   text-decoration: none;
-  color: white;
-  padding: 0.8rem;
-  font-size: 18px;
+  color: #D9D4D1;
+  padding: 0.7rem;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .enlaceNav:hover {
-  color: orange;
+  color: #FFD12B;
 }
 
 .sticky1{
@@ -46,7 +49,7 @@ main{
 }
 
 .logo{
-    width: 5rem;
+    width: 4rem;
 }
 
 header{
@@ -83,6 +86,29 @@ header{
     padding: .8rem;
 }
 
+.btn-quick-view {
+  font-size: 1.2rem;
+  background-color:#D9D4D1;
+  border: 3px solid #FFD12B;
+  border-radius: 3px;
+  color: #1e1d1d;
+  padding: 12px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .1s ease;
+  letter-spacing: 0.15em;
+  font-weight: 800;
+}
+
+.btn-quick-view:hover {
+  background-color: #1e1d1d;
+  font-weight: 900;
+  color: white;
+}
+
+
+
+
 
 
 /* <--------------------------------------------------------------ACORDEON-------------------------------------------------> */
@@ -114,9 +140,57 @@ header{
 
 iframe{
     margin-top: 4rem;
-    width: 80%;
+    width: 100%;
     height: 35rem;
 }
+
+.formContact{
+  position: absolute;
+  right: 20px;
+}
+.btn-contact {
+  font-size: .7em;
+  background-color: #1e1d1d;
+  border: 1px solid #dbdbdb;
+  border-radius: 1px;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .1s ease;
+  letter-spacing: 0.15em;
+  font-weight: 300;
+}
+
+.btn-contact:hover {
+  background-color: #000000;
+  font-weight: bolder !important;
+}
+
+.btn-contact2{
+  position: absolute;
+  right: 150px;
+  transform: translateY(-140px);
+  font-size: 1rem;
+  background-color: #1e1d1d;
+  border: 1px solid #dbdbdb;
+  border-radius: 1px;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .1s ease;
+  letter-spacing: 0.15em;
+  font-weight: 300;
+}
+
+.btn-contact2:hover {
+  background-color: #000000;
+  font-weight: bolder !important;
+}
+
+/* <---------------------------------------------INPUTS----------------------------------> */
+
 
 
 /* footer */
@@ -124,6 +198,7 @@ iframe{
 #footer {
     color: #313030;
     font-size: 14px;
+    background-color: white;
   }
   
   #footer .footer-top {
@@ -288,11 +363,22 @@ iframe{
     .onlineStore{
         height: 20rem;
     }
+    .btn-contact2{
+      right: 50px;
+    }
 }
 
 @media (max-width: 900px){
     .onlineStore{
         height: 15rem;
+    }
+    .btn-quick-view {
+      font-size: .7rem;
+      padding: 8px 10px;
+      margin-bottom: 0!important; 
+    }
+    .btn-contact2{
+      right: 50px;
     }
 }
 
