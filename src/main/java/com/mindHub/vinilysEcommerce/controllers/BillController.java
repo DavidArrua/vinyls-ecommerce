@@ -1,6 +1,7 @@
 package com.mindHub.vinilysEcommerce.controllers;
 
 
+import com.itextpdf.text.DocumentException;
 import com.mindHub.vinilysEcommerce.dtos.ProductSelectDTO;
 import com.mindHub.vinilysEcommerce.models.*;
 import com.mindHub.vinilysEcommerce.repositories.BillRepository;
@@ -8,6 +9,7 @@ import com.mindHub.vinilysEcommerce.repositories.ProductBillRepository;
 import com.mindHub.vinilysEcommerce.services.ClientService;
 import com.mindHub.vinilysEcommerce.services.PdfService;
 import com.mindHub.vinilysEcommerce.services.ProductService;
+import com.mindHub.vinilysEcommerce.utils.Pdf;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.FileNotFoundException;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
@@ -39,7 +42,7 @@ public class BillController {
     ClientService clientService;
 
     @PostMapping("/api/bills")
-    public ResponseEntity<Object> bills (HttpServletResponse response, @RequestBody Set<ProductSelectDTO> productSelectDTOSet, Authentication authentication){
+    public ResponseEntity<Object> bills (HttpServletResponse response, @RequestBody Set<ProductSelectDTO> productSelectDTOSet, Authentication authentication) throws DocumentException, FileNotFoundException {
 
         Client client = clientService.getClientByEmail(authentication.getName());
 
@@ -129,6 +132,9 @@ public class BillController {
         }
 
             billRepository.save(bill);
+
+            
+            Pdf.createPDF(productSelectDTOSet,productList,bill);
             return new ResponseEntity<>("productList",HttpStatus.CREATED);
     }
 
