@@ -4,6 +4,60 @@
     box-sizing: border-box;
 }
 
+[v-cloak] {
+  display: none;
+}
+
+.btn-contact2{
+ 
+  right: 150px;
+
+  font-size: 1rem;
+  background-color: #1e1d1d;
+  border: 1px solid #dbdbdb;
+  border-radius: 1px;
+  color: white;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .1s ease;
+  letter-spacing: 0.15em;
+  font-weight: 300;
+}
+
+.btn-contact2:hover {
+  background-color: rgba(255, 255, 255, 0.441);
+  border: 1px solid orange;
+  color: orange;
+  font-weight: bolder !important;
+}
+
+.btn-contact3{
+ 
+  right: 150px;
+
+  font-size: 1rem;
+  background-color: #1e1d1d;
+  border: 1px solid #dbdbdb;
+  border-radius: 1px;
+  color: white;
+  width: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .1s ease;
+  letter-spacing: 0.15em;
+  font-weight: 300;
+}
+
+.btn-contact3:hover {
+  background-color: rgba(0, 0, 0, 0.648);
+  border: 1px solid orange;
+  color: white;
+
+  font-weight: bolder !important;
+}
 /* footer */
 
 #footer {

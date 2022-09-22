@@ -32,7 +32,7 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" v-cloak>
         <video playsinline autoplay muted loop src="./assets/estatica.mp4"></video>
         <section class="sectionCatalogoInicio">
             <nav class="navbar navbar-expand-lg fixed-top">
@@ -242,16 +242,26 @@
             <div class="d-flex justify-content-center align-items-center">
                 <div class="contenedor">
                     <!-- filters -->
-                    <div class="d-flex justify-content-center">
-                        <button class="col-4 col-md-3 col-xl-2" @click="allProducts()">Todos los
-                            productos</button>
-                        <button class="col-4 col-md-3 col-xl-2" @click="mostSold">Mas vendidos</button>
-                        <button class="col-4 col-md-3 col-xl-2" @click="newProducts">Nuevos Productos</button>
+                    <div class="d-flex justify-content-center mt-3 mb-5">
+                        <button type="button" class="btn-contact2 col-4 col-md-3 col-xl-2 me-2" @click="allProducts()" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Todos los productos
+                        </button>
+
+                        <button type="button" class="btn-contact2 col-4 col-md-3 col-xl-2 me-2" @click="mostSold" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Mas vendidos
+                        </button>
+                        
+                  
+                        <button type="button" class="btn-contact2 col-4 col-md-3 col-xl-2" @click="newProducts" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Nuevos Productos
+                        </button>
+
+
                     </div>
-                    <hr>
+                
                     <div class="row sticky-top">
                         <div class="col-lg-2 ">
-                            <select class="form-select form-select-lg mb-3" v-model="orderProduct"
+                            <select class="form-select form-select-lg mb-3 btn-contact3" v-model="orderProduct"
                                 @change="orderProducts" aria-label=".form-select-lg example">
                                 <option selected value="order">Ordenar</option>
                                 <option value="precioMasBajo">precio mas bajo</option>
@@ -259,18 +269,18 @@
                                 <option value="laconchadetumadre">A-Z</option>
                                 <option value="zA">Z-A</option>
                             </select>
-                            <select class="form-select form-select-lg mb-3" v-model="genresValue"
+                            <select class="form-select form-select-lg mb-3 btn-contact3" v-model="genresValue"
                                 @change="orderGenres(genresValue)" aria-label=".form-select-lg example">
                                 <option selected value="allGenere">Genero</option>
                                 <option v-for="genere in selectGenres" :value="genere">{{genere}}</option>
                             </select>
-                            <select class="form-select form-select-lg mb-3" v-model="productType"
+                            <select class="form-select form-select-lg mb-3 btn-contact3" v-model="productType"
                                 @change="orderByType(productType)" aria-label=".form-select-lg example">
                                 <option selected value="allType">Tipo</option>
                                 <option value="VINYLS">Vinilos</option>
                                 <option value="RECORDPLAYER">Toca discos</option>
                             </select>
-                            <select class="form-select form-select-lg mb-3" v-model="condition"
+                            <select class="form-select form-select-lg mb-3 btn-contact3" v-model="condition"
                                 @change="productCondition(condition)" aria-label=".form-select-lg example">
                                 <option selected value="allCondition">Codicion</option>
                                 <option value="new">Nuevo</option>
