@@ -30,11 +30,10 @@ public class VinilysEcommerceApplication {
 			Client client1 = new Client("Facu","Araujo", "facu@mindhub.com", passwordEncoder.encode("123"), true);
 			clientRepository.save(client1);
 
-			Product product1 = new Product("Fine Line", "Harry Styles","asdfasdfasdfasd" ,"2019", List.of( "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg"), Set.of("Pop","Pop Rock"), 0, 2000.0, true, ProductType.VINYLS, "-");
-			Product product2 = new Product("Fine Line", "Harry Styles","asdfasdfasdfasd" ,"2019", List.of( "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg"), Set.of("Pop","Pop Rock"), 2, 2000.0, true, ProductType.VINYLS, "-");
-			Product product3 = new Product("Dual Lipa album", "Dua Lipa","asdfasdfasdfasd" ,"2019", List.of( "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg"), Set.of("Pop","Pop Rock"), 0, 1000.0, true, ProductType.VINYLS, "-");
-			Product product4 = new Product("Toro Rojo", "Guasones", "asdfasdfasdfasd","2019", List.of( "https://i.pinimg.com/736x/d2/43/5c/d2435c7f07cb296e3a5b51518e26cac6.jpg"), Set.of("Pop","Pop Rock"), 10, 1000.0, true, ProductType.VINYLS, "-");
-
+			Product product1 = new Product("Fine Line", "Harry Styles","Debutó en el número tres en la lista de álbumes del Reino Unido5 y en el número uno en el Billboard 200" ,"2019", List.of( "https://http2.mlstatic.com/D_NQ_NP_832207-MLA40089208872_122019-O.webp"), Set.of("Pop","Pop Rock"), 15, 2000.0, true, ProductType.VINYLS, "-");
+			Product product2 = new Product("Future Nostalgi", "Dua Lipa","El álbum fue promocionado con seis sencillos y un sencillo promocional, «Don't Start Now», se lanzó el 1 de noviembre de 2019 como el sencillo principal del álbum" ,"2019", List.of( "https://i.pinimg.com/originals/80/e4/0e/80e40e92d83ead241dc29fd1f2ebd5af.jpg"), Set.of("Pop","Pop Rock"), 29, 3300.0, true, ProductType.VINYLS, "-");
+			Product product3 = new Product("Born to die", "Lana Del Rey","tras el lanzamiento del disco obtuvo críticas «favorables» por parte de los profesionales más grandes de música contemporáneas" ,"2012", List.of( "https://upload.wikimedia.org/wikipedia/en/2/29/BornToDieAlbumCover.png"), Set.of("Pop","Pop Rock"), 30, 10000.0, true, ProductType.VINYLS, "-");
+			Product product4 = new Product("Harry Styles", "Harry Styles","tras el lanzamiento del disco obtuvo críticas «favorables» por parte de los profesionales más grandes de música contemporáneas" ,"2012", List.of( "https://m.media-amazon.com/images/I/71ICZkHhviL._SL1500_.jpg"), Set.of("Pop","Pop Rock"), 40, 6000.0, true, ProductType.VINYLS, "-");
 
 			productRepository.save(product1);
 			productRepository.save(product2);
@@ -105,7 +104,7 @@ public class VinilysEcommerceApplication {
 			productRepository.save(product33);
 			Product product34 = new Product("Back to black", "Amy Winehouse","Back to Black es el segundo y último álbum de estudio de la cantante británica Amy Winehouse. ", "2016", List.of("http://drive.google.com/uc?export=view&id=1UOYvePTI1F4bJY-y6QGx_up87s99Z28M"), Set.of("Pop"), 85, 12798.0, true, ProductType.VINYLS, "-");
 			productRepository.save(product34);
-			Product product35 = new Product("Almendra", "Almendra","Almendra fue una banda de rock argentino formada en 1967 en el barrio porteño de Belgrano por Luis Alberto Spinetta, Edelmiro Molinari, Emilio del Guercio y Rodolfo García. ", "2015", List.of("http://drive.google.com/uc?export=view&id=1PpPYbR32dV3z4dxhsqE1qSI11LNVVEI7"), Set.of("Pop"), 5, 110340, true, ProductType.VINYLS, "-");
+			Product product35 = new Product("Almendra", "Almendra","Almendra fue una banda de rock argentino formada en 1967 en el barrio porteño de Belgrano por Luis Alberto Spinetta, Edelmiro Molinari, Emilio del Guercio y Rodolfo García. ", "2015", List.of("http://drive.google.com/uc?export=view&id=1PpPYbR32dV3z4dxhsqE1qSI11LNVVEI7"), Set.of("Pop"), 5, 10340, true, ProductType.VINYLS, "-");
 			productRepository.save(product35);
 			Product product36 = new Product("Mi Buenos Aires Querido", "Daniel Barenboim","Los mejores tangos en un solo disco", "2019", List.of("http://drive.google.com/uc?export=view&id=148i-ZxAXo0o7OiBKwZqmdyJi735uzwFm"), Set.of("Tango"), 7, 5912.0, true, ProductType.VINYLS, "-");
 			productRepository.save(product36);
