@@ -242,7 +242,7 @@ const app = Vue.
             },
             logOut() {
                 Swal.fire({
-                    title: 'Are you sure?',
+                    title: 'Estas seguro?',
                     text: "Do you want to exit the app?",
                     icon: 'warning',
                     showCancelButton: true,
@@ -253,7 +253,6 @@ const app = Vue.
                 }).then((result) => {
                     if (result.isConfirmed) {
                         axios.post('/api/logout')
-                            .then(response => location.href = '/web/index.html')
                             .then(response => location.href = '/web/index.html')
                             .catch(function (error) {
                                 alert(error);

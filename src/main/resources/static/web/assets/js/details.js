@@ -57,8 +57,8 @@ createApp({
                     description: product.description,
                     image: [product.image],
                     genres: [product.genres],
-                    // stock: product.stock,
-                    // totalStock: product.stock,
+                    stock: product.stock,
+                    totalStock: product.stock,
                     price: product.price,
                     firstHand: product.firstHand,
                     productType: product.productType,
@@ -67,7 +67,7 @@ createApp({
                 this.trolley.push(products);
                 localStorage.setItem("products", JSON.stringify(this.trolley));
             }
-            // product.stock--;
+            product.stock--;
 
             Swal.fire({
                 position: "top-end",
