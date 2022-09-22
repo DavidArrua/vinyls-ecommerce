@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./manager.css">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div id="app">
+        <section class="sectionCatalogoInicio">
+            <nav class="navbar navbar-expand-lg fixed-top">
+                <div class="container-fluid d-flex align-items-center">
+                    <a class="navbar-brand" href="./index.html"><img
+                            src="http://drive.google.com/uc?export=view&id=1x0PkozmdxhQtg9f3UE1iQuPq7X8bOGj3" alt="logo"
+                            class="logo p-0"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span>
+                            <label for="check" class="bar">
+                                <input id="check" type="checkbox">
+                                <span class="top"></span>
+                                <span class="middle"></span>
+                                <span class="bottom"></span>
+                            </label>
+                        </span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="enlaceNav" aria-current="page" href="#">Volver a tienda</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="enlaceNav" href="#">Contactanos</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <button @click="logOut" class="bg-transparent px-4"><img src="./assets/img/switch.png"
+                                        alt="logOut"></button>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div>
+                <h1 class="text-center py-3 fw-bolder text-light">Agregá un nuevo producto</h1>
+            </div>
+            <div class="">
+                <div class="text-center my-3">
+                    
+                    <button type="button" data-bs-toggle="modal" href="#modificarrticulo" role="button" type="button"
+                        class="btn-contact2 ms-5">
+                        Modificar un Artículo
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <main class="conteiner">
+            <form class="form">
+                <div class="p-5">
+                    <div class="fondoForm container">
+                        <div class="d-flex justify-content-evenly responsiveBlock">
+                            <div class="blockSize">
+                                <div class=" d-flex">
+                                    <div class="d-flex w-50 inputGroup">
+                                        <input v-model="Name" type="text" required autocomplete="off" id="Name">
+                                        <label for="Name">Album o producto</label>
+                                    </div>
+                                    <div class="d-flex w-50 inputGroup ms-1">
+                                        <input v-model="Author" id="Author" type="text" required autocomplete="off">
+                                        <label for="Author">Autor</label>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex w-100 inputGroup  comentariosInput">
+                                    <input v-model="Detail" id="comentarios" type="text" required autocomplete="off">
+                                    <label for="comentarios">Descripción</label>
+                                </div>
+
+                                <div class=" d-flex">
+                                    <div class="d-flex  w-50 inputGroup">
+                                        <input v-model="releaseDate" id="año" type="text" required autocomplete="off">
+                                        <label for="año">Año</label>
+                                    </div>
+                                    <div class="d-flex  w-50 inputGroup ms-1">
+                                        <input v-model="Genres" id="genero" type="text" required autocomplete="off">
+                                        <label for="genero">Categoria</label>
+                                    </div>
+                                </div>
+
+                                <div class=" d-flex">
+                                    <div class="d-flex  w-100 inputGroup">
+                                        <input v-model="Image" id="link" type="text" required autocomplete="off">
+                                        <label for="link">Link de imagen</label>
+                                    </div>
+                                </div>
+
+                                <div class=" d-flex">
+                                    <div class="d-flex  w-50 inputGroup">
+                                        <input v-model="Stock" id="stock" type="text" required autocomplete="off">
+                                        <label for="stock">Stock</label>
+                                    </div>
+                                    <div class="d-flex  w-50 inputGroup ms-1">
+                                        <input v-model="Price" type="text" required autocomplete="off" id="precio">
+                                        <label for="precio">Precio</label>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-center mt-1">
+                                    <h4 class="fw-bolder text-light">Estado</h4>
+                                    <div class="d-flex">
+                                        <label for="opvinyls" class="container">
+                                            <input id="opvinyls" name="State" v-model="State" v-bind:value="true"
+                                                type="radio" checked="checked">
+                                            <div class="checkmark fw-bolder">NEW</div>
+                                        </label>
+                                        <label for="oprecord" class="container">
+                                            <input v-model="State" id="oprecord" name="State" v-bind:value="false"
+                                                type="radio" checked="checked">
+                                            <div class="checkmark fw-bolder">USED</div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center mt-3 ms-5">
+                                    <h4 class="fw-bolder ms-4 text-light">Producto</h4>
+                                    <div class="d-flex ">
+                                        <label for="opvinyls" class="container">
+                                            <input id="opvinyls" name="Type" v-model="Type" type="radio"
+                                                checked="checked" value="VINYLS">
+                                            <div class="checkmark fw-bolder">VINYLS</div>
+                                        </label>
+                                        <label for="oprecord" class="container">
+                                            <input v-model="Type" id="oprecord" name="Type" type="radio"
+                                                checked="checked" value="RECORDPLAYER">
+                                            <div class="checkmark fw-bolder">RECORDPLAYER</div>
+                                        </label>
+                                    </div>
+                                </div>
+
+
+                                <div class=" d-flex">
+                                    <div class="d-flex  w-100 inputGroup">
+                                        <input type="text" required autocomplete="off">
+                                        <label>Marca</label>
+                                    </div>
+                                </div>
+                                <!-- <button  class="btn btn-warning m-2 ms-5 mb-4"></button> -->
+                                <div class="text-center my-3">
+                                    <button @click="addProduct" type="button" class="btn-contact2">
+                                        Agregar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            
+
+            <!-- Modal Modificar -->
+            <div class="modal fade" id="modificarrticulo" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog ">
+                    <div class="modal-content">
+                        <div class="modal-header bg-dark text-light">
+                            <h4 class=" mt-4 fw-bolder" id="exampleModalLabel">Modificá el producto</h4>
+                            <button type="button" id="contactUs" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="blockSize">
+                            <div class=" d-flex">
+                                <div class="d-flex inputGroup w-25">
+                                    <input v-model="nameModify" type="text" required autocomplete="off" id="Name">
+                                    <label for="Name">Name</label>
+                                </div>
+                                <div class="d-flex w-25 inputGroup">
+                                    <input v-model="stockModify" id="stock" type="number" required autocomplete="off">
+                                    <label for="stock">Stock</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-block">
+                            <button @click="modifyProduct" type="button" class="btn-contact2">
+                                Modificar
+                            </button>
+                            <button data-bs-toggle="modal" href="/manager.html" role="button" type="button"
+                                class="btn-contact2">
+                                Volver
+                            </button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            
+
+
+        </main>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="./manager.js"></script>
+</body>
+
+</html>
