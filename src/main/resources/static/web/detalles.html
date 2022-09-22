@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" v-cloak>
 
 
         <header>
@@ -145,7 +145,7 @@
                     <p class="mt-3">{{productId.description}}.</p>
                     <h3 class="fw-bold">{{formattedNumber(productId.price)}}</h3>
                     <div class="d-flex justify-content-end me-3">
-                        <button @click="trolleyPurchase(product)" class="btn-quick-view">Agregar al carrito</button>
+                        <button @click="trolleyPurchase(productId)" class="btn-quick-view">Agregar al carrito</button>
                     </div>
                 </div>
             </section>

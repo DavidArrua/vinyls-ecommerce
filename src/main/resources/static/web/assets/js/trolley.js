@@ -5,7 +5,8 @@ const app = Vue.
             return {
                 select: "selectStep1",
                 productStorage: [],
-                buy: []
+                buy: [],
+                deliveryPrice: 0
             }
         },
         created() {
@@ -41,7 +42,7 @@ const app = Vue.
             },
             sendProducts() {
                 Swal.fire({
-                    title: "Â¿Finalizar compra?",
+                    title: "¿Finalizar compra?",
                     // text: "Eliminar producto del carrito",
                     icon: "warning",
                     showCancelButton: true,
@@ -49,36 +50,40 @@ const app = Vue.
                     cancelButtonColor: "#d33",
                     confirmButtonText: "Finalizar",
                 }).then((result) => {
-                    if (result.isConfirmed) {
-                        axios.post('/api/bills', this.buy)
+                    if (result.isConfirmed) 
+                        axios.post('/api/bills',this.buy)
                             .then(() => {
                                 this.productStorage = localStorage.removeItem("products")
                                 this.buy = localStorage.removeItem("buy")
+                                this.deliveryPrice = 0
                             })
-                    }
+                    
                 })
             },
-            selectDelivery(place) {
+            selectDelivery(place, price) {
+                this.deliveryPrice = price
                 this.productStorage.forEach(product => {
-                    let products = {
-                        id: product.id,
-                        name: product.name,
-                        author: product.author,
-                        releaseDate: product.releaseDate,
-                        brand: product.brand,
-                        description: product.description,
-                        image: [product.image],
-                        genres: [product.genres],
-                        stock: product.stock,
-                        price: product.price,
-                        firstHand: product.firstHand,
-                        productType: product.productType,
-                        quantity: product.quantity,
-                        delivery: place
-                    }
-                    this.buy.push(products)
-                    localStorage.setItem("buy", JSON.stringify(this.buy))
+                        let products = {
+                            id: product.id,
+                            name: product.name,
+                            author: product.author,
+                            releaseDate: product.releaseDate,
+                            brand: product.brand,
+                            description: product.description,
+                            image: [product.image],
+                            genres: [product.genres],
+                            stock: product.stock,
+                            price: product.price,
+                            firstHand: product.firstHand,
+                            productType: product.productType,
+                            quantity: product.quantity,
+                            delivery: place
+                        }
+                        this.buy.push(products)
+                        localStorage.setItem("buy", JSON.stringify(this.buy))
                 })
+
+
             },
             trolleyPurchase(product) {
                 let products = this.productStorage.filter(item => item.id == product.id)[0]
@@ -155,9 +160,6 @@ const app = Vue.
                     timer: 1500,
 
                 })
-
-
-
             },
 
 
@@ -188,10 +190,15 @@ const app = Vue.
 
 
         },
-            computed: {
-            totalAPagar() {
+        computed: {
+            total() {
                 if (this.productStorage != null) {
                     return this.formattedNumber(this.productStorage.reduce((acc, item) => acc + item.quantity * item.price, 0));
+                }
+            },
+            totalAPagar() {
+                if (this.productStorage != null) {
+                    return this.formattedNumber(this.productStorage.reduce((acc, item) => acc + item.quantity * item.price + this.deliveryPrice, 0));
                 }
             },
         }

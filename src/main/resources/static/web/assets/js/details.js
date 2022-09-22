@@ -8,11 +8,11 @@ createApp({
         return {
             products: [],
             productId:[],
-              productsFilter: [],
+            productsFilter: [],
             selectProducts: [],
             trolleyInStorage: [],
-            trolley: []
-
+            trolley: [],
+            verifired: false,
         }
     },
 
@@ -21,8 +21,8 @@ createApp({
             .then(response => {
                 this.products = response.data;
                 this.productId = this.products.find(product => product.id == urlName)
-                console.log(this.productId.productType)
                 this.selectProducts = this.productsFilter;
+                this.trolley = JSON.parse(localStorage.getItem('products'))
                 let trolleyInStorage = JSON.parse(localStorage.getItem("products"));
                 if (trolleyInStorage) {
                     this.trolley = trolleyInStorage;
@@ -31,15 +31,19 @@ createApp({
             .catch((error) =>{
                 console.log(error);
             });
+            axios.get("/api/clients/current")
+                .then(response => {
+                    this.client = response.data;
+                    this.verifired = this.client.validation
+                })
 
     },
     methods: {
         formattedNumber(balance){
             return balance = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(balance)
         },
-
         trolleyPurchase(product) {
-            let products = this.trolley;
+            let products = this.trolley.filter(item => item.id == product.id)[0]
             if (products != undefined) {
                 products.quantity++;
                 localStorage.setItem("products", JSON.stringify(this.trolley));
@@ -97,6 +101,15 @@ createApp({
 
         
     },
+    computed: {
+        cantidadDeProductos() {
+            return this.trolley.reduce((acc, item) => acc + item.quantity, 0)
+        },
+        totalAPagar() {
+            return this.trolley.reduce((acc, item) => acc + item.quantity * item.price, 0);
+        },
+
+    }
 }).mount('#app');
 
 
