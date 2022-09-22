@@ -261,13 +261,14 @@
                 
                     <div class="row sticky-top">
                         <div class="col-lg-2 ">
+                            <form class="d-flex" role="search">
+                                <input class="form-control mb-3 btn-contact4 text-light" type="search" aria-label="Search" placeholder="Search" id="inputSearch"  v-model="input">     {{ filterSerch}}                  
+                            </form>
                             <select class="form-select form-select-lg mb-3 btn-contact3" v-model="orderProduct"
                                 @change="orderProducts" aria-label=".form-select-lg example">
                                 <option selected value="order">Ordenar</option>
                                 <option value="precioMasBajo">precio mas bajo</option>
-                                <option value="precioMasAlto">precio mas alto</option>
-                                <option value="laconchadetumadre">A-Z</option>
-                                <option value="zA">Z-A</option>
+                                <option value="precioMasAlto">precio mas alto</option>                          
                             </select>
                             <select class="form-select form-select-lg mb-3 btn-contact3" v-model="genresValue"
                                 @change="orderGenres(genresValue)" aria-label=".form-select-lg example">
@@ -290,29 +291,6 @@
                         <div class="col-lg-10">
                             <div class="row">
                                 <div v-for="product in productsFilter" class="col-md-4 col-xl-3 col-12 mt-3">
-                                    <!-- <div class="card_ border">
-                                    <img :src="product.image" alt="">
-                                     <span v-show="product.stock <= 5" class="position-absolute top-50 start-50 translate-middle badge rounded-pill bg-danger">
-                                        quedan pocas unidades!   
-                                    </span> 
-                                    <div>
-                                        <h5 class="card-title text-center">{{product.name}}</h5>
-                                        <p class="card-text text-center">{{product.resalaseDate}}</p>
-                                        <div class="d-flex justify-content-around">
-                                            <p class="fw-semibold">{{formattedNumber(product.price)}}</p>
-                                            <button class="buy-button" @click="trolleyPurchase(product)">Buy
-                                                
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                    fill="currentColor" class="bi bi-cart">
-                                                    <path
-                                                        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                                                </svg>
-                                            </button>
-                                            <a :href="'./detalles.html?id='+product.id" class="link-text">detalles</a>
-                                        </div>
-                                    </div>
-                                </div> -->
                                     <div class="wrapper">
                                         <div class="card1">
                                             <div class="img-container">

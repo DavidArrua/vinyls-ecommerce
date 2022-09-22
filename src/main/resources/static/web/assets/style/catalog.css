@@ -58,6 +58,42 @@
 
   font-weight: bolder !important;
 }
+
+.btn-contact4{
+ 
+  right: 150px;
+
+  font-size: 1rem;
+  background-color: #1e1d1d;
+  border: 1px solid #dbdbdb;
+  border-radius: 1px;
+  color: white;
+  width: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .1s ease;
+  letter-spacing: 0.15em;
+  font-weight: 300;
+}
+
+.btn-contact4:hover {
+  background-color: rgba(0, 0, 0, 0.648);
+  border: 1px solid orange;
+  color: rgb(38, 25, 25) !important; 
+
+  font-weight: bolder !important;
+}
+
+.btn-contact4::placeholder {
+
+  color: rgb(38, 25, 25) !important; 
+
+
+}
+
+
+
 /* footer */
 
 #footer {

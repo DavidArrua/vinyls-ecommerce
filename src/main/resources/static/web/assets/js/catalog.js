@@ -19,6 +19,7 @@ const app = Vue.
                 selectProducts: [],
                 client: {},
                 verifired: false,
+                selectName: [],
             }
         },
 
@@ -272,7 +273,8 @@ const app = Vue.
             },
             filterSerch() {
                 this.productsFilter = this.products.filter(item => item.name.toLowerCase().includes(this.input.toLowerCase()))
-            }
+            },
+           
         }
     }).mount('#app');
 
