@@ -40,9 +40,7 @@ public class VinilysEcommerceApplication {
 			productRepository.save(product3);
 			productRepository.save(product4);
 
-
 			//http://drive.google.com/uc?export=FIELD
-
 
 			Product product99 = new Product("A Rush of blood to the head", "Coldplay", "Es el segundo álbum de estudio de la banda británica Coldplay. Lanzado el 26 de agosto de 2002 bajo el sello de la discográfica Parlophone, el álbum fue producido por la banda junto a Ken Nelson 2012", "2020", List.of( "http://drive.google.com/uc?export=view&id=1tjw3hSYS2VZ6vObLn8FHj_GcXbIcqVcE"), Set.of("Rock", "Pop"), 35, 6205.0, true, ProductType.VINYLS, "-");
 			productRepository.save(product99);

@@ -5,6 +5,10 @@
     font-family: 'Russo One', sans-serif;
 }
 
+[v-cloak] {
+    display: none;
+  }
+
 body {
     background-image: url(../img/fondoVerify.jpg);
 }

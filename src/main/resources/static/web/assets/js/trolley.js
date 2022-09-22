@@ -45,13 +45,13 @@ const app = Vue.
             },
             logOut() {
                 Swal.fire({
-                    title: 'Are you sure?',
-                    text: "Do you want to exit the app?",
+                    title: 'Estas seguro?',
+                    text: "Quieres salir de la app?",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: "Yes, I'm sure!",
+                    confirmButtonText: "salir",
                     showCloseButton: true,
                 }).then((result) => {
                     if (result.isConfirmed) {

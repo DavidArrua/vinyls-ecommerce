@@ -134,7 +134,8 @@ public class BillController {
             billRepository.save(bill);
 
 
-            Pdf.createPDF(productSelectDTOSet,productList,bill);
+            Pdf.createPDF(productList,bill);
+
             return new ResponseEntity<>("productList",HttpStatus.CREATED);
     }
 

@@ -16,6 +16,10 @@
     transition: all 0.2s;
 }
 
+[v-cloak] {
+    display: none;
+  }
+  
 .card1:hover {
     /* padding-bottom: calc(2em + 45px); */
     box-shadow: 0px 0px 8px 0px #b5b5b5;

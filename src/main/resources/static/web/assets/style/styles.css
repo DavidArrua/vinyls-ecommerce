@@ -6,6 +6,10 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+[v-cloak] {
+  display: none;
+}
+
 body{
     background-image: url(../img/fondoLanding.jpg);
     background-size: contain;
@@ -450,6 +454,17 @@ iframe{
   .navbar-toggler {
     color: #f1faee;
    transform: scale(.6)!important;	
+  }
+
+
+  .ir-arriba {
+    display: none;
+    padding: 10px;
+    background: #1e1d1d;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
   }
 
 

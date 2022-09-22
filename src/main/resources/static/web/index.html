@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./assets/style/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="http://drive.google.com/uc?export=view&id=1qDlEsKlMgfBtrEil_CeOfLa6DYbdWSBs"
@@ -23,7 +24,7 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" v-cloak>
         <header class="" id="header">
             <video playsinline autoplay muted loop class="videoIndex" src="./assets/indexvideo2.mp4"></video>
             <nav class="navbar navbar-expand-lg fixed-top">
@@ -68,7 +69,7 @@
         </header>
         <main>
             <div id="onlineStore" class="onlineStore d-flex justify-content-center align-items-end ">
-                <a href="./catalog.html" class="pb-3"><button class="btn-quick-view mb-5 ">Go shop</button></a>
+                <a href="./catalog.html" class="pb-3"><button class="btn-quick-view mb-5 ">Ir a la tienda</button></a>
             </div>
             <section>
                 <div class="containerCarrousel">
@@ -191,6 +192,11 @@
                     <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
                     <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
                     <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                </div>
+                <div class="d-flex ms-3">
+                    <span class="ir-arriba icon-arrow-up2 fw-bold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                    </svg></span>
                 </div>
             </div>
         </footer>

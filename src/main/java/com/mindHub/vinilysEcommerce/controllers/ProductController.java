@@ -70,11 +70,16 @@ public class ProductController {
             Authentication authentication){
         Client client = clientService.getClientByEmail(authentication.getName());
         Product product = productService.getProductByName(name);
+
         if (name.isEmpty()){
             return new ResponseEntity<>("Nombre vacio", HttpStatus.FORBIDDEN);
         }
-        if (stock<0){
+
+        if (stock < 0){
             return new ResponseEntity<>("No se puede poner stock en negativo",HttpStatus.FORBIDDEN);
+        }
+        if(productService.getProductByName(product.getName()) == null){
+            return new ResponseEntity<>("Este producto no existe",HttpStatus.FORBIDDEN);
         }
 
         product.setName(name);
