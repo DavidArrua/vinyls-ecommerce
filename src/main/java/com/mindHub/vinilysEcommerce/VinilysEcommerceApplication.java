@@ -31,9 +31,9 @@ public class VinilysEcommerceApplication {
 			clientRepository.save(client1);
 
 			Product product1 = new Product("Fine Line", "Harry Styles","Debutó en el número tres en la lista de álbumes del Reino Unido5 y en el número uno en el Billboard 200" ,"2019", List.of( "https://http2.mlstatic.com/D_NQ_NP_832207-MLA40089208872_122019-O.webp"), Set.of("Pop","Pop Rock"), 15, 2000.0, true, ProductType.VINYLS, "-");
-			Product product2 = new Product("Future Nostalgi", "Dua Lipa","El álbum fue promocionado con seis sencillos y un sencillo promocional, «Don't Start Now», se lanzó el 1 de noviembre de 2019 como el sencillo principal del álbum" ,"2019", List.of( "https://i.pinimg.com/originals/80/e4/0e/80e40e92d83ead241dc29fd1f2ebd5af.jpg"), Set.of("Pop","Pop Rock"), 29, 3300.0, true, ProductType.VINYLS, "-");
-			Product product3 = new Product("Born to die", "Lana Del Rey","tras el lanzamiento del disco obtuvo críticas «favorables» por parte de los profesionales más grandes de música contemporáneas" ,"2012", List.of( "https://upload.wikimedia.org/wikipedia/en/2/29/BornToDieAlbumCover.png"), Set.of("Pop","Pop Rock"), 30, 10000.0, true, ProductType.VINYLS, "-");
-			Product product4 = new Product("Harry Styles", "Harry Styles","tras el lanzamiento del disco obtuvo críticas «favorables» por parte de los profesionales más grandes de música contemporáneas" ,"2012", List.of( "https://m.media-amazon.com/images/I/71ICZkHhviL._SL1500_.jpg"), Set.of("Pop","Pop Rock"), 40, 6000.0, true, ProductType.VINYLS, "-");
+			Product product2 = new Product("Future Nostalgia", "Dua Lipa","El álbum fue promocionado con seis sencillos y un sencillo promocional, «Don't Start Now», se lanzó el 1 de noviembre de 2019 como el sencillo principal del álbum" ,"2019", List.of( "https://i.pinimg.com/originals/80/e4/0e/80e40e92d83ead241dc29fd1f2ebd5af.jpg"), Set.of("Pop","Pop Rock"), 29, 3300.0, true, ProductType.VINYLS, "-");
+			Product product3 = new Product("Born to die", "Lana Del Rey","Tras el lanzamiento del disco obtuvo críticas «favorables» por parte de los profesionales más grandes de música contemporáneas" ,"2012", List.of( "https://upload.wikimedia.org/wikipedia/en/2/29/BornToDieAlbumCover.png"), Set.of("Pop"), 30, 10000.0, true, ProductType.VINYLS, "-");
+			Product product4 = new Product("Harry Styles", "Harry Styles","Tras el lanzamiento del disco obtuvo críticas «favorables» por parte de los profesionales más grandes de música contemporáneas" ,"2017", List.of( "https://m.media-amazon.com/images/I/71ICZkHhviL._SL1500_.jpg"), Set.of("Pop Rock"), 40, 6000.0, true, ProductType.VINYLS, "-");
 
 			productRepository.save(product1);
 			productRepository.save(product2);
@@ -132,7 +132,7 @@ public class VinilysEcommerceApplication {
 			productRepository.save(product47);
 			Product product48 = new Product("Romántico en el Teatro Colon", "Luciano Pereyra","Lo mejor de Luciano en una obra exquisita en el gran Teatro Colón", "2019", List.of("http://drive.google.com/uc?export=view&id=1wn59GQ7kekipFddHW3TXnxoGfhxgOn5a"), Set.of("Folklore"), 25, 3438.0, true, ProductType.VINYLS, "-");
 			productRepository.save(product48);
-			Product product51 = new Product("The Dark Side of the Moon", "Pink Floyd","El álbum está construido a partir de las ideas que Pink Floyd había explorado en sus conciertos y anteriores grabaciones", "1973", List.of("https://upload.wikimedia.org/wikipedia/commons/c/c7/The_Dark_Side_of_the_Moon_Cover.svg"), Set.of("Rock progresivo", "rock psicodélico"), 25, 4000.0, true, ProductType.VINYLS, "-");
+			Product product51 = new Product("The Dark Side of the Moon", "Pink Floyd","El álbum está construido a partir de las ideas que Pink Floyd había explorado en sus conciertos y anteriores grabaciones", "1973", List.of("https://upload.wikimedia.org/wikipedia/commons/c/c7/The_Dark_Side_of_the_Moon_Cover.svg"), Set.of("Rock progresivo"), 25, 4000.0, true, ProductType.VINYLS, "-");
 			productRepository.save(product51);
 
 

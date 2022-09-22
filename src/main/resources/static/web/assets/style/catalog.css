@@ -353,6 +353,15 @@ button{
   font-weight: bolder;
 }
 
+.impedibles:hover{
+  transform: translateY(-15px);
+  transition: .5s;
+}
+
+.impedibles{
+  transition: .5s;
+}
+
   
 video{
   position: absolute;

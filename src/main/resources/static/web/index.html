@@ -54,7 +54,7 @@
                             <li v-if="verifired == false" class="nav-item">
                                 <a class="enlaceNav login" href="./login.html">Ingresa o Registrate</a>
                             </li>
-                            <li v-else class="nav-item">
+                            <li v-else="verifired == true" class="nav-item">
                                 <button @click="logOut" class="bg-transparent"><img src="./assets/img/switch.png" alt="logOut"></button>
                             </li>
                         </ul>
