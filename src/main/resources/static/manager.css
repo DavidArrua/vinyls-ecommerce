@@ -60,7 +60,7 @@ label {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/web/assets/img/person-holding-black-vinyl.jpg");
     /* background-color: rgba(255, 255, 255, 0.555); */
     background-position: center;
-    background-size:50%;
+    background-size:60%;
     background-repeat: no-repeat;
     border-radius: 15px;
 }
