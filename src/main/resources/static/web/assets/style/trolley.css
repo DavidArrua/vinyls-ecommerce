@@ -6,6 +6,11 @@
 [v-cloak] {
   display: none;
 }
+
+a{
+  color: white;
+  text-decoration: none;
+}
 /* <-------------------------------------------------NAV---------------------------------------------------------------> */
 
 .enlaceNav {
@@ -57,10 +62,12 @@
   
   .btn-contact2:hover {
     color: black;
-   
     background-color: gray;
     font-weight: bolder !important;
   }
+
+
+
 .btn-quick-view {
     font-size: 1rem;
     background-color: #1e1d1ddf;
@@ -88,14 +95,6 @@
 .switch{
   border: none;
 }
-
-
-
-
-
-
-
-
 
 
 

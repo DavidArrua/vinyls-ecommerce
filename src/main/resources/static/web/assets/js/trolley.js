@@ -82,8 +82,18 @@ const app = Vue.
                                 this.productStorage = localStorage.removeItem("products")
                                 this.buy = localStorage.removeItem("buy")
                                 this.deliveryPrice = 0
-                                setTimeout(() => { location.href = "/web/index.html"}, 1500)
+                                
                             })
+                            .then(()=> {
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: 'Compra finalizada',
+                                    showConfirmButton: false,
+                                    timer: 1900,
+                                })
+                            })
+                            .then(()=> setTimeout(() => { location.href = "/web/catalog.html"}, 1500))
                     
                 })
             },

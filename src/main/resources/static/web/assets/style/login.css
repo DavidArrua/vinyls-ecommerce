@@ -1,8 +1,8 @@
 body {
-    /* background-image: url(http://drive.google.com/uc?export=view&id=1K8gRkV34x3shCywBqnQds1xrWJ_0J9hI); */
-    background-image: url(../img/fondoLanding.jpg);
-    /* background-attachment: fixed;
-     background-position: 0 -10vh; */
+    background-image: url(http://drive.google.com/uc?export=view&id=1K8gRkV34x3shCywBqnQds1xrWJ_0J9hI);
+   /*  background-image: url(../img/fondoLanding.jpg); */
+    background-attachment: fixed;
+     background-position: 0 -10vh;
     background-size: cover;
  overflow: hidden;
 }
