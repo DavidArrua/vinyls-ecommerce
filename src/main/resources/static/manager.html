@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./manager.css">
-    <title>Title</title>
+    <link rel="stylesheet" href="/manager.css">
+    <title>Manager</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
@@ -33,14 +33,14 @@
                     <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="enlaceNav" aria-current="page" href="#">Volver a tienda</a>
+                                <a class="enlaceNav" aria-current="page" href="./web/catalog.html">Volver a tienda</a>
                             </li>
                             <li class="nav-item">
                                 <a class="enlaceNav" href="#">Contactanos</a>
                             </li>
 
                             <li class="nav-item">
-                                <button @click="logOut" class="bg-transparent px-4"><img src="./assets/img/switch.png"
+                                <button @click="logOut" class="bg-transparent px-4"><img src="./web/assets/img/switch.png"
                                         alt="logOut"></button>
                             </li>
 
@@ -177,18 +177,18 @@
                         </div>
                         <div class="blockSize">
                             <div class=" d-flex">
-                                <div class="d-flex inputGroup w-25">
+                                <div class="d-flex inputGroup w-50 ms-5">
                                     <input v-model="nameModify" type="text" required autocomplete="off" id="Name">
                                     <label for="Name">Name</label>
                                 </div>
-                                <div class="d-flex w-25 inputGroup">
+                                <div class="d-flex w-25 ms-2 inputGroup">
                                     <input v-model="stockModify" id="stock" type="number" required autocomplete="off">
                                     <label for="stock">Stock</label>
                                 </div>
                             </div>
                         </div>
-                        <div class="d-block">
-                            <button @click="modifyProduct" type="button" class="btn-contact2">
+                        <div class="centrar">
+                            <button @click="modifyProduct" type="button" class="btn-contact2 me-1">
                                 Modificar
                             </button>
                             <button data-bs-toggle="modal" href="/manager.html" role="button" type="button"
@@ -217,7 +217,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-    <script src="./manager.js"></script>
+    <script src="./assets/js/manager.js"></script>
 </body>
 
 </html>

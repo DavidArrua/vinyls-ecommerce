@@ -48,9 +48,10 @@ const app = Vue.
             },
 
             modifyProduct(){
-                axios.patch("/api/products/edit", `name=${this.nameModify}&stock=${this.stockModify}`)
+                axios
+                .patch("/api/products/edit", `name=${this.nameModify}&stock=${this.stockModify}`)
                 .then(response => location.reload)
-                .catch(error => console.log(error))
+                .cath(error => console.log(error))
             },
             logOut() {
                 Swal.fire({

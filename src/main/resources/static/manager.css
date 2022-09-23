@@ -1,5 +1,5 @@
 body {
-    background-image: url(/assets/img/fondoLanding.jpg);
+    background-image: url(/web/assets/img/fondoLanding.jpg);
     background-size: contain;
 }
 
@@ -57,7 +57,7 @@ label {
 }
 
 .fondoForm {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/img/person-holding-black-vinyl.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/web/assets/img/person-holding-black-vinyl.jpg");
     /* background-color: rgba(255, 255, 255, 0.555); */
     background-position: center;
     background-size:50%;
@@ -66,6 +66,12 @@ label {
 }
 label {
     color: white!important;
+}
+.centrar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
 }
 
 .btn-contact2 {
